@@ -1,0 +1,10 @@
+D:\Visual studios\repos\Monopoly\Monopoly\bin\Debug\Monopoly.exe.config
+D:\Visual studios\repos\Monopoly\Monopoly\bin\Debug\Monopoly.exe
+D:\Visual studios\repos\Monopoly\Monopoly\bin\Debug\Monopoly.pdb
+D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.csproj.AssemblyReference.cache
+D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.csproj.SuggestedBindingRedirects.cache
+D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.Properties.Resources.resources
+D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.csproj.GenerateResource.cache
+D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.csproj.CoreCompileInputs.cache
+D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.exe
+D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.pdb
