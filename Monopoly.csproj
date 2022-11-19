@@ -49,6 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Project\Classes\Player\Player.cs" />
+    <Compile Include="Project\Classes\Tiles\Property\Property.cs" />
+    <Compile Include="Project\Classes\Tiles\PurchasableTile.cs" />
+    <Compile Include="Project\Classes\Tiles\Tile.cs" />
     <Compile Include="Project\Windows\Window.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,8 +84,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Project\AidClasses\" />
-    <Folder Include="Project\Classes\" />
+    <Folder Include="Project\AidClasses\Log\" />
+    <Folder Include="Project\Classes\Tiles\Station\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
