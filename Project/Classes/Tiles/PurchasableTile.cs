@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
+    /// <summary>
+    /// This class will represent all the purchasable tiles in the game of Monopoly.
+    /// </summary>
     abstract public class PurchasableTile : Tile
     {
-        /// <summary>
-        /// This class will represent all the purchasable tiles in the game of Monopoly.
-        /// </summary>
-
         #region Properties:
         //The index of the group correlated to the tile. For instance can there be 3 streets and they all have the same group index to indicate that they are correlated.
         public int GroupIndex { get; }
@@ -27,10 +26,8 @@ namespace Monopoly
             Owner = newOwner;
         }
 
-        public virtual void GetRent(int houses)
-        {
-
-        }
+        //Will work as a base method for fetching the rent data for specifik subclasses.
+        public virtual float GetRent(int houses) { return 0; }
         #endregion
     }
 }

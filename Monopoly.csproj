@@ -49,10 +49,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Project\AidClasses\Document\Document.cs" />
+    <Compile Include="Project\AidClasses\Log\Log.cs" />
+    <Compile Include="Project\AidClasses\Log\Urgency.cs" />
+    <Compile Include="Project\AidClasses\Statistic\Statistic.cs" />
+    <Compile Include="Project\Classes\Game\ActionHandler\ActionHandler.cs" />
+    <Compile Include="Project\Classes\Game\Game.cs" />
+    <Compile Include="Project\Classes\Game\GameData\GameData.cs" />
+    <Compile Include="Project\Classes\Dice\Dice.cs" />
+    <Compile Include="Project\Classes\Player\Bot.cs" />
     <Compile Include="Project\Classes\Player\Player.cs" />
+    <Compile Include="Project\Classes\Tiles\ActionSpaces\ActionSpace.cs" />
+    <Compile Include="Project\Classes\Tiles\ActionSpaces\CardCollecter\CardCollecter.cs" />
+    <Compile Include="Project\Classes\Tiles\ActionSpaces\CardCollecter\CardType.cs" />
+    <Compile Include="Project\Classes\Tiles\ActionSpaces\Go\Go.cs" />
+    <Compile Include="Project\Classes\Tiles\ActionSpaces\Prison\Prison.cs" />
     <Compile Include="Project\Classes\Tiles\Property\Property.cs" />
     <Compile Include="Project\Classes\Tiles\PurchasableTile.cs" />
+    <Compile Include="Project\Classes\Tiles\Station\Station.cs" />
     <Compile Include="Project\Classes\Tiles\Tile.cs" />
+    <Compile Include="Project\Classes\Tiles\Utilities\Utility.cs" />
+    <Compile Include="Project\Data\TileData.cs" />
     <Compile Include="Project\Windows\Window.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,9 +100,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Project\AidClasses\Log\" />
-    <Folder Include="Project\Classes\Tiles\Station\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
