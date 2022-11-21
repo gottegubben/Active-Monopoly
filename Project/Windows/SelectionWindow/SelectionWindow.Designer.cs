@@ -1,6 +1,6 @@
 ﻿namespace Monopoly
 {
-    partial class Window
+    partial class SelectionWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // SelectionWindow
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(484, 461);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "SelectionWindow";
+            this.Text = "Selection Window";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-

@@ -12,7 +12,8 @@ namespace Monopoly
     public class Game
     {
         #region Properties
-        private GameData data { get; }
+        //The initial data. The players, the dices and the tiles.
+        public GameData Data { get; }
         #endregion
     }
 }

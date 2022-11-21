@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Monopoly
 {
     /// <summary>
-    /// The player class contains all the different actions that the player can make when playing monopoly.
+    /// The player class contains all the different actions that the player can make while playing monopoly.
     /// </summary>
     public class Player
     {
@@ -18,6 +18,9 @@ namespace Monopoly
 
         //Decides if the player can move or not. If it for example: can throw a dice and move.
         public bool CanMove { get; private set; }
+
+        //Indicates if the player can still play the game or has the player "been killed" / "lost" the game.
+        public bool IsAlive { get; private set; }
         #endregion
 
         #region Methods:
@@ -51,6 +54,12 @@ namespace Monopoly
         public void BuyProperty()
         {
             throw new NotImplementedException();
+        }
+
+        //Will disable this player. Resigned players have "lost" and can't be apart of the game anymore.
+        public void Resign()
+        {
+            IsAlive = false;
         }
         #endregion
     }

@@ -9,11 +9,8 @@ namespace Monopoly
     public abstract class ActionSpace : Tile
     {
         #region Properties:
-        //The callback method will work as a blueprint for the type of method that it should contain.
-        public delegate void Callback(object value, TypeOfAction typeOfAction);
-
         //This is the prop that will hold the reference to the callback function.
-        public Callback CallbackReference { get; set; }
+        public Delegate.PerformActionCallback PerformActionCallbackRef { get; set; }
         #endregion
 
         #region Methods:

@@ -49,7 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Project\AidClasses\Delegates\Delegate.cs" />
     <Compile Include="Project\AidClasses\Document\Document.cs" />
+    <Compile Include="Project\AidClasses\Export\Export.cs" />
     <Compile Include="Project\AidClasses\Log\Log.cs" />
     <Compile Include="Project\AidClasses\Log\Urgency.cs" />
     <Compile Include="Project\AidClasses\Statistic\Statistic.cs" />
@@ -58,6 +60,7 @@
     <Compile Include="Project\Classes\Game\Game.cs" />
     <Compile Include="Project\Classes\Game\GameData.cs" />
     <Compile Include="Project\Classes\Dice\Dice.cs" />
+    <Compile Include="Project\Classes\Game\Round.cs" />
     <Compile Include="Project\Classes\Player\Bot.cs" />
     <Compile Include="Project\Classes\Player\Player.cs" />
     <Compile Include="Project\Classes\Tiles\ActionSpaces\ActionSpace.cs" />
@@ -70,14 +73,35 @@
     <Compile Include="Project\Classes\Tiles\Station\Station.cs" />
     <Compile Include="Project\Classes\Tiles\Tile.cs" />
     <Compile Include="Project\Classes\Tiles\Utilities\Utility.cs" />
-    <Compile Include="Project\Windows\Window.cs">
+    <Compile Include="Project\Windows\CreditWindow\CreditWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Project\Windows\Window.Designer.cs">
-      <DependentUpon>Window.cs</DependentUpon>
+    <Compile Include="Project\Windows\CreditWindow\CreditWindow.Designer.cs">
+      <DependentUpon>CreditWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project\Windows\SelectionWindow\SelectionWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\Windows\SelectionWindow\SelectionWindow.Designer.cs">
+      <DependentUpon>SelectionWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project\Windows\TileStepSimulation\TileStepSimulation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\Windows\TileStepSimulation\TileStepSimulation.Designer.cs">
+      <DependentUpon>TileStepSimulation.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Project\Windows\CreditWindow\CreditWindow.resx">
+      <DependentUpon>CreditWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\Windows\SelectionWindow\SelectionWindow.resx">
+      <DependentUpon>SelectionWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\Windows\TileStepSimulation\TileStepSimulation.resx">
+      <DependentUpon>TileStepSimulation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -100,6 +124,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Project\Assets\Images\Ebba.JPG" />
+    <Content Include="Project\Assets\Images\Johan.JPG" />
+    <Content Include="Project\Assets\Images\Jonathan.JPG" />
+    <Content Include="Project\Assets\Images\Lukas.JPG" />
+    <Content Include="Project\Assets\Images\Malte.JPG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

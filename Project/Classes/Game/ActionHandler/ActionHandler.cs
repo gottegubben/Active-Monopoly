@@ -18,16 +18,30 @@ namespace Monopoly
             //This code forces the reference to the callback method as a variable in the subclasses.
             foreach (ActionSpace item in actionspaces)
             {
-                item.CallbackReference = callbackMethod;
+                item.PerformActionCallbackRef = handleAction;
             }
         }
         #endregion
 
         #region Methods:
         //The callback function will be called by the subclasses. The value object will be transformed to another class depending on the type of action that is being performed.
-        private void callbackMethod(object value, TypeOfAction typeOfAction) 
+        private void handleAction(object value, TypeOfAction typeOfAction) 
         {
-            
+            //the temp variable is the temporary used (value as the prefered class).
+            if(typeOfAction == TypeOfAction.Teleport)
+            {
+                throw new NotImplementedException();
+            }
+            else if(typeOfAction == TypeOfAction.ChangeBalance)
+            {
+                throw new NotImplementedException();
+            }
+            else if(typeOfAction == TypeOfAction.SendToPrison)
+            {
+                int temp = (int)value;
+
+                throw new NotImplementedException();
+            }
         }
         #endregion
     }

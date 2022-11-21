@@ -11,8 +11,13 @@ namespace Monopoly
     /// </summary>
     public enum TypeOfAction
     {
-        Teleport,
+        //A teleport action will move the player to the desired index (maybe will just teleport it (ex: don't go past GO)).
+        Teleport, 
 
-        ChangeBalance
+        //A change balance action will be refering to a value that will change the balance of the player (ex: +100$ for the player).
+        ChangeBalance,
+
+        //This action will place the player in prison and make them unable to move.
+        SendToPrison
     }
 }

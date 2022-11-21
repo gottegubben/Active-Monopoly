@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Monopoly
 {
     /// <summary>
-    /// This will contain the data of the tiles represented in the game of monopoly as well as the players etc.
+    /// This will contain the data of all the useful things that the game of monopoly have to initialize.
     /// </summary>
     public class GameData
     {
@@ -20,6 +20,9 @@ namespace Monopoly
 
         //The dices that will be used in the game.
         public List<Dice> Dices { get; }
+
+        //The action handler for the game.
+        public ActionHandler ActionHandler { get; }
         #endregion
     }
 }

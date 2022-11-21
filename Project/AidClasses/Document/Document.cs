@@ -11,5 +11,13 @@ namespace Monopoly
     /// </summary>
     public class Document
     {
+        #region Checklist:
+        //Hur ska jag spara all statistik? Ska jag ha textfiler?
+        //Ska jag använda JSON?
+        #endregion
+
+        #region Methods:
+
+        #endregion
     }
 }

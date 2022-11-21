@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Monopoly
 {
-    public partial class Window : Form
+    public partial class SelectionWindow : Form
     {
-        public Window()
+        public SelectionWindow()
         {
             InitializeComponent();
         }

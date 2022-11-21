@@ -7,16 +7,9 @@ using System.Threading.Tasks;
 namespace Monopoly
 {
     /// <summary>
-    /// The urgency enum is a enum that will be a factor for other classes depending on the urgency.
+    /// The export class will make it easier to export tables of data. For example: to a excel sheet.
     /// </summary>
-    public enum Urgency
+    public static class Export
     {
-        None,
-
-        Normal,
-
-        Warning,
-
-        Urgent 
     }
 }

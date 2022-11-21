@@ -41,7 +41,7 @@ namespace Monopoly
 
                 Console.WriteLine(message);
             }
-            else if(urgency == Urgency.Information)
+            else if(urgency == Urgency.Normal)
             {
                 resetColor();
 
@@ -57,7 +57,7 @@ namespace Monopoly
 
                 Console.WriteLine();
             }
-            else if (urgency == Urgency.Destructive)
+            else if (urgency == Urgency.Urgent)
             {
                 resetColor();
 
@@ -70,7 +70,7 @@ namespace Monopoly
         //The "Time Write - method" will write the desired text but with a time stamp in front.
         public static void TimeWrite(string message, Urgency urgency)
         {
-            throw new NotImplementedException();
+            Write($"[{DateTime.Now.ToLongTimeString()}] {message}", urgency);
         }
         #endregion
     }

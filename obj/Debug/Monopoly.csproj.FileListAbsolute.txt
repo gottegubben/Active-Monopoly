@@ -8,3 +8,6 @@ D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.csproj.GenerateReso
 D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.csproj.CoreCompileInputs.cache
 D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.exe
 D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.pdb
+D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.TileStepSimulation.resources
+D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.SelectionWindow.resources
+D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.CreditWindow.resources
