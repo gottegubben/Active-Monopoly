@@ -54,8 +54,9 @@
     <Compile Include="Project\AidClasses\Log\Urgency.cs" />
     <Compile Include="Project\AidClasses\Statistic\Statistic.cs" />
     <Compile Include="Project\Classes\Game\ActionHandler\ActionHandler.cs" />
+    <Compile Include="Project\Classes\Game\ActionHandler\TypeOfAction.cs" />
     <Compile Include="Project\Classes\Game\Game.cs" />
-    <Compile Include="Project\Classes\Game\GameData\GameData.cs" />
+    <Compile Include="Project\Classes\Game\GameData.cs" />
     <Compile Include="Project\Classes\Dice\Dice.cs" />
     <Compile Include="Project\Classes\Player\Bot.cs" />
     <Compile Include="Project\Classes\Player\Player.cs" />
@@ -69,7 +70,6 @@
     <Compile Include="Project\Classes\Tiles\Station\Station.cs" />
     <Compile Include="Project\Classes\Tiles\Tile.cs" />
     <Compile Include="Project\Classes\Tiles\Utilities\Utility.cs" />
-    <Compile Include="Project\Data\TileData.cs" />
     <Compile Include="Project\Windows\Window.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -12,8 +12,6 @@ namespace Monopoly
     public class Player
     {
         #region Properties:
-        //Throw is a value that shows how many throws a player has made.
-        public int ThrowCounter { get; private set; }
 
         //The balance is the amount of money the player currently have.
         public int Balance { get; private set; }
@@ -28,8 +26,6 @@ namespace Monopoly
         {
             if (CanMove)
             {
-                ThrowCounter++;
-
                 return globalDice.Throw();
             }
             else { return 0; }
@@ -40,8 +36,6 @@ namespace Monopoly
         {
             if (CanMove)
             {
-                ThrowCounter++;
-
                 return globalDice.TamperedThrow();
             }
             else { return 0; }

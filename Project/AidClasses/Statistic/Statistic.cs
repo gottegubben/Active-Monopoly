@@ -11,5 +11,8 @@ namespace Monopoly
     /// </summary>
     public class Statistic
     {
+        //Vad behöver jag för data?
+
+        //Spelare borde ha en callback metod hit till det här programmet där den skickar sig själv som objekt.
     }
 }
