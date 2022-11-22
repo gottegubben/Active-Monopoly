@@ -125,8 +125,11 @@ There will be two dices that dictates where the player land as in the base game.
 Settings:
 * Amount of rounds to play ; will determin how many times the player will throw
  the dices.
-* Time in prison (rounds) ; will tell the simulation how many rounds, on average, the
+* Max time in prison (rounds) ; will tell the simulation how many rounds, on average, the
  player stays in prison.
-</value>
+* Amount of matches to play ; will determin how many games of monoply will be 
+ played.
+
+* Break free with dices ; will determin if you can break free using the dices.</value>
   </data>
 </root>

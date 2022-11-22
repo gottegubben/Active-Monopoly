@@ -30,30 +30,60 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TileStepSimulation));
             this.groupBoxSimSettings = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxPrisonTime = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.textBoxAmountRounds = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.richTextBoxDescription = new System.Windows.Forms.RichTextBox();
-            this.textBoxPrisonTime = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.buttonRun = new System.Windows.Forms.Button();
+            this.textBoxAmountMatches = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.checkBoxBreakFree = new System.Windows.Forms.CheckBox();
             this.groupBoxSimSettings.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxSimSettings
             // 
+            this.groupBoxSimSettings.Controls.Add(this.checkBoxBreakFree);
+            this.groupBoxSimSettings.Controls.Add(this.textBoxAmountMatches);
+            this.groupBoxSimSettings.Controls.Add(this.label4);
             this.groupBoxSimSettings.Controls.Add(this.textBoxPrisonTime);
             this.groupBoxSimSettings.Controls.Add(this.label3);
             this.groupBoxSimSettings.Controls.Add(this.textBoxAmountRounds);
             this.groupBoxSimSettings.Controls.Add(this.label1);
-            this.groupBoxSimSettings.Location = new System.Drawing.Point(12, 214);
+            this.groupBoxSimSettings.Location = new System.Drawing.Point(12, 268);
             this.groupBoxSimSettings.Name = "groupBoxSimSettings";
-            this.groupBoxSimSettings.Size = new System.Drawing.Size(459, 89);
+            this.groupBoxSimSettings.Size = new System.Drawing.Size(459, 111);
             this.groupBoxSimSettings.TabIndex = 0;
             this.groupBoxSimSettings.TabStop = false;
             this.groupBoxSimSettings.Text = "Simulation Settings";
+            // 
+            // textBoxPrisonTime
+            // 
+            this.textBoxPrisonTime.Location = new System.Drawing.Point(168, 52);
+            this.textBoxPrisonTime.Name = "textBoxPrisonTime";
+            this.textBoxPrisonTime.Size = new System.Drawing.Size(127, 20);
+            this.textBoxPrisonTime.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 55);
+            this.label3.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(138, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Max time in prison (rounds) :";
+            // 
+            // textBoxAmountRounds
+            // 
+            this.textBoxAmountRounds.Location = new System.Drawing.Point(168, 26);
+            this.textBoxAmountRounds.Name = "textBoxAmountRounds";
+            this.textBoxAmountRounds.Size = new System.Drawing.Size(127, 20);
+            this.textBoxAmountRounds.TabIndex = 1;
             // 
             // label1
             // 
@@ -64,13 +94,6 @@
             this.label1.Size = new System.Drawing.Size(130, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Amount of rounds to play :";
-            // 
-            // textBoxAmountRounds
-            // 
-            this.textBoxAmountRounds.Location = new System.Drawing.Point(168, 26);
-            this.textBoxAmountRounds.Name = "textBoxAmountRounds";
-            this.textBoxAmountRounds.Size = new System.Drawing.Size(127, 20);
-            this.textBoxAmountRounds.TabIndex = 1;
             // 
             // label2
             // 
@@ -87,7 +110,7 @@
             this.groupBox1.Controls.Add(this.richTextBoxDescription);
             this.groupBox1.Location = new System.Drawing.Point(12, 53);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(459, 155);
+            this.groupBox1.Size = new System.Drawing.Size(459, 209);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Description";
@@ -99,41 +122,52 @@
             this.richTextBoxDescription.Location = new System.Drawing.Point(7, 20);
             this.richTextBoxDescription.Name = "richTextBoxDescription";
             this.richTextBoxDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBoxDescription.Size = new System.Drawing.Size(446, 127);
+            this.richTextBoxDescription.Size = new System.Drawing.Size(446, 181);
             this.richTextBoxDescription.TabIndex = 0;
             this.richTextBoxDescription.Text = resources.GetString("richTextBoxDescription.Text");
             // 
-            // textBoxPrisonTime
-            // 
-            this.textBoxPrisonTime.Location = new System.Drawing.Point(168, 52);
-            this.textBoxPrisonTime.Name = "textBoxPrisonTime";
-            this.textBoxPrisonTime.Size = new System.Drawing.Size(127, 20);
-            this.textBoxPrisonTime.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 55);
-            this.label3.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Time in prison (rounds) :";
-            // 
             // buttonRun
             // 
-            this.buttonRun.Location = new System.Drawing.Point(12, 309);
+            this.buttonRun.Location = new System.Drawing.Point(12, 385);
             this.buttonRun.Name = "buttonRun";
             this.buttonRun.Size = new System.Drawing.Size(459, 33);
             this.buttonRun.TabIndex = 3;
             this.buttonRun.Text = "Run simulation";
             this.buttonRun.UseVisualStyleBackColor = true;
+            this.buttonRun.Click += new System.EventHandler(this.buttonRun_Click);
+            // 
+            // textBoxAmountMatches
+            // 
+            this.textBoxAmountMatches.Location = new System.Drawing.Point(168, 78);
+            this.textBoxAmountMatches.Name = "textBoxAmountMatches";
+            this.textBoxAmountMatches.Size = new System.Drawing.Size(127, 20);
+            this.textBoxAmountMatches.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 81);
+            this.label4.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(138, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Amount of matches to play :";
+            // 
+            // checkBoxBreakFree
+            // 
+            this.checkBoxBreakFree.AutoSize = true;
+            this.checkBoxBreakFree.Location = new System.Drawing.Point(316, 55);
+            this.checkBoxBreakFree.Name = "checkBoxBreakFree";
+            this.checkBoxBreakFree.Size = new System.Drawing.Size(128, 17);
+            this.checkBoxBreakFree.TabIndex = 6;
+            this.checkBoxBreakFree.Text = "Break free with dices.";
+            this.checkBoxBreakFree.UseVisualStyleBackColor = true;
             // 
             // TileStepSimulation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 680);
+            this.ClientSize = new System.Drawing.Size(1015, 432);
             this.Controls.Add(this.buttonRun);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
@@ -162,6 +196,9 @@
         private System.Windows.Forms.TextBox textBoxPrisonTime;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonRun;
+        private System.Windows.Forms.TextBox textBoxAmountMatches;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox checkBoxBreakFree;
     }
 }
 

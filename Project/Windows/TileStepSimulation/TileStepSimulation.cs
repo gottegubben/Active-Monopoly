@@ -19,8 +19,14 @@ namespace Monopoly
 
         private void TileStepSimulation_Load(object sender, EventArgs e)
         {
+            //This will fix the alignment of the text of the rich text box.
             richTextBoxDescription.SelectAll();
             richTextBoxDescription.SelectionAlignment = HorizontalAlignment.Center;
+        }
+
+        //This method runs the simulation.
+        private void buttonRun_Click(object sender, EventArgs e)
+        {
         }
     }
 }

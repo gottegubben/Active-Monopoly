@@ -11,3 +11,15 @@ D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.pdb
 D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.TileStepSimulation.resources
 D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.SelectionWindow.resources
 D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.CreditWindow.resources
+C:\CodingProjects\Monopoly\bin\Debug\Monopoly.exe.config
+C:\CodingProjects\Monopoly\bin\Debug\Monopoly.exe
+C:\CodingProjects\Monopoly\bin\Debug\Monopoly.pdb
+C:\CodingProjects\Monopoly\obj\Debug\Monopoly.csprojAssemblyReference.cache
+C:\CodingProjects\Monopoly\obj\Debug\Monopoly.CreditWindow.resources
+C:\CodingProjects\Monopoly\obj\Debug\Monopoly.SelectionWindow.resources
+C:\CodingProjects\Monopoly\obj\Debug\Monopoly.TileStepSimulation.resources
+C:\CodingProjects\Monopoly\obj\Debug\Monopoly.Properties.Resources.resources
+C:\CodingProjects\Monopoly\obj\Debug\Monopoly.csproj.GenerateResource.cache
+C:\CodingProjects\Monopoly\obj\Debug\Monopoly.csproj.CoreCompileInputs.cache
+C:\CodingProjects\Monopoly\obj\Debug\Monopoly.exe
+C:\CodingProjects\Monopoly\obj\Debug\Monopoly.pdb

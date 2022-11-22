@@ -11,8 +11,6 @@ namespace Monopoly
     /// </summary>
     public class Round
     {
-        //The round class should send stats about the state of the game.
-
         #region Constructors:
         //This constructor will construct one round of Monopoly.
         public Round(GameData data, Delegate.SendStatisticsCallback sendStatisticsCallbackRef)
@@ -24,6 +22,7 @@ namespace Monopoly
         #endregion
 
         #region Properties:
+        //The game data from the board.
         public GameData Data { get; }
 
         //This prop holds the reference to the statistic method for sending the state to the statistic class.
