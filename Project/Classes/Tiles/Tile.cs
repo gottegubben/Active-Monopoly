@@ -14,13 +14,13 @@ namespace Monopoly
     {
         #region Properties: 
         //The name of the tile.
-        public string TileName { get; }
+        public string TileName { get; set; }
 
         //The id of the tile.
-        public string TileId { get; }
+        public int TileId { get; set; }
 
         //The color of the tile. For instance the color of the street.
-        public Color TileColor { get; }
+        public Color TileColor { get; set; }
         #endregion
     }
 }

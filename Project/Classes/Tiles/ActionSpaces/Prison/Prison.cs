@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
+    /// <summary>
+    /// The prison class will represent the prison that exists in Monopoly. When landed on, you'll be sent to prison.
+    /// </summary>
     public class Prison : ActionSpace
     {
         #region Constructors:
@@ -25,7 +28,7 @@ namespace Monopoly
         //The action method will make the player unable to move temporarily and may send him to another tile.
         public override void Action()
         {
-            PerformActionCallbackRef(prisonTileId, TypeOfAction.SendToPrison);
+            if(PerformActionCallbackRef != null) { PerformActionCallbackRef(prisonTileId, TypeOfAction.SendToPrison); }
         }
         #endregion
     }

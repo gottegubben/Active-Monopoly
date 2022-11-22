@@ -11,6 +11,25 @@ namespace Monopoly
     /// </summary>
     public class Utility : PurchasableTile
     {
+        #region Constructors:
+        //The default constructor for the utility class.
+        public Utility()
+        {
+            rentMultiplier = 1;
+        }
+
+        //This constructor will add the ability to change the rent multiplier.
+        public Utility(int rentMultiplier)
+        {
+            this.rentMultiplier = rentMultiplier;
+        }
+        #endregion
+
+        #region Properties:
+        //This multiplier will be added to the rent, the default value should be one.
+        private int rentMultiplier { get; }
+        #endregion
+
         #region Methods:
         //This function is only there to satisfy the implementation of this function and will only redirect the programmer to the desired function instead, being the overloaded function.
         public override float GetRent(int propertyCount) { throw new Exception(@"Use the overloaded ""GetRent - method"" intead."); }
@@ -18,13 +37,13 @@ namespace Monopoly
         //This function returns the rent by calculating it from the usage of a dice value. These rules are taken from the Monopoly wiki.
         public float GetRent(int propertyCount, int diceValue)
         {
-            if(propertyCount >= 1 && propertyCount <= 2)
+            if(propertyCount >= 1)
             {
-                return ((((propertyCount - 1) * 6) + 4) * diceValue);
+                return (((((propertyCount - 1) * 6) + 4) * diceValue) * rentMultiplier);
             }
             else
             {
-                throw new Exception($"The property amount should be between 1 & 2, this value doesn't work: [{propertyCount}]!");
+                throw new Exception($"The property count should be at least 1, this value doesn't work: [{propertyCount}]!");
             }
         }
         #endregion

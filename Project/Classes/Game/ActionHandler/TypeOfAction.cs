@@ -18,6 +18,9 @@ namespace Monopoly
         ChangeBalance,
 
         //This action will place the player in prison and make them unable to move.
-        SendToPrison
+        SendToPrison,
+
+        //This action will give the player a card.
+        PickUpCard
     }
 }

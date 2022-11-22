@@ -11,7 +11,19 @@ namespace Monopoly
     /// </summary>
     public class Property : PurchasableTile
     {
+        #region Constructors:
+        //The default property constructor.
+        public Property(int constructionCost, params int[] rent)
+        {
+            ConstructionCost = constructionCost;
+            this.rent = rent;
+        }
+        #endregion
+
         #region Properties:
+        //The cost of constructing a building. Either being a house or a hotel.
+        public int ConstructionCost { get; set; }
+
         //The rent property contains all the different rents. The index corresponds to the amount of houses. For example: rent[0] is the base rent.
         private int[] rent { get; }
         #endregion

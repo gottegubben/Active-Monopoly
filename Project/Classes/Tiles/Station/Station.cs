@@ -11,9 +11,17 @@ namespace Monopoly
     /// </summary>
     public class Station : PurchasableTile
     {
+        #region Constructors:
+        //The default constructor of the station class.
+        public Station(params int[] rent)
+        {
+            this.rent = rent;
+        }
+        #endregion
+
         #region Properties:
         //The rent property contains all the different rents. The index corresponds to the amount of houses. For example: rent[0] is the base rent.
-        private float[] rent { get; }
+        private int[] rent { get; }
         #endregion
 
         #region Methods:

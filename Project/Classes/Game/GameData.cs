@@ -11,6 +11,12 @@ namespace Monopoly
     /// </summary>
     public class GameData
     {
+        #region Checklist:
+        //Kanske bestämma en kostnad som säger hur mycket det kostar att fly från fängelset.
+
+        //Hur många rundor man annars stannar i fängelset (ifall man inte betalar eller slår rätt tärning).
+        #endregion
+
         #region Properties:
         //All the tiles that will be used in the game and in there respected order.
         public List<Tile> Tiles { get; }

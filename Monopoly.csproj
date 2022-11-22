@@ -55,6 +55,7 @@
     <Compile Include="Project\AidClasses\Log\Log.cs" />
     <Compile Include="Project\AidClasses\Log\Urgency.cs" />
     <Compile Include="Project\AidClasses\Statistic\Statistic.cs" />
+    <Compile Include="Project\Classes\CardDeck\CardDeck.cs" />
     <Compile Include="Project\Classes\Game\ActionHandler\ActionHandler.cs" />
     <Compile Include="Project\Classes\Game\ActionHandler\TypeOfAction.cs" />
     <Compile Include="Project\Classes\Game\Game.cs" />
@@ -68,11 +69,13 @@
     <Compile Include="Project\Classes\Tiles\ActionSpaces\CardCollecter\CardType.cs" />
     <Compile Include="Project\Classes\Tiles\ActionSpaces\Go\Go.cs" />
     <Compile Include="Project\Classes\Tiles\ActionSpaces\Prison\Prison.cs" />
+    <Compile Include="Project\Classes\Tiles\ActionSpaces\Tax\Tax.cs" />
     <Compile Include="Project\Classes\Tiles\Property\Property.cs" />
     <Compile Include="Project\Classes\Tiles\PurchasableTile.cs" />
     <Compile Include="Project\Classes\Tiles\Station\Station.cs" />
     <Compile Include="Project\Classes\Tiles\Tile.cs" />
     <Compile Include="Project\Classes\Tiles\Utilities\Utility.cs" />
+    <Compile Include="Project\Config\MonopolyConfig.cs" />
     <Compile Include="Project\Windows\CreditWindow\CreditWindow.cs">
       <SubType>Form</SubType>
     </Compile>
