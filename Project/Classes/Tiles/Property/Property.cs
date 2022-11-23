@@ -21,6 +21,8 @@ namespace Monopoly
         #endregion
 
         #region Properties:
+        private int houseCount { get; set; }
+
         //The cost of constructing a building. Either being a house or a hotel.
         public int ConstructionCost { get; set; }
 
@@ -30,7 +32,7 @@ namespace Monopoly
 
         #region Methods:
         //This function will have a parameter that stands for the amount of houses you have built on that property. This function will therefore return the desired rent.
-        public override float GetRent(int houseCount)
+        public override int GetRent()
         {
             if(houseCount <= rent.Length && houseCount < 0)
             {

@@ -10,7 +10,7 @@ namespace Monopoly
     /// <summary>
     /// The tile class will represent a tile in the game of monopoly. For instance: the "GO - tile". This will be the base class for all tiles.
     /// </summary>
-    public abstract class Tile
+    public class Tile
     {
         #region Properties: 
         //The name of the tile.

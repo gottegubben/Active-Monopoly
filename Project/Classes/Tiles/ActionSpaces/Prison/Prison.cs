@@ -28,7 +28,7 @@ namespace Monopoly
         //The action method will make the player unable to move temporarily and may send him to another tile.
         public override void Action()
         {
-            if(PerformActionCallbackRef != null) { PerformActionCallbackRef(prisonTileId, TypeOfAction.SendToPrison); }
+            PerformActionCallbackRef?.Invoke(prisonTileId, TypeOfAction.SendToPrison);
         }
         #endregion
     }

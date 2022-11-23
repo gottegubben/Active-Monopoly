@@ -30,7 +30,7 @@ namespace Monopoly
         }
 
         //Will work as a base method for fetching the rent data for specifik subclasses.
-        public virtual float GetRent(int houses) { return 0; }
+        public virtual int GetRent() { return 0; }
         #endregion
     }
 }

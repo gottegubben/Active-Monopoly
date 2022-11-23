@@ -28,7 +28,7 @@ namespace Monopoly
         //This will make the player pay a sum.
         public override void Action()
         {
-            if (PerformActionCallbackRef != null) { PerformActionCallbackRef(tax, TypeOfAction.ChangeBalance); }
+            PerformActionCallbackRef?.Invoke(tax, TypeOfAction.ChangeBalance);
         }
         #endregion
     }
