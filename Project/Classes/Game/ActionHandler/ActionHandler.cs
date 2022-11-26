@@ -46,6 +46,8 @@ namespace Monopoly
             }
             else if(typeOfAction == TypeOfAction.PickUpCard)
             {
+                CardType temp = (CardType)value;
+
                 throw new NotImplementedException();
             }
         }

@@ -34,7 +34,15 @@ namespace Monopoly
         //and then dispose for a new round to be created later by the game class. (Will maybe use the IDisposable interface for disposing)
         private void roundLoop()
         {
-            //The code that should be executed in a round of monopoly.
+            //All players should have their own turns in a round, this will happen here.
+            foreach (Player player in Data.Players)
+            {
+                //Checks if the current player is alive, otherwise the player can't play.
+                if (player.IsAlive)
+                {
+
+                }
+            }
 
             SendStatisticsCallbackRef(this);
         }

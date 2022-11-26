@@ -55,6 +55,7 @@
     <Compile Include="Project\AidClasses\Log\Log.cs" />
     <Compile Include="Project\AidClasses\Log\Urgency.cs" />
     <Compile Include="Project\AidClasses\Statistic\Statistic.cs" />
+    <Compile Include="Project\Classes\CardDeck\Card.cs" />
     <Compile Include="Project\Classes\CardDeck\CardDeck.cs" />
     <Compile Include="Project\Classes\Game\ActionHandler\ActionHandler.cs" />
     <Compile Include="Project\Classes\Game\ActionHandler\TypeOfAction.cs" />

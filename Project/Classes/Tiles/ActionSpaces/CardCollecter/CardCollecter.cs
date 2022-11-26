@@ -28,7 +28,7 @@ namespace Monopoly
         //The action will pick up a card and the player will apply that card.
         public override void Action()
         {
-            throw new NotImplementedException();
+            PerformActionCallbackRef?.Invoke(cardType, TypeOfAction.PickUpCard);
         }
         #endregion
     }

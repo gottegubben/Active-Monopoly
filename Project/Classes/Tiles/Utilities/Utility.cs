@@ -32,10 +32,10 @@ namespace Monopoly
 
         #region Methods:
         //This function is only there to satisfy the implementation of this function and will only redirect the programmer to the desired function instead, being the overloaded function.
-        public override float GetRent(int propertyCount) { throw new Exception(@"Use the overloaded ""GetRent - method"" intead."); }
+        public override int GetRent() { throw new Exception(@"Use the overloaded ""GetRent - method"" intead."); }
 
         //This function returns the rent by calculating it from the usage of a dice value. These rules are taken from the Monopoly wiki.
-        public float GetRent(int propertyCount, int diceValue)
+        public int GetRent(int propertyCount, int diceValue)
         {
             if(propertyCount >= 1)
             {

@@ -25,8 +25,11 @@ namespace Monopoly
         #endregion
 
         #region Methods:
+        //This function is only there to satisfy the implementation of this function and will only redirect the programmer to the desired function instead, being the overloaded function.
+        public override int GetRent() { throw new Exception(@"Use the overloaded ""GetRent - method"" intead."); }
+
         //This function will have a parameter that stands for the amount of properties of the same sort you own. This function will therefore return the desired rent.
-        public override float GetRent(int propertyCount)
+        public int GetRent(int propertyCount)
         {
             if (propertyCount <= rent.Length && propertyCount < 1)
             {

@@ -117,7 +117,7 @@ namespace Monopoly
                 getTileTax("Skatt", 2, Color.White, 0),
                 getTileStation("Slussen", 5, Color.White, 0, 0, stationRent),
                 getTileProperty("Hammarby sjöstad", 6, Color.LightBlue, 3, 0, 0, new int[]{}),
-                //Action tile - chansjm
+                //Action tile - chans
                 getTileProperty("Hornstull", 8, Color.LightBlue, 3, 0, 0, new int[]{}),
                 getTileProperty("Sveavägen", 9, Color.LightBlue, 3, 0, 0, new int[]{}),
                 getTileBlank("Fängelsebesök", 10, Color.White),

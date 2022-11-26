@@ -38,6 +38,9 @@ namespace Monopoly
             //The player that will be used in the simulation.
             Player player = new Player();
 
+            //Fetches all the tiles that exist in monopoly.
+            List<Tile> tiles = MonopolyConfig.GetTiles();
+
             //All the values from the textboxes:
             int matches = 0;
             int rounds = 0;
