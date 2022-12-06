@@ -32,6 +32,9 @@ namespace Monopoly
 
         //Indicates if the player can still play the game or has the player "been killed" / "lost" the game.
         public bool IsAlive { get; private set; }
+
+        //This id will identify the player when for example: searching for it. Can be used as identifier.
+        public int Id { get; }
         #endregion
 
         #region Methods:

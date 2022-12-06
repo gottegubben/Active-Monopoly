@@ -29,6 +29,9 @@ namespace Monopoly
 
         //The action handler for the game.
         public ActionHandler ActionHandler { get; }
+
+        //The player position handler handles all the player positions.
+        public PlayerPositionHandler PlayerPositionHandler { get; set; }
         #endregion
     }
 }

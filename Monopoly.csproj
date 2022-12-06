@@ -62,6 +62,8 @@
     <Compile Include="Project\Classes\Game\Game.cs" />
     <Compile Include="Project\Classes\Game\GameData.cs" />
     <Compile Include="Project\Classes\Dice\Dice.cs" />
+    <Compile Include="Project\Classes\Game\PlayerPositionHandler\PlayerPosition.cs" />
+    <Compile Include="Project\Classes\Game\PlayerPositionHandler\PlayerPositionHandler.cs" />
     <Compile Include="Project\Classes\Game\Round.cs" />
     <Compile Include="Project\Classes\Player\Bot.cs" />
     <Compile Include="Project\Classes\Player\Player.cs" />

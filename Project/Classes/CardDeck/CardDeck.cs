@@ -18,9 +18,18 @@ namespace Monopoly
 
         #region Methods:
         //This method will mix the cards in the deck.
-        public void MixCards()
+        public void Shuffle()
         {
-            
+            Random random = new Random();
+
+            for (int i = cards.Count - 1; i > 1; i--)
+            {
+                int rnd = random.Next(i + 1);
+
+                Card value = cards[rnd];
+                cards[rnd] = cards[i];
+                cards[i] = value;
+            }
         }
         #endregion
 
