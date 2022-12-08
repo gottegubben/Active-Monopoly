@@ -27,11 +27,11 @@ namespace Monopoly
         }
 
         //Returns the prison tile.
-        private static Prison getTilePrison(int tileId, int prisonTileId)
+        private static Prison getTilePrison(string tileName, int tileId, int prisonTileId)
         {
             return new Prison(prisonTileId)
             {
-                TileName = "Prison",
+                TileName = tileName,
                 TileId = tileId,
                 TileColor = Color.White
             };
@@ -88,6 +88,16 @@ namespace Monopoly
             };
         }
 
+        private static CardCollecter getTileCardCollector(string tileName, int tileId, Color tileColor, CardType cardType)
+        {
+            return new CardCollecter(cardType)
+            {
+                TileName = tileName,
+                TileId = tileId,
+                TileColor = tileColor
+            };
+        }
+
         private static Tile getTileBlank(string tileName, int tileId, Color tileColor)
         {
             return new Tile()
@@ -112,12 +122,12 @@ namespace Monopoly
                 getTileGo(0, 200),
 
                 getTileProperty("Sergels torg", 1, Color.Brown, 2, 0, 0, new int[]{}),
-                //Action Tile - allmän
+                getTileCardCollector("Allmän", 2, Color.White, CardType.CommunityChest),
                 getTileProperty("Medborgarplatsen", 3, Color.Brown, 2, 0, 0, new int[]{}),
                 getTileTax("Skatt", 2, Color.White, 0),
                 getTileStation("Slussen", 5, Color.White, 0, 0, stationRent),
                 getTileProperty("Hammarby sjöstad", 6, Color.LightBlue, 3, 0, 0, new int[]{}),
-                //Action tile - chans
+                getTileCardCollector("Chans", 7, Color.White, CardType.Fortune),
                 getTileProperty("Hornstull", 8, Color.LightBlue, 3, 0, 0, new int[]{}),
                 getTileProperty("Sveavägen", 9, Color.LightBlue, 3, 0, 0, new int[]{}),
                 getTileBlank("Fängelsebesök", 10, Color.White),
@@ -127,12 +137,12 @@ namespace Monopoly
                 getTileProperty("S:T Eriksgatan", 14, Color.Pink, 4, 0, 0, new int[]{}),
                 getTileStation("Fridhemsplan", 15, Color.White, 0, 0, stationRent),
                 getTileProperty("Drottning-gatan", 16, Color.Orange, 5, 0, 0, new int[]{}),
-                //Action tile - allmän
+                getTileCardCollector("Allmän", 17, Color.White, CardType.CommunityChest),
                 getTileProperty("Birgerjarlsgatan", 18, Color.Orange, 5, 0, 0, new int[]{}),
                 getTileProperty("Kungsgatan", 19, Color.Orange, 5, 0, 0, new int[]{}),
                 getTileBlank("Gratis parkering", 20, Color.White),
                 getTileProperty("Mariatorget", 21, Color.Red, 6, 0, 0, new int[]{}),
-                //Action tile - chans
+                getTileCardCollector("Chans", 22, Color.White, CardType.Fortune),
                 getTileProperty("Hötorget", 23, Color.Red, 6, 0, 0, new int[]{}),
                 getTileProperty("Odenplan", 24, Color.Red, 6, 0, 0, new int[]{}),
                 getTileStation("T-centralen", 25, Color.White, 0, 0, stationRent),
@@ -141,14 +151,14 @@ namespace Monopoly
                 getTileUtility("Globen", 28, Color.White, 1, 0),
                 getTileProperty("Hamngatan", 29, Color.Yellow, 7, 0, 0, new int[]{}),
 
-                getTilePrison(30, 10),
+                getTilePrison("Gå i fängelse", 30, 10),
 
                 getTileProperty("Gamla stan", 31, Color.Green, 8, 0, 0, new int[]{}),
                 getTileProperty("Östermalmstorg", 32, Color.Green, 8, 0, 0, new int[]{}),
-                //Action tile - allmän
+                getTileCardCollector("Allmän", 33, Color.White, CardType.CommunityChest),
                 getTileProperty("Norrmalmstorg", 34, Color.Green, 8, 0, 0, new int[]{}),
                 getTileStation("Östermalmstorg", 35, Color.White, 0, 0, stationRent),
-                //Action tile - chans
+                getTileCardCollector("Chans", 36, Color.White, CardType.Fortune),
                 getTileProperty("Djurgården", 37, Color.Blue, 9, 0, 0, new int[]{}),
                 getTileTax("Skatt", 38, Color.White, 0),
                 getTileProperty("Strandvägen", 39, Color.Blue, 9, 0, 0, new int[]{})

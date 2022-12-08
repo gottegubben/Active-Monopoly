@@ -46,34 +46,6 @@ namespace Monopoly
 
             SendStatisticsCallbackRef(this);
         }
-
-        //The "move player forward - method" will move the player forward x steps and set the new position. This method will check if the player has walked over the "GO - tile".
-        private void movePlayerForward(Player player, int steps)
-        {
-            //Will retrieve the current position of the player.
-            int currentPos = Data.PlayerPositionHandler.GetPlayerPositionInt(player);
-
-            //This will find the tile id that the player will walk to. "Data.Tile.Count" is the amount of tiles on the board.
-            int landOnTile = (currentPos + steps) % Data.Tiles.Count;
-
-            //Changes the position of the player.
-            Data.PlayerPositionHandler.SetPlayerPosition(player, landOnTile);
-
-            //This method should also check if the player has walked over the "GO - tile".
-        }
-
-        //The "move player to tile - method" will teleport the player to the chosen location. Has to be a tile on the board.
-        private void movePlayerToTile(Player player, int tileId)
-        {
-            //Will turn true if the player wants to teleport to a tile that is avaible. Not accepted: tile id = -5.
-            if(tileId < Data.Tiles.Count && tileId >= 0)
-            {
-                //Gets the current position of the player.
-                int currentPos = Data.PlayerPositionHandler.GetPlayerPositionInt(player);
-
-                
-            }
-        }
         #endregion
     }
 }

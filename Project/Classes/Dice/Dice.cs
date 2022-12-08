@@ -22,6 +22,16 @@ namespace Monopoly
             random = new Random();
         }
 
+        //Ordinary dice with a seed.
+        public Dice(int seed)
+        {
+            minValue = 1;
+
+            maxValue = 6;
+
+            random = new Random(seed);
+        }
+
         //This constructor creates a dice with a min and max value.
         public Dice(int min, int max)
         {

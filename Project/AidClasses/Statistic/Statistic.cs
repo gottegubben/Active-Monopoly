@@ -21,6 +21,11 @@ namespace Monopoly
         //Vilken spelare som vann och vem som förlorade (kom sist), samt alla spelares position där emellan.
         #endregion
 
+        #region Properties:
+        //This list will contain all the rounds that have been played before in a match.
+        public List<Round> RoundHistory { get; private set; }
+        #endregion
+
         #region Methods:
         //This method will store the stats of the round that has been sent from the round class.
         public void StoreState(Round round)

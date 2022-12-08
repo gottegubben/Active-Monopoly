@@ -13,12 +13,16 @@ namespace Monopoly
     {
         #region Constructors:
         //This constructor will work as a dummy for different kinds of simulations that doesn't need the other properties that the player class have.
-        public Player() { }
+        public Player() 
+        {
+            CanMove = true;
+        }
 
         //The normal constructor for the player class for use in the game of Monopoly.
         public Player(int startBalance)
         {
             Balance = startBalance;
+            CanMove = true;
         }
         #endregion
 
@@ -28,7 +32,7 @@ namespace Monopoly
         public int Balance { get; private set; }
 
         //Decides if the player can move or not. If it for example: can throw a dice and move.
-        public bool CanMove { get; private set; }
+        public bool CanMove { get; set; }
 
         //Indicates if the player can still play the game or has the player "been killed" / "lost" the game.
         public bool IsAlive { get; private set; }

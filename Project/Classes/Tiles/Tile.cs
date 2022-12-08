@@ -22,5 +22,13 @@ namespace Monopoly
         //The color of the tile. For instance the color of the street.
         public Color TileColor { get; set; }
         #endregion
+
+        #region Methods:
+        //Returns the type of tile as a string. If it's just a blank tile, return tile.
+        public string GetTypeOfTile()
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
     }
 }
