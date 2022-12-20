@@ -14,14 +14,14 @@ namespace Monopoly
         #region Properties:
         //The cards that exist in the deck.
         private List<Card> cards { get; set; }
+
+        private Random random { get; set; }
         #endregion
 
         #region Methods:
         //This method will mix the cards in the deck.
         public void Shuffle()
         {
-            Random random = new Random();
-
             for (int i = cards.Count - 1; i > 1; i--)
             {
                 int rnd = random.Next(i + 1);
@@ -31,10 +31,18 @@ namespace Monopoly
                 cards[i] = value;
             }
         }
-        #endregion
 
-        //Ska innehålla en lista av kort
-        //Blanda
-        //Skicak ett kort och lägga det längst ner
+        //Draw the card from the top of the deck and return it. At the same time, place the top card at the bottom.
+        public Card DrawCard()
+        {
+            Card returnValue = cards[0];
+
+            cards.Append(returnValue);
+
+            cards.RemoveAt(0);
+
+            return returnValue;
+        }
+        #endregion
     }
 }
