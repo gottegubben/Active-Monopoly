@@ -132,8 +132,26 @@ namespace Monopoly
                             posHandler.MovePlayerForward(player, diceThrows.Sum(), Tiles.Count);
 
                             tileStepCount[posHandler.GetPlayerPositionInt(player)]++;
+
+                            //If the player lands on the "go to prison" tile then move to prison.
+                            if(posHandler.GetPlayerPositionInt(player) == 30)
+                            {
+                                player.CanMove = false;
+
+                                posHandler.SetPlayerPosition(player, 10);
+                            }
                         }
-                        else { roundsStayedInJail++; }
+                        else //If the player is still in jail.
+                        { 
+                            roundsStayedInJail++;
+
+                            tileStepCount[10]++;
+
+                            if(roundsStayedInJail >= prisonTime)
+                            {
+                                player.CanMove = true;
+                            }
+                        }
 
                         roundsPlayed++;
                     }
@@ -143,6 +161,8 @@ namespace Monopoly
                 {
                     LandingPercentage[i] = (tileStepCount[i] / roundsPlayed) *100;
                 }
+
+                buttonRun.Enabled = true;
             }
             else
             {
@@ -168,5 +188,16 @@ namespace Monopoly
 
             textBoxTileDataChance.Text = $"{LandingPercentage[btnId]}";
         }
+
+        #region Comments:
+
+        /*
+            En avgränsning med programmet är att man inte tar hänsyn till ifall spelaren slår två av samma siffror. Då ska man egentligen få slå ett till kast
+            men i det här programmet finns inte det med. I försäg behövs inte det då det endast tittar vart man landar och det är helt irrelevant att veta hur många
+            rundor spelaren har spelat då det endast är vart den landar. Visst kan man slå två slag på en runda men det spelar ingen roll i den här simuleringen ifall
+            de slår en gång per runda istället.
+        */
+
+        #endregion
     }
 }

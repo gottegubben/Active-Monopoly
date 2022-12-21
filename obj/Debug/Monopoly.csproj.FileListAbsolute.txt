@@ -47,3 +47,5 @@ C:\Programmering\Coding Projects\Monopoly\obj\Debug\Monopoly.pdb
 C:\Programmering\Coding Projects\Monopoly\bin\Debug\Monopoly.exe.config
 C:\Programmering\Coding Projects\Monopoly\bin\Debug\Monopoly.exe
 C:\Programmering\Coding Projects\Monopoly\bin\Debug\Monopoly.pdb
+D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.MonopolySimulation.resources
+D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.TestEnvironment.resources

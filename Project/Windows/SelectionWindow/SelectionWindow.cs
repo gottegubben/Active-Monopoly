@@ -16,5 +16,29 @@ namespace Monopoly
         {
             InitializeComponent();
         }
+
+        private void buttonTileStep_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+
+            switch (int.Parse(btn.Tag.ToString()))
+            {
+                case 1:
+                    new TileStepSimulation().Show();
+                    break;
+
+                case 2:
+                    new MonopolySimulation().Show();
+                    break;
+
+                case 3:
+                    new TestEnvironment().Show();
+                    break;
+
+                case 4:
+                    new CreditWindow().Show();
+                    break;
+            }
+        }
     }
 }

@@ -88,6 +88,7 @@ namespace Monopoly
             };
         }
 
+        //Returns the tile responsible for the player picking up cards with these params.
         private static CardCollecter getTileCardCollector(string tileName, int tileId, Color tileColor, CardType cardType)
         {
             return new CardCollecter(cardType)
@@ -98,6 +99,7 @@ namespace Monopoly
             };
         }
 
+        //Returns a blank tile.
         private static Tile getTileBlank(string tileName, int tileId, Color tileColor)
         {
             return new Tile()
@@ -130,7 +132,9 @@ namespace Monopoly
                 getTileCardCollector("Chans", 7, Color.White, CardType.Fortune),
                 getTileProperty("Hornstull", 8, Color.LightBlue, 3, 0, 0, new int[]{}),
                 getTileProperty("Sveavägen", 9, Color.LightBlue, 3, 0, 0, new int[]{}),
+
                 getTileBlank("Fängelsebesök", 10, Color.White),
+
                 getTileProperty("Hantverkargatan", 11, Color.Pink, 4, 0, 0, new int[]{}),
                 getTileUtility("Kaknästornet", 12, Color.White, 1, 0),
                 getTileProperty("Götgatsbacken", 13, Color.Pink, 4, 0, 0, new int[]{}),
@@ -164,6 +168,57 @@ namespace Monopoly
                 getTileProperty("Strandvägen", 39, Color.Blue, 9, 0, 0, new int[]{})
             };
         }
+        #endregion
+
+        #region GetCards:
+        #region Comments:
+        /*
+            Community:
+            1. Du beskattas för gatureparationer. Betala $40 för varje hus och $115 för varje hotell du äger.
+            2. Fortsätt till gå (Inkassera $200).
+            3. Du säljer aktier och får $50.
+            4. Läkararvode. Betala $50.
+            5. Du erhåller $25 i konsultarvode.
+            6. Återbäring på livsförsäkring. Inkassera $100.
+            7. Du har vunnit andra pris i en skönhetstävling. Inkassera $10.
+            8. Gå i fängelse utan att passera gå.
+            9. Du slipper ut ur fängelset. Du kan behålla kortet tills du behöver det eller sälja det. (Ska ej vara med)
+            10. Banken gör ett misstag som gynnar dig. Inkassera $200.
+            11. Semesterfonden stiger i värde. Du erhåller $100.
+            12. Sjukhusräkning. Betala $100.
+            13. Återbetalning av inkomstskatt. Inkassera $20.
+            14. Du ärver $100.
+            15. Terminsavgift till skolan. Betala $50.
+            16. Det är din födelsedag. Inkassera $10 från varje spelare. (Ska ej vara med)
+
+            Chans:
+            1. Gå vidare till närmaste statliga verk. Om ingen äger det, kan du köpa det från banken. Om någon äger det slår du
+            tärningarna och betalar ägaren 10 gånger värdet som slogs.
+            2. Gå vidare till närmaste järnvägsstation. Om ingen äger den kan du köpa den från banken. Om någon äger den betalar du
+            ägaren dubbla hyran mot vad hen har rätt till.
+            3. Gå vidare till hamngatan. Om du passerar gå, inkassera $200.
+            4. Du slipper ut ur fängelset. Du kan behålla kortet tills du behöver det eller säljer det. (Ska ej vara med)
+            5. Du måste reparera alla dina egendomar. Betala $25 för varje hus och $100 för varje hotell du äger.
+            6. Du får $50 i återbäring från banken.
+            7. Fortkörningsböter, betala $15.
+            8. Ditt bygglön förfaller. Inkassera $150.
+            9. Gå tillbaka tre steg.
+            10. Gå vidare till gå (Inkassera $200).
+            11. Gå till södra station. Om du passerar gå, inkassera $200.
+            12. Du har valts till styrelseordförande. Betala $50 till varje spelare.
+            13. Gå vidare till normalmstorg.
+            14. Gå vidare till S:T Eriksgatan. Om du passerar gå, inkassera $200.
+            15. Gå i fängelse. Gå direkt i fängelse utan att passera gå. Inkassera inte $200.
+        */
+        #endregion
+        #endregion
+
+        #region GetGameData
+        //Get all the game data from this function.
+
+        //Get all the data.
+
+        //Get all the data with custom players (bots).
         #endregion
 
         #endregion

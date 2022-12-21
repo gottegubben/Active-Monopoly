@@ -11,5 +11,11 @@ namespace Monopoly
     /// </summary>
     public class Card
     {
+        #region Properties:
+        //The message on the card.
+        public string Message { get; set; }
+
+        //TypeOfAction??? (Change in balance / teleport)
+        #endregion
     }
 }

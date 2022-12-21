@@ -13,7 +13,7 @@ namespace Monopoly
     {
         #region Properties
         //The initial data. The players, the dices and the tiles.
-        public GameData Data { get; }
+        public GameData Data { get; set; }
         #endregion
 
         #region Methods:

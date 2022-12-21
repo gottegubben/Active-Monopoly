@@ -45,22 +45,15 @@ namespace Monopoly
         //Simulates a player that throws a dice.
         public int[] Throw(params Dice[] globalDices)
         {
-            if (CanMove)
-            {
-                List<int> returnValue = new List<int>();
+            List<int> returnValue = new List<int>();
 
-                //Throws all the different dices and creates a list of all the values from the different dices.
-                foreach (Dice item in globalDices)
-                {
-                    returnValue.Add(item.Throw());
-                }
-
-                return returnValue.ToArray();
-            }
-            else
+            //Throws all the different dices and creates a list of all the values from the different dices.
+            foreach (Dice item in globalDices)
             {
-                return null;
+                returnValue.Add(item.Throw());
             }
+
+            return returnValue.ToArray();
         }
 
         //Simulates a player that throws a tampered dice.
