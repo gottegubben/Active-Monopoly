@@ -1010,6 +1010,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TileStepSimulation";
+            this.ShowIcon = false;
             this.Load += new System.EventHandler(this.TileStepSimulation_Load);
             this.groupBoxSimSettings.ResumeLayout(false);
             this.groupBoxSimSettings.PerformLayout();

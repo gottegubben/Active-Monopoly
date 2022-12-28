@@ -30,10 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBoxSelections = new System.Windows.Forms.GroupBox();
-            this.buttonTileStep = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.buttonTestEnv = new System.Windows.Forms.Button();
             this.buttonCredits = new System.Windows.Forms.Button();
+            this.buttonTestEnv = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.buttonTileStep = new System.Windows.Forms.Button();
             this.groupBoxSelections.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,29 +60,17 @@
             this.groupBoxSelections.TabStop = false;
             this.groupBoxSelections.Text = "Selections";
             // 
-            // buttonTileStep
+            // buttonCredits
             // 
-            this.buttonTileStep.Location = new System.Drawing.Point(18, 31);
-            this.buttonTileStep.Margin = new System.Windows.Forms.Padding(15);
-            this.buttonTileStep.Name = "buttonTileStep";
-            this.buttonTileStep.Size = new System.Drawing.Size(424, 46);
-            this.buttonTileStep.TabIndex = 0;
-            this.buttonTileStep.Tag = "1";
-            this.buttonTileStep.Text = "Tile Step Simulation";
-            this.buttonTileStep.UseVisualStyleBackColor = true;
-            this.buttonTileStep.Click += new System.EventHandler(this.buttonTileStep_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(18, 107);
-            this.button2.Margin = new System.Windows.Forms.Padding(15);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(424, 46);
-            this.button2.TabIndex = 1;
-            this.button2.Tag = "2";
-            this.button2.Text = "Monopoly Simulation";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.buttonTileStep_Click);
+            this.buttonCredits.Location = new System.Drawing.Point(18, 259);
+            this.buttonCredits.Margin = new System.Windows.Forms.Padding(15);
+            this.buttonCredits.Name = "buttonCredits";
+            this.buttonCredits.Size = new System.Drawing.Size(424, 46);
+            this.buttonCredits.TabIndex = 3;
+            this.buttonCredits.Tag = "4";
+            this.buttonCredits.Text = "Credits";
+            this.buttonCredits.UseVisualStyleBackColor = true;
+            this.buttonCredits.Click += new System.EventHandler(this.buttonTileStep_Click);
             // 
             // buttonTestEnv
             // 
@@ -96,17 +84,29 @@
             this.buttonTestEnv.UseVisualStyleBackColor = true;
             this.buttonTestEnv.Click += new System.EventHandler(this.buttonTileStep_Click);
             // 
-            // buttonCredits
+            // button2
             // 
-            this.buttonCredits.Location = new System.Drawing.Point(18, 259);
-            this.buttonCredits.Margin = new System.Windows.Forms.Padding(15);
-            this.buttonCredits.Name = "buttonCredits";
-            this.buttonCredits.Size = new System.Drawing.Size(424, 46);
-            this.buttonCredits.TabIndex = 3;
-            this.buttonCredits.Tag = "4";
-            this.buttonCredits.Text = "Credits";
-            this.buttonCredits.UseVisualStyleBackColor = true;
-            this.buttonCredits.Click += new System.EventHandler(this.buttonTileStep_Click);
+            this.button2.Location = new System.Drawing.Point(18, 107);
+            this.button2.Margin = new System.Windows.Forms.Padding(15);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(424, 46);
+            this.button2.TabIndex = 1;
+            this.button2.Tag = "2";
+            this.button2.Text = "Monopoly Simulation";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.buttonTileStep_Click);
+            // 
+            // buttonTileStep
+            // 
+            this.buttonTileStep.Location = new System.Drawing.Point(18, 31);
+            this.buttonTileStep.Margin = new System.Windows.Forms.Padding(15);
+            this.buttonTileStep.Name = "buttonTileStep";
+            this.buttonTileStep.Size = new System.Drawing.Size(424, 46);
+            this.buttonTileStep.TabIndex = 0;
+            this.buttonTileStep.Tag = "1";
+            this.buttonTileStep.Text = "Tile Step Simulation";
+            this.buttonTileStep.UseVisualStyleBackColor = true;
+            this.buttonTileStep.Click += new System.EventHandler(this.buttonTileStep_Click);
             // 
             // SelectionWindow
             // 
@@ -119,6 +119,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SelectionWindow";
+            this.ShowIcon = false;
             this.groupBoxSelections.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

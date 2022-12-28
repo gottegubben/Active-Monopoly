@@ -32,7 +32,6 @@ namespace Monopoly
                     break;
 
                 case 3:
-                    new TestEnvironment().Show();
                     break;
 
                 case 4:

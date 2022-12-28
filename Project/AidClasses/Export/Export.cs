@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Monopoly
 {
@@ -12,9 +13,8 @@ namespace Monopoly
     public static class Export
     {
         #region Methods:
-        public static void WriteToFile()
+        public static void WriteToFile(string path)
         {
-
         }
         #endregion
     }
