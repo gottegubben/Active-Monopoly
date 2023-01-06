@@ -29,7 +29,7 @@ namespace Monopoly
         #region Properties:
 
         //The balance is the amount of money the player currently have.
-        public int Balance { get; private set; }
+        public int Balance { get; set; }
 
         //Decides if the player can move or not. If it for example: can throw a dice and move.
         public bool CanMove { get; set; }

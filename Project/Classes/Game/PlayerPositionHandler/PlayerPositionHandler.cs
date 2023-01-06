@@ -51,10 +51,10 @@ namespace Monopoly
         }
 
         //The "move player to tile - method" will teleport the player to the chosen location. Has to be a tile on the board.
-        public void MovePlayerToTile(Player player, int tileId, int tilesTotal)
+        public void MovePlayerToTile(Player player, int tileId, int tilesMax)
         {
             //Will turn true if the player wants to teleport to a tile that is avaible. Not accepted: tile id = -5.
-            if (tileId < tilesTotal && tileId >= 0)
+            if (tileId < tilesMax && tileId >= 0)
             {
                 //Gets the current position of the player.
                 int currentPos = GetPlayerPositionInt(player);

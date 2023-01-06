@@ -171,6 +171,28 @@ namespace Monopoly
         #endregion
 
         #region GetCards:
+        private static List<CardDeck> getCardDecks()
+        {
+            CardDeck community = new CardDeck()
+            {
+                Cards = new List<Card>()
+                {
+                    new Card("Du beskattas för gatureparationer. Betala $40 för varje hus och $115 för varje hotell du äger.", (Player player, GameData data) => { player.Balance -= 40; }),
+                    new Card("Fortsätt till gå (Inkassera $200).", (Player player, GameData data)=>{data.PlayerPositionHandler.MovePlayerToTile(player, 0, data.Tiles.Count); player.Balance += 200; })
+                }
+            };
+
+            CardDeck chance = new CardDeck()
+            {
+
+            };
+
+            return new List<CardDeck>()
+            {
+                community,
+                chance
+            };
+        }
         #region Comments:
         /*
             Community:
