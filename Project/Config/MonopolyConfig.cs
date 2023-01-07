@@ -173,18 +173,89 @@ namespace Monopoly
         #region GetCards:
         private static List<CardDeck> getCardDecks()
         {
-            CardDeck community = new CardDeck()
+            //Copy paste : new Card("", (Player player, GameData data) => {})
+
+            CardDeck community = new CardDeck(true)
             {
                 Cards = new List<Card>()
                 {
-                    new Card("Du beskattas för gatureparationer. Betala $40 för varje hus och $115 för varje hotell du äger.", (Player player, GameData data) => { player.Balance -= 40; }),
-                    new Card("Fortsätt till gå (Inkassera $200).", (Player player, GameData data)=>{data.PlayerPositionHandler.MovePlayerToTile(player, 0, data.Tiles.Count); player.Balance += 200; })
+                    //13 x cards.
+                    new Card("Du beskattas för gatureparationer. Betala $40 för varje hus och $115 för varje hotell du äger.", (Player player, GameData data) => {
+                    
+                    }),
+                    new Card("Fortsätt till gå (Inkassera $200).", (Player player, GameData data)=>{data.PlayerPositionHandler.MovePlayerToTile(player, 0, data.Tiles.Count); player.Balance += 200; }),
+                    new Card("Du säljer aktier och får $50.", (Player player, GameData data) => {player.Balance += 50; }),
+                    new Card(" Du erhåller $25 i konsultarvode.", (Player player, GameData data) => {player.Balance += 25; }),
+                    new Card("Återbäring på livsförsäkring. Inkassera $100.", (Player player, GameData data) => {player.Balance += 100; }),
+                    new Card("Du har vunnit andra pris i en skönhetstävling. Inkassera $10.", (Player player, GameData data) => {player. Balance += 10; }),
+                    new Card("Gå i fängelse utan att passera gå.", (Player player, GameData data) => {}),
+                    new Card("Banken gör ett misstag som gynnar dig. Inkassera $200.", (Player player, GameData data) => {player.Balance += 200; }),
+                    new Card("Semesterfonden stiger i värde. Du erhåller $100.", (Player player, GameData data) => {player.Balance += 100; }),
+                    new Card("Sjukhusräkning. Betala $100.", (Player player, GameData data) => {player.Balance -= 100; }),
+                    new Card("Återbetalning av inkomstskatt. Inkassera $20.", (Player player, GameData data) => {player.Balance += 20; }),
+                    new Card("Du ärver $100.", (Player player, GameData data) => {player.Balance += 100; }),
+                    new Card("Terminsavgift till skolan. Betala $50.", (Player player, GameData data) => {player.Balance -= 50; })
                 }
             };
 
-            CardDeck chance = new CardDeck()
+            CardDeck chance = new CardDeck(true)
             {
+                Cards = new List<Card>()
+                {
+                    // x cards.
+                    new Card("", (Player player, GameData data) => {
 
+                    }),
+                    new Card("", (Player player, GameData data) => {}),
+                    new Card("Gå vidare till hamngatan. Om du passerar gå, inkassera $200.", (Player player, GameData data) => {
+                        data.PlayerPositionHandler.MovePlayerToTile(player, 29, 40);
+
+                        if(data.PlayerPositionHandler.GetPlayerPositionInt(player) > 29)
+                        {
+                            player.Balance += 200;
+                        }
+                    }),
+                    new Card("", (Player player, GameData data) => {}),
+                    new Card("Du får $50 i återbäring från banken.", (Player player, GameData data) => {player.Balance += 50; }),
+                    new Card("Fortkörningsböter, betala $15.", (Player player, GameData data) => {player.Balance -= 15; }),
+                    new Card("Ditt bygglån förfaller. Inkassera $150.", (Player player, GameData data) => {player.Balance += 150; }),
+                    new Card("Gå tillbaka tre steg.", (Player player, GameData data) => {data.PlayerPositionHandler.MovePlayerForward(player, (40-3), 40); }),
+                    new Card("Gå vidare till gå (Inkassera $200).", (Player player, GameData data) => {
+                        player.Balance += 200;
+                        data.PlayerPositionHandler.MovePlayerToTile(player, 0, 40);
+                    }),
+                    new Card("Gå till södra station. Om du passerar gå, inkassera $200.", (Player player, GameData data) => {
+                        data.PlayerPositionHandler.MovePlayerToTile(player, 25, 40);
+
+                        if(data.PlayerPositionHandler.GetPlayerPositionInt(player) > 25)
+                        {
+                            player.Balance += 200;
+                        }
+                    }),
+                    new Card("Du har valts till styrelseordförande. Betala $50 till varje spelare.", (Player player, GameData data) => {
+                        player.Balance -= 50 * 2;
+                        foreach (Player item in data.Players)
+                            {
+                                item.Balance += 50;
+	                        }
+                    }),
+                    new Card("Gå vidare till Normalmstorg.", (Player player, GameData data) => {
+                        data.PlayerPositionHandler.MovePlayerToTile(player, 34, 40);
+                    }),
+                    new Card("Gå vidare till S:T Eriksgatan. Om du passerar gå, inkassera $200.", (Player player, GameData data) => {
+                        data.PlayerPositionHandler.MovePlayerToTile(player, 14, 40);
+
+                        if(data.PlayerPositionHandler.GetPlayerPositionInt(player) > 14)
+                        {
+                            player.Balance += 200;
+                        }
+                    }),
+                    new Card("Gå i fängelse. Gå direkt i fängelse utan att passera gå. Inkassera inte $200.", (Player player, GameData data) => {
+                        player.CanMove = false;
+
+                        data.PlayerPositionHandler.MovePlayerToTile(player, 10, 40);
+                    })
+                }
             };
 
             return new List<CardDeck>()
@@ -203,7 +274,7 @@ namespace Monopoly
             5. Du erhåller $25 i konsultarvode.
             6. Återbäring på livsförsäkring. Inkassera $100.
             7. Du har vunnit andra pris i en skönhetstävling. Inkassera $10.
-            8. Gå i fängelse utan att passera gå.
+            8. Gå i fängelse utan att passera gå. (Får nog ta med det här)
             9. Du slipper ut ur fängelset. Du kan behålla kortet tills du behöver det eller sälja det. (Ska ej vara med)
             10. Banken gör ett misstag som gynnar dig. Inkassera $200.
             11. Semesterfonden stiger i värde. Du erhåller $100.

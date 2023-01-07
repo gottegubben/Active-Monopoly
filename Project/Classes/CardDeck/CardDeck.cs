@@ -12,18 +12,22 @@ namespace Monopoly
     public class CardDeck
     {
         #region Constuctors:
-        public CardDeck()
+        public CardDeck(bool shuffle)
         {
             Cards = new List<Card>();
 
             random = new Random();
+
+            if (shuffle) { Shuffle(); }
         }
 
-        public CardDeck(int seed)
+        public CardDeck(bool shuffle, int seed)
         {
             Cards = new List<Card>();
 
             random = new Random(seed);
+
+            if (shuffle) { Shuffle(); }
         }
         #endregion
 

@@ -60,6 +60,43 @@ namespace Monopoly
                 int currentPos = GetPlayerPositionInt(player);
             }
         }
+
+        //Finds the closest tile of the designated tile type to the player and returns the id of that specific tile on the board. T is the tile type.
+        public int FindClosestTile<T>(Player player, List<Tile> boardTiles)
+        {
+            //This distance is impossible.
+            int distance = boardTiles.Count;
+
+            //The default is set to -1 if it can't find a tile of type T close to the player. The reason behind this is if there's no tiles of type T on the board.
+            int targetId = -1;
+
+            //All the tiles of type T.
+            List<Tile> tilesOfTypeT = new List<Tile>();
+
+            //Fetches all the tiles that can be converted to type T.
+            foreach (Tile item in boardTiles)
+            {
+                if(item is T)
+                {
+                    tilesOfTypeT.Add(item);
+                }
+            }
+
+            //Gets the targetId which will be the closest tile to the player.
+            for (int i = 0; i < tilesOfTypeT.Count; i++)
+            {
+                int dist = tilesOfTypeT[i].TileId - GetPlayerPositionInt(player);
+
+                if (dist < distance)
+                {
+                    targetId = tilesOfTypeT[i].TileId;
+
+                    distance = dist;
+                }
+            }
+
+            return targetId;
+        }
         #endregion
     }
 }

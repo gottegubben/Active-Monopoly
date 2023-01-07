@@ -33,5 +33,29 @@ namespace Monopoly
         //The player position handler handles all the player positions.
         public PlayerPositionHandler PlayerPositionHandler { get; set; }
         #endregion
+
+        #region Methods:
+        //Returns all the "purchasable tiles" that the player owns.
+        public List<PurchasableTile> GetTilesOfOwner(Player player)
+        {
+            List<PurchasableTile> returnValue = new List<PurchasableTile>();
+
+            foreach (Tile item in Tiles)
+            {
+                try
+                {
+                    PurchasableTile temp = item as PurchasableTile;
+
+                    if(temp.Owner == player)
+                    {
+                        returnValue.Add(temp);
+                    }
+                }
+                catch { }
+            }
+
+            return returnValue;
+        }
+        #endregion
     }
 }

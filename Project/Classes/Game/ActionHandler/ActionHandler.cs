@@ -39,7 +39,7 @@ namespace Monopoly
             else if(typeOfAction == TypeOfAction.SendToPrison)
             {
                 //The player's "canMove" variable should be altered.
-
+                
                 int temp = (int)value;
 
                 throw new NotImplementedException();
