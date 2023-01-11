@@ -56,6 +56,34 @@ namespace Monopoly
 
             return returnValue;
         }
+
+        //A little hard to create a good name for this function without having it being super long. This function will return the amount of tiles the player owns that has the
+        //same group index as the tile you put in. Essentially this will be useful if you, for instance, want to know how many stations the player possess.
+        public int GetOwnedGroupIndexCount(Player player, PurchasableTile tile)
+        {
+            int returnValue = 0;
+            try
+            {
+                int targetIndex = tile.GroupIndex;
+
+                foreach (Tile item in Tiles)
+                {
+                    try
+                    {
+                        PurchasableTile temp = (item as PurchasableTile);
+
+                        if(temp.GroupIndex == targetIndex && temp.Owner == player)
+                        {
+                            returnValue++;
+                        }
+                    }
+                    catch { }
+                }
+            }
+            catch { }
+
+            return returnValue;
+        }
         #endregion
     }
 }

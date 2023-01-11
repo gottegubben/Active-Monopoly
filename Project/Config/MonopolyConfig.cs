@@ -111,7 +111,7 @@ namespace Monopoly
         }
 
         //This function will return all the tiles.
-        public static List<Tile> GetTiles()
+        public static List<Tile> getTiles()
         {
             //Station group index = 0
             //Utility group index = 1
@@ -181,7 +181,29 @@ namespace Monopoly
                 {
                     //13 x cards.
                     new Card("Du beskattas för gatureparationer. Betala $40 för varje hus och $115 för varje hotell du äger.", (Player player, GameData data) => {
-                    
+                        List<PurchasableTile> temp = data.GetTilesOfOwner(player);
+                        int houses = 0;
+                        int hotels = 0;
+
+                        foreach (PurchasableTile item in temp)
+                        {
+                            try
+                            {
+                                Property prop = item as Property;
+
+                                if(prop.HouseCount > 4)
+                                {
+                                    hotels += prop.HouseCount - 4;
+                                }
+                                else
+                                {
+                                    houses += prop.HouseCount;
+                                }
+                            }
+                            catch{}
+	                    }
+
+                        player.Balance -= ((40 * houses) + (115 * hotels));
                     }),
                     new Card("Fortsätt till gå (Inkassera $200).", (Player player, GameData data)=>{data.PlayerPositionHandler.MovePlayerToTile(player, 0, data.Tiles.Count); player.Balance += 200; }),
                     new Card("Du säljer aktier och får $50.", (Player player, GameData data) => {player.Balance += 50; }),
@@ -202,11 +224,49 @@ namespace Monopoly
             {
                 Cards = new List<Card>()
                 {
-                    // x cards.
-                    new Card("", (Player player, GameData data) => {
+                    //14 x cards.
+                    new Card("Gå vidare till närmaste statliga verk. Om ingen äger det, kan du köpa det från banken. Om någon äger det slår du tärningarna och betalar ägaren 10 gånger värdet som slogs.", (Player player, GameData data) => {
+                        int tileId = data.PlayerPositionHandler.FindClosestTile<Utility>(player, data.Tiles);
 
+                        PurchasableTile tile = (data.Tiles[tileId] as PurchasableTile);
+                        Player owner = tile.Owner;
+
+                        if(owner != null)
+                        {
+                            int propertyCount = data.GetOwnedGroupIndexCount(player, tile);
+
+                            int rent = (tile as Utility).GetRent(propertyCount, player.Throw(data.Dices.ToArray()).Sum());
+
+                            player.Balance -= rent;
+
+                            owner.Balance += rent;
+                        }
+                        else
+                        {
+                            //Try to buy the property.
+                        }
                     }),
-                    new Card("", (Player player, GameData data) => {}),
+                    new Card("Gå vidare till närmaste järnvägsstation. Om ingen äger den kan du köpa den från banken. Om någon äger den betalar du ägaren dubbla hyran mot vad hen har rätt till.", (Player player, GameData data) => {
+                        int tileId = data.PlayerPositionHandler.FindClosestTile<Station>(player, data.Tiles);
+
+                        PurchasableTile tile = (data.Tiles[tileId] as PurchasableTile);
+                        Player owner = tile.Owner;
+
+                        if(owner != null)
+                        {
+                            int propertyCount = data.GetOwnedGroupIndexCount(player, tile);
+
+                            int rent = (tile as Station).GetRent(propertyCount);
+
+                            player.Balance -= rent;
+
+                            owner.Balance += rent;
+                        }
+                        else
+                        {
+                            //Try to buy the property.
+                        }
+                    }),
                     new Card("Gå vidare till hamngatan. Om du passerar gå, inkassera $200.", (Player player, GameData data) => {
                         data.PlayerPositionHandler.MovePlayerToTile(player, 29, 40);
 
@@ -215,7 +275,31 @@ namespace Monopoly
                             player.Balance += 200;
                         }
                     }),
-                    new Card("", (Player player, GameData data) => {}),
+                    new Card("Du måste reparera alla dina egendomar. Betala $25 för varje hus och $100 för varje hotell du äger.", (Player player, GameData data) => {
+                        List<PurchasableTile> temp = data.GetTilesOfOwner(player);
+                        int houses = 0;
+                        int hotels = 0;
+
+                        foreach (PurchasableTile item in temp)
+                        {
+                            try
+                            {
+                                Property prop = item as Property;
+
+                                if(prop.HouseCount > 4)
+                                {
+                                    hotels += prop.HouseCount - 4;
+                                }
+                                else
+                                {
+                                    houses += prop.HouseCount;
+                                }
+                            }
+                            catch{}
+                        }
+
+                        player.Balance -= ((25 * houses) + (100 * hotels));
+                    }),
                     new Card("Du får $50 i återbäring från banken.", (Player player, GameData data) => {player.Balance += 50; }),
                     new Card("Fortkörningsböter, betala $15.", (Player player, GameData data) => {player.Balance -= 15; }),
                     new Card("Ditt bygglån förfaller. Inkassera $150.", (Player player, GameData data) => {player.Balance += 150; }),
@@ -261,49 +345,16 @@ namespace Monopoly
             return new List<CardDeck>()
             {
                 community,
-                chance
+                chance  
             };
         }
-        #region Comments:
-        /*
-            Community:
-            1. Du beskattas för gatureparationer. Betala $40 för varje hus och $115 för varje hotell du äger.
-            2. Fortsätt till gå (Inkassera $200).
-            3. Du säljer aktier och får $50.
-            4. Läkararvode. Betala $50.
-            5. Du erhåller $25 i konsultarvode.
-            6. Återbäring på livsförsäkring. Inkassera $100.
-            7. Du har vunnit andra pris i en skönhetstävling. Inkassera $10.
-            8. Gå i fängelse utan att passera gå. (Får nog ta med det här)
-            9. Du slipper ut ur fängelset. Du kan behålla kortet tills du behöver det eller sälja det. (Ska ej vara med)
-            10. Banken gör ett misstag som gynnar dig. Inkassera $200.
-            11. Semesterfonden stiger i värde. Du erhåller $100.
-            12. Sjukhusräkning. Betala $100.
-            13. Återbetalning av inkomstskatt. Inkassera $20.
-            14. Du ärver $100.
-            15. Terminsavgift till skolan. Betala $50.
-            16. Det är din födelsedag. Inkassera $10 från varje spelare. (Ska ej vara med)
-
-            Chans:
-            1. Gå vidare till närmaste statliga verk. Om ingen äger det, kan du köpa det från banken. Om någon äger det slår du
-            tärningarna och betalar ägaren 10 gånger värdet som slogs.
-            2. Gå vidare till närmaste järnvägsstation. Om ingen äger den kan du köpa den från banken. Om någon äger den betalar du
-            ägaren dubbla hyran mot vad hen har rätt till.
-            3. Gå vidare till hamngatan. Om du passerar gå, inkassera $200.
-            4. Du slipper ut ur fängelset. Du kan behålla kortet tills du behöver det eller säljer det. (Ska ej vara med)
-            5. Du måste reparera alla dina egendomar. Betala $25 för varje hus och $100 för varje hotell du äger.
-            6. Du får $50 i återbäring från banken.
-            7. Fortkörningsböter, betala $15.
-            8. Ditt bygglön förfaller. Inkassera $150.
-            9. Gå tillbaka tre steg.
-            10. Gå vidare till gå (Inkassera $200).
-            11. Gå till södra station. Om du passerar gå, inkassera $200.
-            12. Du har valts till styrelseordförande. Betala $50 till varje spelare.
-            13. Gå vidare till normalmstorg.
-            14. Gå vidare till S:T Eriksgatan. Om du passerar gå, inkassera $200.
-            15. Gå i fängelse. Gå direkt i fängelse utan att passera gå. Inkassera inte $200.
-        */
         #endregion
+
+        #region GetGameData
+        private static GameData getGameData()
+        {
+            
+        }
         #endregion
 
         #region GetGameData

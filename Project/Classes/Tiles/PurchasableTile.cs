@@ -24,7 +24,7 @@ namespace Monopoly
 
         #region Methods:
         //Changes the current owner of the tile to a new owner.
-        public void ChangeOwner(Player newOwner)
+        public virtual void ChangeOwner(Player newOwner)
         {
             Owner = newOwner;
         }

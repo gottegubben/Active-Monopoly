@@ -21,7 +21,8 @@ namespace Monopoly
         #endregion
 
         #region Properties:
-        private int houseCount { get; set; }
+        //How many houses that are currently on this property.
+        public int HouseCount { get; set; }
 
         //The cost of constructing a building. Either being a house or a hotel.
         public int ConstructionCost { get; set; }
@@ -31,16 +32,24 @@ namespace Monopoly
         #endregion
 
         #region Methods:
+        //Overrides the base method "ChangeOwner" to accomodate for the loss of all the houses on the property.
+        public override void ChangeOwner(Player newOwner)
+        {
+            base.ChangeOwner(newOwner);
+
+            HouseCount = 0;
+        }
+
         //This function will have a parameter that stands for the amount of houses you have built on that property. This function will therefore return the desired rent.
         public override int GetRent()
         {
-            if(houseCount <= rent.Length && houseCount < 0)
+            if(HouseCount <= rent.Length && HouseCount < 0)
             {
-                return rent[houseCount];
+                return rent[HouseCount];
             }
             else
             {
-                throw new Exception($"This property can't have a house count of [{houseCount}]!");
+                throw new Exception($"This property can't have a house count of [{HouseCount}]!");
             }
         }
         #endregion
