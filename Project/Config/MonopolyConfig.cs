@@ -14,6 +14,20 @@ namespace Monopoly
     {
         #region Methods:
 
+        #region GetDices
+        
+        //Returns all the normal dices. The random should be definied in the simulation which will result it being different for every new game simulated.
+        public static List<Dice> GetDices(Random rnd)
+        {
+            return new List<Dice>()
+            {
+                new Dice(rnd.Next(1, 100000)),
+                new Dice(rnd.Next(1, 100000))
+            };
+        }
+
+        #endregion
+
         #region GetTiles:
         //Fetches the go tile.
         private static Go getTileGo(int tileId, int rent)
@@ -111,7 +125,7 @@ namespace Monopoly
         }
 
         //This function will return all the tiles.
-        public static List<Tile> getTiles()
+        public static List<Tile> GetTiles()
         {
             //Station group index = 0
             //Utility group index = 1
@@ -171,7 +185,7 @@ namespace Monopoly
         #endregion
 
         #region GetCards:
-        private static List<CardDeck> getCardDecks()
+        public static List<CardDeck> GetCardDecks()
         {
             //Copy paste : new Card("", (Player player, GameData data) => {})
 
@@ -350,19 +364,64 @@ namespace Monopoly
         }
         #endregion
 
-        #region GetGameData
-        private static GameData getGameData()
+        #region GetBots
+
+        //Aggressive - Max
+        public static Bot GetAggressiveMaxBot()
         {
-            
+            return new Bot(1, 1);
         }
+
+        //Aggressive - Min
+        public static Bot GetAggressiveMinBot()
+        {
+            return new Bot(0.75, 0.75);
+        }
+
+        //Balanced
+        public static Bot GetBalancedBot()
+        {
+            return new Bot(0.5, 0.5);
+        }
+
+        //Passive
+        public static Bot GetPassiveBot()
+        {
+            return new Bot(0.25, 0.25);
+        }
+
+        //Braindead
+        public static Bot GetBraindeadBot()
+        {
+            return new Bot(0, 0);
+        }
+        
         #endregion
 
         #region GetGameData
-        //Get all the game data from this function.
+        //Returns the gamedata that is usually represented in the game of monopoly. The players need to be added later.
+        public static GameData GetGameData(Random rnd)
+        {
+            return new GameData()
+            {
+                Tiles = getTiles(),
 
-        //Get all the data.
+                Dices = getDices(rnd),
 
-        //Get all the data with custom players (bots).
+                PlayerPositionHandler = new PlayerPositionHandler(),
+
+                //Finds all the actionspaces in the "getTiles - list" and converts them to actionspaces.
+                ActionHandler = new ActionHandler(getTiles().FindAll((x) =>
+                {
+                    if (x is ActionSpace) { return true; }
+                    else { return false; }
+                }).ConvertAll(
+                    (y) => 
+                    { 
+                        return y as ActionSpace; 
+                    }))
+            };
+        }
         #endregion
 
         #endregion

@@ -12,10 +12,5 @@ namespace Monopoly
     /// </summary>
     public static class Export
     {
-        #region Methods:
-        public static void WriteToFile(string path)
-        {
-        }
-        #endregion
     }
 }

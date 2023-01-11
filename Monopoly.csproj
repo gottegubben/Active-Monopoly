@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Project\AidClasses\Statistic\Move.cs" />
     <Compile Include="Project\Windows\MonopolySimulation\MonopolySimulation.cs">
       <SubType>Form</SubType>
     </Compile>

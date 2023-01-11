@@ -19,16 +19,16 @@ namespace Monopoly
 
         #region Properties:
         //All the tiles that will be used in the game and in there respected order.
-        public List<Tile> Tiles { get; }
+        public List<Tile> Tiles { get; set; }
         
         //All the players that will be playing the game. Can be a minimum of two players.
-        public List<Player> Players { get; }
+        public List<Player> Players { get; set; }
 
         //The dices that will be used in the game.
-        public List<Dice> Dices { get; }
+        public List<Dice> Dices { get; set; }
 
         //The action handler for the game.
-        public ActionHandler ActionHandler { get; }
+        public ActionHandler ActionHandler { get; set; }
 
         //The player position handler handles all the player positions.
         public PlayerPositionHandler PlayerPositionHandler { get; set; }

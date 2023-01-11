@@ -11,9 +11,21 @@ namespace Monopoly
     /// </summary>
     public class Game
     {
+        #region Consturctors:
+        public Game(Random rnd)
+        {
+            Data = MonopolyConfig.GetGameData(rnd);
+
+            Stat = new Statistic();
+        }
+        #endregion
+
         #region Properties
         //The initial data. The players, the dices and the tiles.
         public GameData Data { get; set; }
+
+        //The statistic class that will keep the data of the match.
+        public Statistic Stat { get; set; }
         #endregion
 
         #region Methods:
@@ -23,7 +35,10 @@ namespace Monopoly
         //The main loop that will run the game.
         private void GameLoop()
         {
-
+            while (true) //Fix this loop!!!
+            {
+                new Round(Data, Stat.StoreState);
+            }
         }
         #endregion
     }

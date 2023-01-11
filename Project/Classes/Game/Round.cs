@@ -17,13 +17,20 @@ namespace Monopoly
         {
             Data = data;
 
+            Moves = new List<Move>();
+
             SendStatisticsCallbackRef = sendStatisticsCallbackRef;
+
+            //Play the round.
+            roundLoop();
         }
         #endregion
 
         #region Properties:
         //The game data from the board.
         public GameData Data { get; }
+
+        public List<Move> Moves { get; set; }
 
         //This prop holds the reference to the statistic method for sending the state to the statistic class.
         public Delegate.SendStatisticsCallback SendStatisticsCallbackRef { get; set; }
