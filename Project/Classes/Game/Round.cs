@@ -30,6 +30,7 @@ namespace Monopoly
         //The game data from the board.
         public GameData Data { get; }
 
+        //The moves that the players make during a round of Monopoly.
         public List<Move> Moves { get; set; }
 
         //This prop holds the reference to the statistic method for sending the state to the statistic class.

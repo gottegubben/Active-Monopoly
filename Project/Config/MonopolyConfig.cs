@@ -404,19 +404,17 @@ namespace Monopoly
         {
             return new GameData()
             {
-                Tiles = getTiles(),
+                Tiles = GetTiles(),
 
-                Dices = getDices(rnd),
+                Dices = GetDices(rnd),
 
                 PlayerPositionHandler = new PlayerPositionHandler(),
 
                 //Finds all the actionspaces in the "getTiles - list" and converts them to actionspaces.
-                ActionHandler = new ActionHandler(getTiles().FindAll((x) =>
+                ActionHandler = new ActionHandler(GetTiles().FindAll(x =>
                 {
-                    if (x is ActionSpace) { return true; }
-                    else { return false; }
-                }).ConvertAll(
-                    (y) => 
+                    return x is ActionSpace;
+                }).ConvertAll(y => 
                     { 
                         return y as ActionSpace; 
                     }))
