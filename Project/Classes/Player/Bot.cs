@@ -29,6 +29,9 @@ namespace Monopoly
 
         //Buffert. If the bot has less money than this in the bank, it will keep it's money instead.
         public int Buffert { get; set; }
+
+        //The max amount of construction that the player will build.
+        public int MaxConstruction { get; set; }
         #endregion
 
         #region Methods:

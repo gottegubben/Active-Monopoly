@@ -88,7 +88,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxTileDataChance = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBoxTileDataType = new System.Windows.Forms.TextBox();
+            this.textBoxTileGroupIndex = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxTileDataName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -610,7 +610,7 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.textBoxTileDataChance);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBoxTileDataType);
+            this.groupBox2.Controls.Add(this.textBoxTileGroupIndex);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.textBoxTileDataName);
             this.groupBox2.Controls.Add(this.label5);
@@ -673,22 +673,22 @@
             this.label7.TabIndex = 4;
             this.label7.Text = "Chance of landing on the tile (%) :";
             // 
-            // textBoxTileDataType
+            // textBoxTileGroupIndex
             // 
-            this.textBoxTileDataType.Enabled = false;
-            this.textBoxTileDataType.Location = new System.Drawing.Point(99, 59);
-            this.textBoxTileDataType.Name = "textBoxTileDataType";
-            this.textBoxTileDataType.Size = new System.Drawing.Size(159, 20);
-            this.textBoxTileDataType.TabIndex = 3;
+            this.textBoxTileGroupIndex.Enabled = false;
+            this.textBoxTileGroupIndex.Location = new System.Drawing.Point(99, 59);
+            this.textBoxTileGroupIndex.Name = "textBoxTileGroupIndex";
+            this.textBoxTileGroupIndex.Size = new System.Drawing.Size(159, 20);
+            this.textBoxTileGroupIndex.TabIndex = 3;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(13, 62);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 13);
+            this.label6.Size = new System.Drawing.Size(70, 13);
             this.label6.TabIndex = 2;
-            this.label6.Text = "Type of tile :";
+            this.label6.Text = "Group index :";
             // 
             // textBoxTileDataName
             // 
@@ -1104,7 +1104,7 @@
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxTileDataType;
+        private System.Windows.Forms.TextBox textBoxTileGroupIndex;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxTileDataName;
         private System.Windows.Forms.TextBox textBoxTileDataChance;

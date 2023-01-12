@@ -184,6 +184,8 @@ namespace Monopoly
                     Log.Write($"Tile {i}: {LandingPercentage[i]}%", Urgency.Result);
                 }
 
+                #region Displaying Results:
+                #region Top 3:
                 float[] sorted = LandingPercentage.OrderBy(x => x).ToArray();
 
                 Log.PaintLine();
@@ -199,6 +201,28 @@ namespace Monopoly
                 {
                     Log.Write($"{i + 1}: {sorted[i]}%", Urgency.Result);
                 }
+                #endregion
+
+                #region Top property groups:
+                float[] propertyGroups = new float[10];
+                Log.PaintLine();
+
+                for (int i = 0; i < Tiles.Count; i++)
+                {
+                    if(Tiles[i] is PurchasableTile)
+                    {
+                        PurchasableTile temp = (Tiles[i] as PurchasableTile);
+                        int currentGroupIndex = temp.GroupIndex;
+                        string color = temp.TileColor.ToString();
+                        propertyGroups[currentGroupIndex] += LandingPercentage[i];
+                    }
+                }
+                for (int y = 0; y < propertyGroups.Length; y++)
+                {
+                    Log.Write($"Group index {y}: {propertyGroups[y]}%", Urgency.Result);
+                }
+                #endregion
+                #endregion
 
                 buttonRun.Enabled = true;
             }
@@ -207,7 +231,7 @@ namespace Monopoly
                 Log.TimeWrite($"The input was wrong!", Urgency.Incorrect);
             }
         }
-
+        
         //This function is responsible for displaying the data of a tile if the tile is pressed.
         private void buttonTile1_Click(object sender, EventArgs e)
         {
@@ -222,7 +246,11 @@ namespace Monopoly
 
             panelTileDataTileColor.BackColor = Tiles[btnId].TileColor;
 
-            textBoxTileDataType.Text = "Unidentified";
+            if(Tiles[btnId] is PurchasableTile)
+            {
+                textBoxTileGroupIndex.Text = $"{(Tiles[btnId] as PurchasableTile).GroupIndex}";
+            }
+            else { textBoxTileGroupIndex.Text = "Unidentified!"; }
 
             textBoxTileDataChance.Text = $"{LandingPercentage[btnId]}";
         }
