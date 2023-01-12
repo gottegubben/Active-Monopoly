@@ -17,6 +17,10 @@ namespace Monopoly
 
         Warning,
 
-        Urgent 
+        Incorrect,
+        
+        Correct,
+
+        Result
     }
 }

@@ -16,6 +16,7 @@ namespace Monopoly
         public Player() 
         {
             CanMove = true;
+            IsAlive = true;
         }
 
         //The normal constructor for the player class for use in the game of Monopoly.
@@ -23,6 +24,7 @@ namespace Monopoly
         {
             Balance = startBalance;
             CanMove = true;
+            IsAlive = true;
         }
         #endregion
 
@@ -68,7 +70,7 @@ namespace Monopoly
             throw new NotImplementedException();
         }
 
-        //Buys the property from the bank.
+        //Buys the property from the bank. The player can only buy the property they stand on.
         public void BuyProperty()
         {
             throw new NotImplementedException();

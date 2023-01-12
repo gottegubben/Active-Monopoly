@@ -26,6 +26,9 @@ namespace Monopoly
 
         //Determins how likely the bot is to build if it is able to do it.
         public double BuildingChance { get; set; }
+
+        //Buffert. If the bot has less money than this in the bank, it will keep it's money instead.
+        public int Buffert { get; set; }
         #endregion
 
         #region Methods:

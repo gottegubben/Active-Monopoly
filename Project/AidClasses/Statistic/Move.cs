@@ -12,7 +12,7 @@ namespace Monopoly
     public class Move
     {
         #region Constructors:
-        //The only constructor for the move class.
+        //This will be the constructor that keeps the player corrolated to the move performed.
         public Move(Player player)
         {
             this.Player = player;

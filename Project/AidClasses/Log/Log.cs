@@ -11,66 +11,88 @@ namespace Monopoly
     /// </summary>
     public static class Log
     {
-        #region Properties:
-        private static ConsoleColor defBackground = ConsoleColor.Black;
-
-        private static ConsoleColor defForeground = ConsoleColor.White;
-
-        private static ConsoleColor information = ConsoleColor.Blue;
-
-        private static ConsoleColor warning = ConsoleColor.Yellow;
-
-        private static ConsoleColor destructive = ConsoleColor.Red;
-        #endregion
-
         #region Methods:
-        //"Reset Color - method" resets the colors used in the console.
-        private static void resetColor()
-        {
-            Console.BackgroundColor = defBackground;
-
-            Console.ForegroundColor = defForeground;
-        }
 
         //The write method will write the desired text to the console.
         public static void Write(string message, Urgency urgency)
         {
             if(urgency == Urgency.None)
             {
-                resetColor();
-
                 Console.WriteLine(message);
             }
             else if(urgency == Urgency.Normal)
             {
-                resetColor();
+                Console.ForegroundColor = ConsoleColor.Blue;
 
-                Console.ForegroundColor = information;
-
-                Console.WriteLine();
+                Console.WriteLine(message);
             }
             else if(urgency == Urgency.Warning)
             {
-                resetColor();
+                Console.ForegroundColor = ConsoleColor.Yellow;
 
-                Console.ForegroundColor = warning;
-
-                Console.WriteLine();
+                Console.WriteLine(message);
             }
-            else if (urgency == Urgency.Urgent)
+            else if (urgency == Urgency.Incorrect)
             {
-                resetColor();
+                Console.ForegroundColor = ConsoleColor.Red;
 
-                Console.ForegroundColor = destructive;
-
-                Console.WriteLine();
+                Console.WriteLine(message);
             }
+            else if(urgency == Urgency.Correct)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+
+                Console.WriteLine(message);
+            }
+            else if(urgency == Urgency.Result)
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+
+                Console.WriteLine(message);
+            }
+
+            Console.ResetColor();
         }
 
         //The "Time Write - method" will write the desired text but with a time stamp in front.
         public static void TimeWrite(string message, Urgency urgency)
         {
             Write($"[{DateTime.Now.ToLongTimeString()}] {message}", urgency);
+        }
+
+        //This method will paint a line in the console. For splitting up information.
+        public static void PaintLine()
+        {
+            Console.WriteLine("-------------------------------------------------------");
+        }
+        
+        //Writes a blank space.
+        public static void PaintSpace()
+        {
+            Console.WriteLine();
+        }
+
+        //Paints a title.
+        public static void WriteTitle(string message)
+        {
+            PaintLine();
+
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.White;
+
+            Write($"[ {message} ]", Urgency.None);
+
+            Console.ResetColor();
+
+            PaintLine();
+
+            /* Preview:
+             
+                -------------------------------------------- 
+                THE TITLE
+                -------------------------------------------- 
+
+            */
         }
         #endregion
     }

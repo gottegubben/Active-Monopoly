@@ -12,6 +12,16 @@ namespace Monopoly
 {
     public partial class TileStepSimulation : Form
     {
+        #region Constructors:
+        public TileStepSimulation()
+        {
+            //Inits the list.
+            ButtonTiles = new List<Button>();
+
+            InitializeComponent();
+        }
+        #endregion
+
         #region Properties:
         //The tiles that will be in the simulation.
         public List<Tile> Tiles { get; set; }
@@ -22,14 +32,8 @@ namespace Monopoly
         //A list that will contain all the simulated percentage of landing on a specific tile. 
         public float[] LandingPercentage { get; set; }
         #endregion
-        public TileStepSimulation()
-        {
-            //Inits the list.
-            ButtonTiles = new List<Button>();
 
-            InitializeComponent();
-        }
-
+        #region Methods:
         //This method runs when the window is first runned.
         private void TileStepSimulation_Load(object sender, EventArgs e)
         {
@@ -58,6 +62,8 @@ namespace Monopoly
         //This method runs the simulation.
         private void buttonRun_Click(object sender, EventArgs e)
         {
+            Log.WriteTitle("Tile Step Simulation");
+
             #region Check before running:
             //All the values from the textboxes:
             int matches = 0;
@@ -75,6 +81,8 @@ namespace Monopoly
             //Checks if the input is in the correct format.
             if (input1 && input2 && input3)
             {
+                Log.TimeWrite($"Input worked!", Urgency.Correct);
+
                 //The dice / dices for the game.
                 Random rnd = new Random();
 
@@ -104,6 +112,7 @@ namespace Monopoly
                 buttonRun.Enabled = false;
 
                 float roundsPlayed = 0;
+
                 float[] tileStepCount = new float[Tiles.Count];
 
                 //Plays the desired amount of matches of monopoly with the total amount of rounds will be the round variable.
@@ -115,6 +124,9 @@ namespace Monopoly
                     for (int y = 0; y < rounds; y++)
                     {
                         int[] diceThrows = player.Throw(dices.ToArray());
+
+                        Move move = new Move(player);
+                        move.PrePosition = posHandler.GetPlayerPositionInt(player);
 
                         //This will check if the player has thrown duplicates and acts accordingly.
                         if (checkBoxBreakFree.Checked)
@@ -153,20 +165,46 @@ namespace Monopoly
                             }
                         }
 
+                        move.PostPosition = posHandler.GetPlayerPositionInt(player);
+
                         roundsPlayed++;
+
+                        Log.PaintLine();
+                        Log.TimeWrite($"[M:{i} R:{y}] Previous Position: {move.PrePosition}", Urgency.Normal);
+                        Log.TimeWrite($"[M:{i} R:{y}] Post position    : {move.PostPosition}", Urgency.Normal);
                     }
                 }
+
+                Log.PaintLine();
 
                 for (int i = 0; i < Tiles.Count; i++)
                 {
                     LandingPercentage[i] = (tileStepCount[i] / roundsPlayed) *100;
+
+                    Log.Write($"Tile {i}: {LandingPercentage[i]}%", Urgency.Result);
+                }
+
+                float[] sorted = LandingPercentage.OrderBy(x => x).ToArray();
+
+                Log.PaintLine();
+
+                Log.Write("Highest (Top 3):", Urgency.None);
+                for (int i = 0; i < 3; i++)
+                {
+                    Log.Write($"{i + 1}: {sorted[sorted.Length - (i + 1)]}%", Urgency.Result);
+                }
+                Log.PaintSpace();
+                Log.Write("Lowest (Top 3):", Urgency.None);
+                for (int i = 0; i < 3; i++)
+                {
+                    Log.Write($"{i + 1}: {sorted[i]}%", Urgency.Result);
                 }
 
                 buttonRun.Enabled = true;
             }
             else
             {
-                //If the input is wrong!
+                Log.TimeWrite($"The input was wrong!", Urgency.Incorrect);
             }
         }
 
@@ -188,6 +226,7 @@ namespace Monopoly
 
             textBoxTileDataChance.Text = $"{LandingPercentage[btnId]}";
         }
+        #endregion
 
         #region Comments:
 
