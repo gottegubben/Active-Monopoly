@@ -17,6 +17,9 @@ namespace Monopoly
         {
             PurchaseChance = purchaseChance;
             BuildingChance = buildingChance;
+
+            Buffert = 0;
+            MaxConstruction = 0;
         }
         #endregion
 

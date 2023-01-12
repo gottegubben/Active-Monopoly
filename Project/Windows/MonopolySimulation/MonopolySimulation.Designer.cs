@@ -33,21 +33,21 @@
             this.richTextBoxDescription = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxBra = new System.Windows.Forms.TextBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.textBoxPas = new System.Windows.Forms.TextBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.textBoxBal = new System.Windows.Forms.TextBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.textBoxAggMin = new System.Windows.Forms.TextBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBoxAggMax = new System.Windows.Forms.TextBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.textBoxAggMin = new System.Windows.Forms.TextBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.textBoxBal = new System.Windows.Forms.TextBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.textBoxPas = new System.Windows.Forms.TextBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.textBoxBra = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.textBoxSeed = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -126,17 +126,89 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(446, 176);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // label1
+            // textBoxBra
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 35);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Type of Players";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.textBoxBra.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxBra.Location = new System.Drawing.Point(227, 150);
+            this.textBoxBra.Name = "textBoxBra";
+            this.textBoxBra.Size = new System.Drawing.Size(214, 20);
+            this.textBoxBra.TabIndex = 11;
+            this.textBoxBra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBox5.Location = new System.Drawing.Point(12, 150);
+            this.checkBox5.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(207, 21);
+            this.checkBox5.TabIndex = 10;
+            this.checkBox5.Text = "Braindead";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // textBoxPas
+            // 
+            this.textBoxPas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPas.Location = new System.Drawing.Point(227, 123);
+            this.textBoxPas.Name = "textBoxPas";
+            this.textBoxPas.Size = new System.Drawing.Size(214, 20);
+            this.textBoxPas.TabIndex = 9;
+            this.textBoxPas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBox4.Location = new System.Drawing.Point(12, 123);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(207, 19);
+            this.checkBox4.TabIndex = 8;
+            this.checkBox4.Text = "Passive";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // textBoxBal
+            // 
+            this.textBoxBal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxBal.Location = new System.Drawing.Point(227, 96);
+            this.textBoxBal.Name = "textBoxBal";
+            this.textBoxBal.Size = new System.Drawing.Size(214, 20);
+            this.textBoxBal.TabIndex = 7;
+            this.textBoxBal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBox3.Location = new System.Drawing.Point(12, 96);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(207, 19);
+            this.checkBox3.TabIndex = 6;
+            this.checkBox3.Text = "Balanced";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // textBoxAggMin
+            // 
+            this.textBoxAggMin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxAggMin.Location = new System.Drawing.Point(227, 69);
+            this.textBoxAggMin.Name = "textBoxAggMin";
+            this.textBoxAggMin.Size = new System.Drawing.Size(214, 20);
+            this.textBoxAggMin.TabIndex = 5;
+            this.textBoxAggMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBox2.Location = new System.Drawing.Point(12, 69);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(207, 19);
+            this.checkBox2.TabIndex = 4;
+            this.checkBox2.Text = "Aggressive - Min";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -149,6 +221,18 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Amount of Players";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(5, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(214, 35);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Type of Players";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // checkBox1
             // 
@@ -171,90 +255,6 @@
             this.textBoxAggMax.TabIndex = 3;
             this.textBoxAggMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox2.Location = new System.Drawing.Point(12, 69);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(207, 19);
-            this.checkBox2.TabIndex = 4;
-            this.checkBox2.Text = "Aggressive - Min";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // textBoxAggMin
-            // 
-            this.textBoxAggMin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxAggMin.Location = new System.Drawing.Point(227, 69);
-            this.textBoxAggMin.Name = "textBoxAggMin";
-            this.textBoxAggMin.Size = new System.Drawing.Size(214, 20);
-            this.textBoxAggMin.TabIndex = 5;
-            this.textBoxAggMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox3.Location = new System.Drawing.Point(12, 96);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(207, 19);
-            this.checkBox3.TabIndex = 6;
-            this.checkBox3.Text = "Balanced";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // textBoxBal
-            // 
-            this.textBoxBal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxBal.Location = new System.Drawing.Point(227, 96);
-            this.textBoxBal.Name = "textBoxBal";
-            this.textBoxBal.Size = new System.Drawing.Size(214, 20);
-            this.textBoxBal.TabIndex = 7;
-            this.textBoxBal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox4.Location = new System.Drawing.Point(12, 123);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(207, 19);
-            this.checkBox4.TabIndex = 8;
-            this.checkBox4.Text = "Passive";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // textBoxPas
-            // 
-            this.textBoxPas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxPas.Location = new System.Drawing.Point(227, 123);
-            this.textBoxPas.Name = "textBoxPas";
-            this.textBoxPas.Size = new System.Drawing.Size(214, 20);
-            this.textBoxPas.TabIndex = 9;
-            this.textBoxPas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox5.Location = new System.Drawing.Point(12, 150);
-            this.checkBox5.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(207, 21);
-            this.checkBox5.TabIndex = 10;
-            this.checkBox5.Text = "Braindead";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // textBoxBra
-            // 
-            this.textBoxBra.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxBra.Location = new System.Drawing.Point(227, 150);
-            this.textBoxBra.Name = "textBoxBra";
-            this.textBoxBra.Size = new System.Drawing.Size(214, 20);
-            this.textBoxBra.TabIndex = 11;
-            this.textBoxBra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.textBoxSeed);
@@ -266,15 +266,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Seed Settings";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 23);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Seed";
-            // 
             // textBoxSeed
             // 
             this.textBoxSeed.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -284,6 +275,15 @@
             this.textBoxSeed.Name = "textBoxSeed";
             this.textBoxSeed.Size = new System.Drawing.Size(261, 20);
             this.textBoxSeed.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Seed";
             // 
             // MonopolySimulation
             // 
