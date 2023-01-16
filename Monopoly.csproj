@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Project\AidClasses\Statistic\Move.cs" />
+    <Compile Include="Project\AidClasses\Statistic\SortList.cs" />
     <Compile Include="Project\Windows\MonopolySimulation\MonopolySimulation.cs">
       <SubType>Form</SubType>
     </Compile>

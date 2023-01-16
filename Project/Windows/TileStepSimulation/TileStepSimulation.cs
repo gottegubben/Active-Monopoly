@@ -30,7 +30,7 @@ namespace Monopoly
         public List<Button> ButtonTiles { get; set; }
 
         //A list that will contain all the simulated percentage of landing on a specific tile. 
-        public float[] LandingPercentage { get; set; }
+        public SortList<float> LandingData { get; set; }
         #endregion
 
         #region Methods:
@@ -45,7 +45,7 @@ namespace Monopoly
             Tiles = MonopolyConfig.GetTiles();
 
             //Inits the array.
-            LandingPercentage = new float[Tiles.Count];
+            LandingData = new SortList<float>(new float[Tiles.Count]);
 
             //Adds all the button tiles controls to the button list.
             for (int i = 1; i < Tiles.Count + 1; i++)
@@ -172,54 +172,66 @@ namespace Monopoly
                         Log.PaintLine();
                         Log.TimeWrite($"[M:{i} R:{y}] Previous Position: {move.PrePosition}", Urgency.Normal);
                         Log.TimeWrite($"[M:{i} R:{y}] Post position    : {move.PostPosition}", Urgency.Normal);
+                        Log.PaintLine();
                     }
                 }
 
-                Log.PaintLine();
-
+                #region Results:
+                
                 for (int i = 0; i < Tiles.Count; i++)
                 {
-                    LandingPercentage[i] = (tileStepCount[i] / roundsPlayed) *100;
-
-                    Log.Write($"Tile {i}: {LandingPercentage[i]}%", Urgency.Result);
+                    LandingData.Data[i] = (tileStepCount[i] / roundsPlayed) * 100;
                 }
 
-                #region Displaying Results:
-                #region Top 3:
-                float[] sorted = LandingPercentage.OrderBy(x => x).ToArray();
+                #region Tile Percentage Order:
+                Log.Write("Sorted tile landing percentage (Highest to Lowest):", Urgency.None);
 
-                Log.PaintLine();
+                LandingData.Sort();
 
-                Log.Write("Highest (Top 3):", Urgency.None);
-                for (int i = 0; i < 3; i++)
+                for (int i = LandingData.SortedData.Length - 1; i > 0; i--)
                 {
-                    Log.Write($"{i + 1}: {sorted[sorted.Length - (i + 1)]}%", Urgency.Result);
-                }
-                Log.PaintSpace();
-                Log.Write("Lowest (Top 3):", Urgency.None);
-                for (int i = 0; i < 3; i++)
-                {
-                    Log.Write($"{i + 1}: {sorted[i]}%", Urgency.Result);
+                    Log.Write($"{LandingData.SortedData.Length-i}. [Tile Index: {LandingData.SortedDataId[i]}]: {LandingData.SortedData[i]}%", Urgency.Result);
                 }
                 #endregion
 
-                #region Top property groups:
-                float[] propertyGroups = new float[10];
+                #region Top 3
                 Log.PaintLine();
+                Log.Write("Top 3 (Highest):", Urgency.None);
+
+                for (int i = 0; i < 3; i++)
+                {
+                    Log.Write($"{i + 1}. [Index: {LandingData.SortedDataId[LandingData.SortedDataId.Length - (1 + i)]}] Value: {LandingData.SortedData[LandingData.SortedData.Length-(1+i)]}%", Urgency.Result);
+                }
+
+                Log.PaintSpace();
+                Log.Write("Top 3 (Lowest):", Urgency.None);
+
+                for (int i = 0; i < 3; i++)
+                {
+                    Log.Write($"{i + 1}. [Index: {LandingData.SortedDataId[i]}] Value: {LandingData.SortedData[i]}%", Urgency.Result);
+                }
+                #endregion
+
+                #region Top Groups:
+                SortList<float> GroupLandingData = new SortList<float>(new float[10]);
 
                 for (int i = 0; i < Tiles.Count; i++)
                 {
                     if(Tiles[i] is PurchasableTile)
                     {
-                        PurchasableTile temp = (Tiles[i] as PurchasableTile);
-                        int currentGroupIndex = temp.GroupIndex;
-                        string color = temp.TileColor.ToString();
-                        propertyGroups[currentGroupIndex] += LandingPercentage[i];
+                        PurchasableTile temp = Tiles[i] as PurchasableTile;
+
+                        GroupLandingData.Data[temp.GroupIndex] += LandingData.Data[i];
                     }
                 }
-                for (int y = 0; y < propertyGroups.Length; y++)
+                GroupLandingData.Sort();
+
+                Log.PaintLine();
+                Log.Write($"Group landing percentage:", Urgency.None);
+
+                for (int i = GroupLandingData.SortedData.Length - 1; i > 0; i--)
                 {
-                    Log.Write($"Group index {y}: {propertyGroups[y]}%", Urgency.Result);
+                    Log.Write($"{GroupLandingData.SortedData.Length-i}. [Grp Ind: {GroupLandingData.SortedDataId[i]}] Value: {GroupLandingData.SortedData[i]}%", Urgency.Result);
                 }
                 #endregion
                 #endregion
@@ -250,9 +262,9 @@ namespace Monopoly
             {
                 textBoxTileGroupIndex.Text = $"{(Tiles[btnId] as PurchasableTile).GroupIndex}";
             }
-            else { textBoxTileGroupIndex.Text = "Unidentified!"; }
+            else { textBoxTileGroupIndex.Text = "Unidentified"; }
 
-            textBoxTileDataChance.Text = $"{LandingPercentage[btnId]}";
+            textBoxTileDataChance.Text = $"{LandingData.Data[btnId]}";
         }
         #endregion
 

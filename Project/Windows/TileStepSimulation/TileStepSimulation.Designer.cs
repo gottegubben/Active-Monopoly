@@ -156,6 +156,7 @@
             this.textBoxAmountMatches.Name = "textBoxAmountMatches";
             this.textBoxAmountMatches.Size = new System.Drawing.Size(127, 20);
             this.textBoxAmountMatches.TabIndex = 5;
+            this.textBoxAmountMatches.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -163,9 +164,9 @@
             this.label4.Location = new System.Drawing.Point(13, 81);
             this.label4.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 13);
+            this.label4.Size = new System.Drawing.Size(135, 13);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Amount of matches to play :";
+            this.label4.Text = "Amount of matches to play:";
             // 
             // textBoxMaxPrisonTime
             // 
@@ -173,6 +174,7 @@
             this.textBoxMaxPrisonTime.Name = "textBoxMaxPrisonTime";
             this.textBoxMaxPrisonTime.Size = new System.Drawing.Size(127, 20);
             this.textBoxMaxPrisonTime.TabIndex = 3;
+            this.textBoxMaxPrisonTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -180,9 +182,9 @@
             this.label3.Location = new System.Drawing.Point(13, 55);
             this.label3.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 13);
+            this.label3.Size = new System.Drawing.Size(135, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Max time in prison (rounds) :";
+            this.label3.Text = "Max time in prison (rounds):";
             // 
             // textBoxAmountRounds
             // 
@@ -190,6 +192,7 @@
             this.textBoxAmountRounds.Name = "textBoxAmountRounds";
             this.textBoxAmountRounds.Size = new System.Drawing.Size(127, 20);
             this.textBoxAmountRounds.TabIndex = 1;
+            this.textBoxAmountRounds.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -197,9 +200,9 @@
             this.label1.Location = new System.Drawing.Point(13, 29);
             this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 13);
+            this.label1.Size = new System.Drawing.Size(127, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Amount of rounds to play :";
+            this.label1.Text = "Amount of rounds to play:";
             // 
             // label2
             // 
@@ -635,9 +638,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(300, 65);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(57, 13);
+            this.label9.Size = new System.Drawing.Size(54, 13);
             this.label9.TabIndex = 8;
-            this.label9.Text = "Tile Color :";
+            this.label9.Text = "Tile Color:";
             // 
             // textBoxTileDataTileId
             // 
@@ -646,15 +649,16 @@
             this.textBoxTileDataTileId.Name = "textBoxTileDataTileId";
             this.textBoxTileDataTileId.Size = new System.Drawing.Size(81, 20);
             this.textBoxTileDataTileId.TabIndex = 7;
+            this.textBoxTileDataTileId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(300, 36);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 13);
+            this.label8.Size = new System.Drawing.Size(39, 13);
             this.label8.TabIndex = 6;
-            this.label8.Text = "Tile Id :";
+            this.label8.Text = "Tile Id:";
             // 
             // textBoxTileDataChance
             // 
@@ -663,15 +667,16 @@
             this.textBoxTileDataChance.Name = "textBoxTileDataChance";
             this.textBoxTileDataChance.Size = new System.Drawing.Size(74, 20);
             this.textBoxTileDataChance.TabIndex = 5;
+            this.textBoxTileDataChance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(13, 88);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(165, 13);
+            this.label7.Size = new System.Drawing.Size(162, 13);
             this.label7.TabIndex = 4;
-            this.label7.Text = "Chance of landing on the tile (%) :";
+            this.label7.Text = "Chance of landing on the tile (%):";
             // 
             // textBoxTileGroupIndex
             // 
@@ -680,15 +685,16 @@
             this.textBoxTileGroupIndex.Name = "textBoxTileGroupIndex";
             this.textBoxTileGroupIndex.Size = new System.Drawing.Size(159, 20);
             this.textBoxTileGroupIndex.TabIndex = 3;
+            this.textBoxTileGroupIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(13, 62);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 13);
+            this.label6.Size = new System.Drawing.Size(68, 13);
             this.label6.TabIndex = 2;
-            this.label6.Text = "Group index :";
+            this.label6.Text = "Group Index:";
             // 
             // textBoxTileDataName
             // 
@@ -697,15 +703,16 @@
             this.textBoxTileDataName.Name = "textBoxTileDataName";
             this.textBoxTileDataName.Size = new System.Drawing.Size(159, 20);
             this.textBoxTileDataName.TabIndex = 1;
+            this.textBoxTileDataName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(13, 36);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 13);
+            this.label5.Size = new System.Drawing.Size(70, 13);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Name of tile :";
+            this.label5.Text = "Name of Tile:";
             // 
             // dataGridViewTileData
             // 
@@ -1011,6 +1018,7 @@
             this.MinimizeBox = false;
             this.Name = "TileStepSimulation";
             this.ShowIcon = false;
+            this.Text = "s";
             this.Load += new System.EventHandler(this.TileStepSimulation_Load);
             this.groupBoxSimSettings.ResumeLayout(false);
             this.groupBoxSimSettings.PerformLayout();
