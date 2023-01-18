@@ -93,6 +93,12 @@
     <Compile Include="Project\Windows\CreditWindow\CreditWindow.Designer.cs">
       <DependentUpon>CreditWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Project\Windows\MonopolySimulation\PlayerDeepdive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\Windows\MonopolySimulation\PlayerDeepdive.Designer.cs">
+      <DependentUpon>PlayerDeepdive.cs</DependentUpon>
+    </Compile>
     <Compile Include="Project\Windows\SelectionWindow\SelectionWindow.cs">
       <SubType>Form</SubType>
     </Compile>
