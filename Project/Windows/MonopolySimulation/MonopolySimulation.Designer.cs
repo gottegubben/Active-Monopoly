@@ -60,6 +60,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -84,19 +95,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.button11 = new System.Windows.Forms.Button();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -105,11 +103,10 @@
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -187,6 +184,7 @@
             // textBoxBra
             // 
             this.textBoxBra.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxBra.Enabled = false;
             this.textBoxBra.Location = new System.Drawing.Point(227, 150);
             this.textBoxBra.Name = "textBoxBra";
             this.textBoxBra.Size = new System.Drawing.Size(214, 20);
@@ -208,6 +206,7 @@
             // textBoxPas
             // 
             this.textBoxPas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPas.Enabled = false;
             this.textBoxPas.Location = new System.Drawing.Point(227, 123);
             this.textBoxPas.Name = "textBoxPas";
             this.textBoxPas.Size = new System.Drawing.Size(214, 20);
@@ -229,6 +228,7 @@
             // textBoxBal
             // 
             this.textBoxBal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxBal.Enabled = false;
             this.textBoxBal.Location = new System.Drawing.Point(227, 96);
             this.textBoxBal.Name = "textBoxBal";
             this.textBoxBal.Size = new System.Drawing.Size(214, 20);
@@ -250,6 +250,7 @@
             // textBoxAggMin
             // 
             this.textBoxAggMin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxAggMin.Enabled = false;
             this.textBoxAggMin.Location = new System.Drawing.Point(227, 69);
             this.textBoxAggMin.Name = "textBoxAggMin";
             this.textBoxAggMin.Size = new System.Drawing.Size(214, 20);
@@ -307,6 +308,7 @@
             // textBoxAggMax
             // 
             this.textBoxAggMax.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxAggMax.Enabled = false;
             this.textBoxAggMax.Location = new System.Drawing.Point(227, 42);
             this.textBoxAggMax.Name = "textBoxAggMax";
             this.textBoxAggMax.Size = new System.Drawing.Size(214, 20);
@@ -360,6 +362,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(126, 142);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(194, 20);
@@ -393,7 +396,6 @@
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(64, 17);
             this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Property";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
@@ -404,13 +406,13 @@
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(57, 17);
             this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Money";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(16, 29);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(79, 17);
@@ -422,7 +424,7 @@
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(22, 209);
+            this.checkBox6.Location = new System.Drawing.Point(22, 180);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(128, 17);
             this.checkBox6.TabIndex = 2;
@@ -456,14 +458,119 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.groupBox9);
             this.groupBox6.Controls.Add(this.groupBox8);
             this.groupBox6.Controls.Add(this.groupBox7);
             this.groupBox6.Location = new System.Drawing.Point(825, 48);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(461, 418);
+            this.groupBox6.Size = new System.Drawing.Size(461, 641);
             this.groupBox6.TabIndex = 6;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Result";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.panel16);
+            this.groupBox9.Controls.Add(this.panel12);
+            this.groupBox9.Controls.Add(this.button9);
+            this.groupBox9.Controls.Add(this.button10);
+            this.groupBox9.Controls.Add(this.panel15);
+            this.groupBox9.Controls.Add(this.panel13);
+            this.groupBox9.Controls.Add(this.button7);
+            this.groupBox9.Controls.Add(this.button11);
+            this.groupBox9.Controls.Add(this.panel14);
+            this.groupBox9.Controls.Add(this.button8);
+            this.groupBox9.Location = new System.Drawing.Point(7, 416);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(448, 219);
+            this.groupBox9.TabIndex = 13;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Players";
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.panel16.Location = new System.Drawing.Point(23, 170);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(20, 28);
+            this.panel16.TabIndex = 15;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.Red;
+            this.panel12.Location = new System.Drawing.Point(23, 34);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(20, 28);
+            this.panel12.TabIndex = 7;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(49, 102);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(155, 28);
+            this.button9.TabIndex = 10;
+            this.button9.Text = "Player deepdive";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(49, 136);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(155, 28);
+            this.button10.TabIndex = 12;
+            this.button10.Text = "Player deepdive";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.LawnGreen;
+            this.panel15.Location = new System.Drawing.Point(23, 136);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(20, 28);
+            this.panel15.TabIndex = 13;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.DarkOrchid;
+            this.panel13.Location = new System.Drawing.Point(23, 68);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(20, 28);
+            this.panel13.TabIndex = 9;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(49, 34);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(155, 28);
+            this.button7.TabIndex = 1;
+            this.button7.Text = "Player deepdive";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(49, 170);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(155, 28);
+            this.button11.TabIndex = 14;
+            this.button11.Text = "Player deepdive";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.Yellow;
+            this.panel14.Location = new System.Drawing.Point(23, 102);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(20, 28);
+            this.panel14.TabIndex = 11;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(49, 68);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(155, 28);
+            this.button8.TabIndex = 8;
+            this.button8.Text = "Player deepdive";
+            this.button8.UseVisualStyleBackColor = true;
             // 
             // groupBox8
             // 
@@ -697,134 +804,11 @@
             this.panel2.Size = new System.Drawing.Size(48, 20);
             this.panel2.TabIndex = 7;
             // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.dataGridView1);
-            this.groupBox9.Controls.Add(this.panel16);
-            this.groupBox9.Controls.Add(this.button11);
-            this.groupBox9.Controls.Add(this.panel15);
-            this.groupBox9.Controls.Add(this.button10);
-            this.groupBox9.Controls.Add(this.panel14);
-            this.groupBox9.Controls.Add(this.button9);
-            this.groupBox9.Controls.Add(this.panel13);
-            this.groupBox9.Controls.Add(this.button8);
-            this.groupBox9.Controls.Add(this.panel12);
-            this.groupBox9.Controls.Add(this.button7);
-            this.groupBox9.Controls.Add(this.label8);
-            this.groupBox9.Location = new System.Drawing.Point(482, 473);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(804, 213);
-            this.groupBox9.TabIndex = 7;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Result Continuing";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(242, 33);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(540, 164);
-            this.dataGridView1.TabIndex = 16;
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.panel16.Location = new System.Drawing.Point(20, 169);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(20, 28);
-            this.panel16.TabIndex = 15;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(46, 169);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(155, 28);
-            this.button11.TabIndex = 14;
-            this.button11.Text = "Player deepdive";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.Color.LawnGreen;
-            this.panel15.Location = new System.Drawing.Point(20, 135);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(20, 28);
-            this.panel15.TabIndex = 13;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(46, 135);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(155, 28);
-            this.button10.TabIndex = 12;
-            this.button10.Text = "Player deepdive";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.Yellow;
-            this.panel14.Location = new System.Drawing.Point(20, 101);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(20, 28);
-            this.panel14.TabIndex = 11;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(46, 101);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(155, 28);
-            this.button9.TabIndex = 10;
-            this.button9.Text = "Player deepdive";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.DarkOrchid;
-            this.panel13.Location = new System.Drawing.Point(20, 67);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(20, 28);
-            this.panel13.TabIndex = 9;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(46, 67);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(155, 28);
-            this.button8.TabIndex = 8;
-            this.button8.Text = "Player deepdive";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.Red;
-            this.panel12.Location = new System.Drawing.Point(20, 33);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(20, 28);
-            this.panel12.TabIndex = 7;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(46, 33);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(155, 28);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "Player deepdive";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(340, 17);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(379, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Hur många properties / spelare? Hur många tärningar? Hur många ägda gator?";
-            // 
             // groupBox10
             // 
             this.groupBox10.Location = new System.Drawing.Point(17, 473);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(459, 213);
+            this.groupBox10.Size = new System.Drawing.Size(802, 216);
             this.groupBox10.TabIndex = 8;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Export Options";
@@ -833,9 +817,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1304, 698);
+            this.ClientSize = new System.Drawing.Size(1299, 701);
             this.Controls.Add(this.groupBox10);
-            this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox4);
@@ -858,14 +841,12 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -929,9 +910,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel16;
@@ -942,6 +921,6 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox groupBox9;
     }
 }
