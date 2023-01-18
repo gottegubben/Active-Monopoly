@@ -33,32 +33,31 @@
             this.richTextBoxDescription = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxBra = new System.Windows.Forms.TextBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.textBoxPas = new System.Windows.Forms.TextBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.textBoxBal = new System.Windows.Forms.TextBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.textBoxAggMin = new System.Windows.Forms.TextBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.textBoxBotDead = new System.Windows.Forms.TextBox();
+            this.checkBoxBotDead = new System.Windows.Forms.CheckBox();
+            this.textBoxBotPas = new System.Windows.Forms.TextBox();
+            this.checkBoxBotPas = new System.Windows.Forms.CheckBox();
+            this.textBoxBotBal = new System.Windows.Forms.TextBox();
+            this.checkBoxBotBal = new System.Windows.Forms.CheckBox();
+            this.textBoxBotAggMin = new System.Windows.Forms.TextBox();
+            this.checkBoxBotAggMin = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBoxAggMax = new System.Windows.Forms.TextBox();
+            this.checkBoxBotAggMax = new System.Windows.Forms.CheckBox();
+            this.textBoxBotAggMax = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBoxSeed = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxRoundCap = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.radioButtonWinProp = new System.Windows.Forms.RadioButton();
+            this.radioButtonWinMon = new System.Windows.Forms.RadioButton();
+            this.radioButtonWinAnn = new System.Windows.Forms.RadioButton();
+            this.checkBoxBreakFreeDice = new System.Windows.Forms.CheckBox();
+            this.textBoxGameCount = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonRunSim = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.panel16 = new System.Windows.Forms.Panel();
@@ -72,15 +71,15 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBoxBotE = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxD = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxBotB = new System.Windows.Forms.TextBox();
+            this.textBoxBotC = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxBotA = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -96,6 +95,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.checkBoxEnableRoundCap = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -107,6 +108,7 @@
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -157,18 +159,18 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.textBoxBra, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox5, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxPas, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox4, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxBal, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox3, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxAggMin, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxBotDead, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxBotDead, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxBotPas, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxBotPas, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxBotBal, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxBotBal, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxBotAggMin, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxBotAggMin, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label3, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxAggMax, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxBotAggMax, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxBotAggMax, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(7, 19);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
@@ -181,93 +183,105 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(446, 176);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // textBoxBra
+            // textBoxBotDead
             // 
-            this.textBoxBra.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxBra.Enabled = false;
-            this.textBoxBra.Location = new System.Drawing.Point(227, 150);
-            this.textBoxBra.Name = "textBoxBra";
-            this.textBoxBra.Size = new System.Drawing.Size(214, 20);
-            this.textBoxBra.TabIndex = 11;
-            this.textBoxBra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxBotDead.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxBotDead.Enabled = false;
+            this.textBoxBotDead.Location = new System.Drawing.Point(227, 150);
+            this.textBoxBotDead.Name = "textBoxBotDead";
+            this.textBoxBotDead.Size = new System.Drawing.Size(214, 20);
+            this.textBoxBotDead.TabIndex = 11;
+            this.textBoxBotDead.Tag = "5";
+            this.textBoxBotDead.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // checkBox5
+            // checkBoxBotDead
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox5.Location = new System.Drawing.Point(12, 150);
-            this.checkBox5.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(207, 21);
-            this.checkBox5.TabIndex = 10;
-            this.checkBox5.Text = "Braindead";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBoxBotDead.AutoSize = true;
+            this.checkBoxBotDead.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxBotDead.Location = new System.Drawing.Point(12, 150);
+            this.checkBoxBotDead.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.checkBoxBotDead.Name = "checkBoxBotDead";
+            this.checkBoxBotDead.Size = new System.Drawing.Size(207, 21);
+            this.checkBoxBotDead.TabIndex = 10;
+            this.checkBoxBotDead.Tag = "5";
+            this.checkBoxBotDead.Text = "Braindead";
+            this.checkBoxBotDead.UseVisualStyleBackColor = true;
+            this.checkBoxBotDead.CheckedChanged += new System.EventHandler(this.checkBoxBotAggMax_CheckedChanged);
             // 
-            // textBoxPas
+            // textBoxBotPas
             // 
-            this.textBoxPas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxPas.Enabled = false;
-            this.textBoxPas.Location = new System.Drawing.Point(227, 123);
-            this.textBoxPas.Name = "textBoxPas";
-            this.textBoxPas.Size = new System.Drawing.Size(214, 20);
-            this.textBoxPas.TabIndex = 9;
-            this.textBoxPas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxBotPas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxBotPas.Enabled = false;
+            this.textBoxBotPas.Location = new System.Drawing.Point(227, 123);
+            this.textBoxBotPas.Name = "textBoxBotPas";
+            this.textBoxBotPas.Size = new System.Drawing.Size(214, 20);
+            this.textBoxBotPas.TabIndex = 9;
+            this.textBoxBotPas.Tag = "4";
+            this.textBoxBotPas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // checkBox4
+            // checkBoxBotPas
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox4.Location = new System.Drawing.Point(12, 123);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(207, 19);
-            this.checkBox4.TabIndex = 8;
-            this.checkBox4.Text = "Passive";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBoxBotPas.AutoSize = true;
+            this.checkBoxBotPas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxBotPas.Location = new System.Drawing.Point(12, 123);
+            this.checkBoxBotPas.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.checkBoxBotPas.Name = "checkBoxBotPas";
+            this.checkBoxBotPas.Size = new System.Drawing.Size(207, 19);
+            this.checkBoxBotPas.TabIndex = 8;
+            this.checkBoxBotPas.Tag = "4";
+            this.checkBoxBotPas.Text = "Passive";
+            this.checkBoxBotPas.UseVisualStyleBackColor = true;
+            this.checkBoxBotPas.CheckedChanged += new System.EventHandler(this.checkBoxBotAggMax_CheckedChanged);
             // 
-            // textBoxBal
+            // textBoxBotBal
             // 
-            this.textBoxBal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxBal.Enabled = false;
-            this.textBoxBal.Location = new System.Drawing.Point(227, 96);
-            this.textBoxBal.Name = "textBoxBal";
-            this.textBoxBal.Size = new System.Drawing.Size(214, 20);
-            this.textBoxBal.TabIndex = 7;
-            this.textBoxBal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxBotBal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxBotBal.Enabled = false;
+            this.textBoxBotBal.Location = new System.Drawing.Point(227, 96);
+            this.textBoxBotBal.Name = "textBoxBotBal";
+            this.textBoxBotBal.Size = new System.Drawing.Size(214, 20);
+            this.textBoxBotBal.TabIndex = 7;
+            this.textBoxBotBal.Tag = "3";
+            this.textBoxBotBal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // checkBox3
+            // checkBoxBotBal
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox3.Location = new System.Drawing.Point(12, 96);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(207, 19);
-            this.checkBox3.TabIndex = 6;
-            this.checkBox3.Text = "Balanced";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBoxBotBal.AutoSize = true;
+            this.checkBoxBotBal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxBotBal.Location = new System.Drawing.Point(12, 96);
+            this.checkBoxBotBal.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.checkBoxBotBal.Name = "checkBoxBotBal";
+            this.checkBoxBotBal.Size = new System.Drawing.Size(207, 19);
+            this.checkBoxBotBal.TabIndex = 6;
+            this.checkBoxBotBal.Tag = "3";
+            this.checkBoxBotBal.Text = "Balanced";
+            this.checkBoxBotBal.UseVisualStyleBackColor = true;
+            this.checkBoxBotBal.CheckedChanged += new System.EventHandler(this.checkBoxBotAggMax_CheckedChanged);
             // 
-            // textBoxAggMin
+            // textBoxBotAggMin
             // 
-            this.textBoxAggMin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxAggMin.Enabled = false;
-            this.textBoxAggMin.Location = new System.Drawing.Point(227, 69);
-            this.textBoxAggMin.Name = "textBoxAggMin";
-            this.textBoxAggMin.Size = new System.Drawing.Size(214, 20);
-            this.textBoxAggMin.TabIndex = 5;
-            this.textBoxAggMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxBotAggMin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxBotAggMin.Enabled = false;
+            this.textBoxBotAggMin.Location = new System.Drawing.Point(227, 69);
+            this.textBoxBotAggMin.Name = "textBoxBotAggMin";
+            this.textBoxBotAggMin.Size = new System.Drawing.Size(214, 20);
+            this.textBoxBotAggMin.TabIndex = 5;
+            this.textBoxBotAggMin.Tag = "2";
+            this.textBoxBotAggMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // checkBox2
+            // checkBoxBotAggMin
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox2.Location = new System.Drawing.Point(12, 69);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(207, 19);
-            this.checkBox2.TabIndex = 4;
-            this.checkBox2.Text = "Aggressive - Min";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxBotAggMin.AutoSize = true;
+            this.checkBoxBotAggMin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxBotAggMin.Location = new System.Drawing.Point(12, 69);
+            this.checkBoxBotAggMin.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.checkBoxBotAggMin.Name = "checkBoxBotAggMin";
+            this.checkBoxBotAggMin.Size = new System.Drawing.Size(207, 19);
+            this.checkBoxBotAggMin.TabIndex = 4;
+            this.checkBoxBotAggMin.Tag = "2";
+            this.checkBoxBotAggMin.Text = "Aggressive - Min";
+            this.checkBoxBotAggMin.UseVisualStyleBackColor = true;
+            this.checkBoxBotAggMin.CheckedChanged += new System.EventHandler(this.checkBoxBotAggMax_CheckedChanged);
             // 
             // label3
             // 
@@ -293,27 +307,30 @@
             this.label1.Text = "Type of Bots";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // checkBox1
+            // checkBoxBotAggMax
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox1.Location = new System.Drawing.Point(12, 42);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(207, 19);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "Aggressive - Max";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxBotAggMax.AutoSize = true;
+            this.checkBoxBotAggMax.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxBotAggMax.Location = new System.Drawing.Point(12, 42);
+            this.checkBoxBotAggMax.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.checkBoxBotAggMax.Name = "checkBoxBotAggMax";
+            this.checkBoxBotAggMax.Size = new System.Drawing.Size(207, 19);
+            this.checkBoxBotAggMax.TabIndex = 2;
+            this.checkBoxBotAggMax.Tag = "1";
+            this.checkBoxBotAggMax.Text = "Aggressive - Max";
+            this.checkBoxBotAggMax.UseVisualStyleBackColor = true;
+            this.checkBoxBotAggMax.CheckedChanged += new System.EventHandler(this.checkBoxBotAggMax_CheckedChanged);
             // 
-            // textBoxAggMax
+            // textBoxBotAggMax
             // 
-            this.textBoxAggMax.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxAggMax.Enabled = false;
-            this.textBoxAggMax.Location = new System.Drawing.Point(227, 42);
-            this.textBoxAggMax.Name = "textBoxAggMax";
-            this.textBoxAggMax.Size = new System.Drawing.Size(214, 20);
-            this.textBoxAggMax.TabIndex = 3;
-            this.textBoxAggMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxBotAggMax.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxBotAggMax.Enabled = false;
+            this.textBoxBotAggMax.Location = new System.Drawing.Point(227, 42);
+            this.textBoxBotAggMax.Name = "textBoxBotAggMax";
+            this.textBoxBotAggMax.Size = new System.Drawing.Size(214, 20);
+            this.textBoxBotAggMax.TabIndex = 3;
+            this.textBoxBotAggMax.Tag = "1";
+            this.textBoxBotAggMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox3
             // 
@@ -347,11 +364,10 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox2);
-            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.groupBox11);
             this.groupBox4.Controls.Add(this.groupBox5);
-            this.groupBox4.Controls.Add(this.checkBox6);
-            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Controls.Add(this.checkBoxBreakFreeDice);
+            this.groupBox4.Controls.Add(this.textBoxGameCount);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Location = new System.Drawing.Point(482, 48);
             this.groupBox4.Name = "groupBox4";
@@ -360,28 +376,19 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Simulation Settings";
             // 
-            // textBox2
+            // textBoxRoundCap
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(126, 142);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(194, 20);
-            this.textBox2.TabIndex = 7;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 145);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Round cap / game:";
+            this.textBoxRoundCap.Enabled = false;
+            this.textBoxRoundCap.Location = new System.Drawing.Point(16, 56);
+            this.textBoxRoundCap.Name = "textBoxRoundCap";
+            this.textBoxRoundCap.Size = new System.Drawing.Size(275, 20);
+            this.textBoxRoundCap.TabIndex = 7;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.radioButton3);
-            this.groupBox5.Controls.Add(this.radioButton2);
-            this.groupBox5.Controls.Add(this.radioButton1);
+            this.groupBox5.Controls.Add(this.radioButtonWinProp);
+            this.groupBox5.Controls.Add(this.radioButtonWinMon);
+            this.groupBox5.Controls.Add(this.radioButtonWinAnn);
             this.groupBox5.Location = new System.Drawing.Point(22, 67);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(298, 64);
@@ -389,54 +396,54 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Winning condition";
             // 
-            // radioButton3
+            // radioButtonWinProp
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(125, 29);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(64, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.Text = "Property";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButtonWinProp.AutoSize = true;
+            this.radioButtonWinProp.Location = new System.Drawing.Point(125, 29);
+            this.radioButtonWinProp.Name = "radioButtonWinProp";
+            this.radioButtonWinProp.Size = new System.Drawing.Size(64, 17);
+            this.radioButtonWinProp.TabIndex = 2;
+            this.radioButtonWinProp.Text = "Property";
+            this.radioButtonWinProp.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButtonWinMon
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(220, 29);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(57, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "Money";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButtonWinMon.AutoSize = true;
+            this.radioButtonWinMon.Location = new System.Drawing.Point(220, 29);
+            this.radioButtonWinMon.Name = "radioButtonWinMon";
+            this.radioButtonWinMon.Size = new System.Drawing.Size(57, 17);
+            this.radioButtonWinMon.TabIndex = 1;
+            this.radioButtonWinMon.Text = "Money";
+            this.radioButtonWinMon.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioButtonWinAnn
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(16, 29);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(79, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Annihilation";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonWinAnn.AutoSize = true;
+            this.radioButtonWinAnn.Checked = true;
+            this.radioButtonWinAnn.Location = new System.Drawing.Point(16, 29);
+            this.radioButtonWinAnn.Name = "radioButtonWinAnn";
+            this.radioButtonWinAnn.Size = new System.Drawing.Size(79, 17);
+            this.radioButtonWinAnn.TabIndex = 0;
+            this.radioButtonWinAnn.TabStop = true;
+            this.radioButtonWinAnn.Text = "Annihilation";
+            this.radioButtonWinAnn.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // checkBoxBreakFreeDice
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(22, 180);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(128, 17);
-            this.checkBox6.TabIndex = 2;
-            this.checkBox6.Text = "Break free with dices.";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBoxBreakFreeDice.AutoSize = true;
+            this.checkBoxBreakFreeDice.Location = new System.Drawing.Point(22, 247);
+            this.checkBoxBreakFreeDice.Name = "checkBoxBreakFreeDice";
+            this.checkBoxBreakFreeDice.Size = new System.Drawing.Size(128, 17);
+            this.checkBoxBreakFreeDice.TabIndex = 2;
+            this.checkBoxBreakFreeDice.Text = "Break free with dices.";
+            this.checkBoxBreakFreeDice.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textBoxGameCount
             // 
-            this.textBox1.Location = new System.Drawing.Point(126, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBoxGameCount.Location = new System.Drawing.Point(126, 35);
+            this.textBoxGameCount.Name = "textBoxGameCount";
+            this.textBoxGameCount.Size = new System.Drawing.Size(194, 20);
+            this.textBoxGameCount.TabIndex = 1;
             // 
             // label5
             // 
@@ -447,14 +454,15 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Amount of games:";
             // 
-            // button1
+            // buttonRunSim
             // 
-            this.button1.Location = new System.Drawing.Point(482, 423);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(337, 43);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Run Simulation";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonRunSim.Location = new System.Drawing.Point(482, 423);
+            this.buttonRunSim.Name = "buttonRunSim";
+            this.buttonRunSim.Size = new System.Drawing.Size(337, 43);
+            this.buttonRunSim.TabIndex = 6;
+            this.buttonRunSim.Text = "Run Simulation";
+            this.buttonRunSim.UseVisualStyleBackColor = true;
+            this.buttonRunSim.Click += new System.EventHandler(this.buttonRunSim_Click);
             // 
             // groupBox6
             // 
@@ -574,15 +582,15 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.textBox7);
+            this.groupBox8.Controls.Add(this.textBoxBotE);
             this.groupBox8.Controls.Add(this.panel9);
             this.groupBox8.Controls.Add(this.panel10);
-            this.groupBox8.Controls.Add(this.textBox6);
+            this.groupBox8.Controls.Add(this.textBoxD);
             this.groupBox8.Controls.Add(this.panel8);
-            this.groupBox8.Controls.Add(this.textBox5);
-            this.groupBox8.Controls.Add(this.textBox4);
+            this.groupBox8.Controls.Add(this.textBoxBotB);
+            this.groupBox8.Controls.Add(this.textBoxBotC);
             this.groupBox8.Controls.Add(this.panel7);
-            this.groupBox8.Controls.Add(this.textBox3);
+            this.groupBox8.Controls.Add(this.textBoxBotA);
             this.groupBox8.Controls.Add(this.panel6);
             this.groupBox8.Location = new System.Drawing.Point(7, 20);
             this.groupBox8.Name = "groupBox8";
@@ -591,13 +599,13 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Bot Assigned";
             // 
-            // textBox7
+            // textBoxBotE
             // 
-            this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(49, 81);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(149, 20);
-            this.textBox7.TabIndex = 11;
+            this.textBoxBotE.Enabled = false;
+            this.textBoxBotE.Location = new System.Drawing.Point(49, 81);
+            this.textBoxBotE.Name = "textBoxBotE";
+            this.textBoxBotE.Size = new System.Drawing.Size(149, 20);
+            this.textBoxBotE.TabIndex = 11;
             // 
             // panel9
             // 
@@ -615,13 +623,13 @@
             this.panel10.Size = new System.Drawing.Size(20, 20);
             this.panel10.TabIndex = 10;
             // 
-            // textBox6
+            // textBoxD
             // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(278, 54);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(149, 20);
-            this.textBox6.TabIndex = 12;
+            this.textBoxD.Enabled = false;
+            this.textBoxD.Location = new System.Drawing.Point(278, 54);
+            this.textBoxD.Name = "textBoxD";
+            this.textBoxD.Size = new System.Drawing.Size(149, 20);
+            this.textBoxD.TabIndex = 12;
             // 
             // panel8
             // 
@@ -631,21 +639,21 @@
             this.panel8.Size = new System.Drawing.Size(20, 20);
             this.panel8.TabIndex = 7;
             // 
-            // textBox5
+            // textBoxBotB
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(278, 28);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(149, 20);
-            this.textBox5.TabIndex = 10;
+            this.textBoxBotB.Enabled = false;
+            this.textBoxBotB.Location = new System.Drawing.Point(278, 28);
+            this.textBoxBotB.Name = "textBoxBotB";
+            this.textBoxBotB.Size = new System.Drawing.Size(149, 20);
+            this.textBoxBotB.TabIndex = 10;
             // 
-            // textBox4
+            // textBoxBotC
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(49, 54);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(149, 20);
-            this.textBox4.TabIndex = 9;
+            this.textBoxBotC.Enabled = false;
+            this.textBoxBotC.Location = new System.Drawing.Point(49, 54);
+            this.textBoxBotC.Name = "textBoxBotC";
+            this.textBoxBotC.Size = new System.Drawing.Size(149, 20);
+            this.textBoxBotC.TabIndex = 9;
             // 
             // panel7
             // 
@@ -655,13 +663,13 @@
             this.panel7.Size = new System.Drawing.Size(20, 20);
             this.panel7.TabIndex = 8;
             // 
-            // textBox3
+            // textBoxBotA
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(49, 28);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(149, 20);
-            this.textBox3.TabIndex = 7;
+            this.textBoxBotA.Enabled = false;
+            this.textBoxBotA.Location = new System.Drawing.Point(49, 28);
+            this.textBoxBotA.Name = "textBoxBotA";
+            this.textBoxBotA.Size = new System.Drawing.Size(149, 20);
+            this.textBoxBotA.TabIndex = 7;
             // 
             // panel6
             // 
@@ -813,6 +821,28 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Export Options";
             // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.checkBoxEnableRoundCap);
+            this.groupBox11.Controls.Add(this.textBoxRoundCap);
+            this.groupBox11.Location = new System.Drawing.Point(22, 137);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(298, 95);
+            this.groupBox11.TabIndex = 6;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Winning condition";
+            // 
+            // checkBoxEnableRoundCap
+            // 
+            this.checkBoxEnableRoundCap.AutoSize = true;
+            this.checkBoxEnableRoundCap.Location = new System.Drawing.Point(16, 24);
+            this.checkBoxEnableRoundCap.Name = "checkBoxEnableRoundCap";
+            this.checkBoxEnableRoundCap.Size = new System.Drawing.Size(116, 17);
+            this.checkBoxEnableRoundCap.TabIndex = 7;
+            this.checkBoxEnableRoundCap.Text = "Enable Round Cap";
+            this.checkBoxEnableRoundCap.UseVisualStyleBackColor = true;
+            this.checkBoxEnableRoundCap.CheckedChanged += new System.EventHandler(this.checkBoxEnableRoundCap_CheckedChanged);
+            // 
             // MonopolySimulation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -820,7 +850,7 @@
             this.ClientSize = new System.Drawing.Size(1299, 701);
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonRunSim);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -847,6 +877,8 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -861,40 +893,40 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBoxBra;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.TextBox textBoxPas;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.TextBox textBoxBal;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.TextBox textBoxAggMin;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.TextBox textBoxAggMax;
+        private System.Windows.Forms.CheckBox checkBoxBotAggMax;
+        private System.Windows.Forms.TextBox textBoxBotDead;
+        private System.Windows.Forms.CheckBox checkBoxBotDead;
+        private System.Windows.Forms.TextBox textBoxBotPas;
+        private System.Windows.Forms.CheckBox checkBoxBotPas;
+        private System.Windows.Forms.TextBox textBoxBotBal;
+        private System.Windows.Forms.CheckBox checkBoxBotBal;
+        private System.Windows.Forms.TextBox textBoxBotAggMin;
+        private System.Windows.Forms.CheckBox checkBoxBotAggMin;
+        private System.Windows.Forms.TextBox textBoxBotAggMax;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBoxSeed;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox checkBoxBreakFreeDice;
+        private System.Windows.Forms.TextBox textBoxGameCount;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton radioButtonWinMon;
+        private System.Windows.Forms.RadioButton radioButtonWinAnn;
+        private System.Windows.Forms.RadioButton radioButtonWinProp;
+        private System.Windows.Forms.Button buttonRunSim;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBoxBotE;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBoxD;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxBotB;
+        private System.Windows.Forms.TextBox textBoxBotC;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxBotA;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
@@ -908,8 +940,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxRoundCap;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel12;
@@ -922,5 +953,7 @@
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.CheckBox checkBoxEnableRoundCap;
     }
 }
