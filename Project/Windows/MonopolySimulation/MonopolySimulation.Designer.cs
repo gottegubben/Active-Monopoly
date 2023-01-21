@@ -49,6 +49,8 @@
             this.textBoxSeed = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.checkBoxEnableRoundCap = new System.Windows.Forms.CheckBox();
             this.textBoxRoundCap = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.radioButtonWinProp = new System.Windows.Forms.RadioButton();
@@ -95,20 +97,18 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.checkBoxEnableRoundCap = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -375,6 +375,28 @@
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Simulation Settings";
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.checkBoxEnableRoundCap);
+            this.groupBox11.Controls.Add(this.textBoxRoundCap);
+            this.groupBox11.Location = new System.Drawing.Point(22, 137);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(298, 95);
+            this.groupBox11.TabIndex = 6;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Winning condition";
+            // 
+            // checkBoxEnableRoundCap
+            // 
+            this.checkBoxEnableRoundCap.AutoSize = true;
+            this.checkBoxEnableRoundCap.Location = new System.Drawing.Point(16, 24);
+            this.checkBoxEnableRoundCap.Name = "checkBoxEnableRoundCap";
+            this.checkBoxEnableRoundCap.Size = new System.Drawing.Size(116, 17);
+            this.checkBoxEnableRoundCap.TabIndex = 7;
+            this.checkBoxEnableRoundCap.Text = "Enable Round Cap";
+            this.checkBoxEnableRoundCap.UseVisualStyleBackColor = true;
+            this.checkBoxEnableRoundCap.CheckedChanged += new System.EventHandler(this.checkBoxEnableRoundCap_CheckedChanged);
             // 
             // textBoxRoundCap
             // 
@@ -821,28 +843,6 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Export Options";
             // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.checkBoxEnableRoundCap);
-            this.groupBox11.Controls.Add(this.textBoxRoundCap);
-            this.groupBox11.Location = new System.Drawing.Point(22, 137);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(298, 95);
-            this.groupBox11.TabIndex = 6;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Winning condition";
-            // 
-            // checkBoxEnableRoundCap
-            // 
-            this.checkBoxEnableRoundCap.AutoSize = true;
-            this.checkBoxEnableRoundCap.Location = new System.Drawing.Point(16, 24);
-            this.checkBoxEnableRoundCap.Name = "checkBoxEnableRoundCap";
-            this.checkBoxEnableRoundCap.Size = new System.Drawing.Size(116, 17);
-            this.checkBoxEnableRoundCap.TabIndex = 7;
-            this.checkBoxEnableRoundCap.Text = "Enable Round Cap";
-            this.checkBoxEnableRoundCap.UseVisualStyleBackColor = true;
-            this.checkBoxEnableRoundCap.CheckedChanged += new System.EventHandler(this.checkBoxEnableRoundCap_CheckedChanged);
-            // 
             // MonopolySimulation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -868,6 +868,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -877,8 +879,6 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

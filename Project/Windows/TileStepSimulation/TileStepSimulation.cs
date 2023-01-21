@@ -18,6 +18,9 @@ namespace Monopoly
             //Inits the list.
             ButtonTiles = new List<Button>();
 
+            //Inits the list
+            SimDataHistory = new List<float[]>();
+
             InitializeComponent();
         }
         #endregion
@@ -31,6 +34,9 @@ namespace Monopoly
 
         //A list that will contain all the simulated percentage of landing on a specific tile. 
         public SortList<float> LandingData { get; set; }
+
+        //A list of float[] containing the data of each tile for each simulation. This is where the simulations will be stored.
+        public List<float[]> SimDataHistory { get; set; }
         #endregion
 
         #region Methods:
@@ -118,6 +124,8 @@ namespace Monopoly
                 //Plays the desired amount of matches of monopoly with the total amount of rounds will be the round variable.
                 for (int i = 0; i < matches; i++)
                 {
+                    float[] currentMatchStepCount = new float[Tiles.Count];
+
                     int roundsStayedInJail = 0;
 
                     //Plays the desired amount of rounds.
@@ -145,8 +153,10 @@ namespace Monopoly
 
                             tileStepCount[posHandler.GetPlayerPositionInt(player)]++;
 
+                            currentMatchStepCount[posHandler.GetPlayerPositionInt(player)]++;
+
                             //If the player lands on the "go to prison" tile then move to prison.
-                            if(posHandler.GetPlayerPositionInt(player) == 30)
+                            if (posHandler.GetPlayerPositionInt(player) == 30)
                             {
                                 player.CanMove = false;
 
@@ -159,6 +169,8 @@ namespace Monopoly
 
                             tileStepCount[10]++;
 
+                            currentMatchStepCount[10]++;
+
                             if(roundsStayedInJail >= prisonTime)
                             {
                                 player.CanMove = true;
@@ -169,11 +181,21 @@ namespace Monopoly
 
                         roundsPlayed++;
 
-                        Log.PaintLine();
-                        Log.TimeWrite($"[M:{i} R:{y}] Previous Position: {move.PrePosition}", Urgency.Normal);
-                        Log.TimeWrite($"[M:{i} R:{y}] Post position    : {move.PostPosition}", Urgency.Normal);
-                        Log.PaintLine();
+                        if (checkBoxLogRndMat.Checked)
+                        {
+                            Log.PaintLine();
+                            Log.TimeWrite($"[M:{i} R:{y}] Previous Position: {move.PrePosition}", Urgency.Normal);
+                            Log.TimeWrite($"[M:{i} R:{y}] Post position    : {move.PostPosition}", Urgency.Normal);
+                            Log.PaintLine();
+                        }
                     }
+
+                    //Will add the previous simulations "landing data" to the history pool.
+                    for (int z = 0; z < currentMatchStepCount.Length; z++)
+                    {
+                        currentMatchStepCount[z] = (currentMatchStepCount[z] / roundsPlayed) * 100;
+                    }
+                    SimDataHistory.Add(currentMatchStepCount);
                 }
 
                 #region Results:
@@ -182,6 +204,8 @@ namespace Monopoly
                 {
                     LandingData.Data[i] = (tileStepCount[i] / roundsPlayed) * 100;
                 }
+
+                textBoxSimHistory.Text = $"{SimDataHistory.Count}";
 
                 #region Tile Percentage Order:
                 Log.Write("Sorted tile landing percentage (Highest to Lowest):", Urgency.None);
@@ -233,6 +257,8 @@ namespace Monopoly
                 {
                     Log.Write($"{GroupLandingData.SortedData.Length-i}. [Grp Ind: {GroupLandingData.SortedDataId[i]}] Value: {GroupLandingData.SortedData[i]}%", Urgency.Result);
                 }
+
+                Log.PaintLine();
                 #endregion
                 #endregion
 
@@ -278,5 +304,70 @@ namespace Monopoly
         */
 
         #endregion
+
+        private void buttonClearHistory_Click(object sender, EventArgs e)
+        {
+            SimDataHistory = new List<float[]>();
+
+            textBoxSimHistory.Text = $"{SimDataHistory.Count}";
+        }
+
+        private void buttonRunSeries_Click(object sender, EventArgs e)
+        {
+            #region Check Input
+            bool inputChecked = true;
+
+            int series = 0;
+            int roundMultiplier = 0;
+
+            try
+            {
+                series = int.Parse(textBoxSeries.Text);
+                roundMultiplier = int.Parse(textBoxRoundMultiplier.Text);
+            }
+            catch
+            {
+                inputChecked = false;
+            }
+            #endregion
+
+            if (inputChecked)
+            {
+                for (int i = 0; i < series; i++)
+                {
+                    buttonRun_Click(sender, e);
+
+                    textBoxAmountRounds.Text = $"{int.Parse(textBoxAmountRounds.Text) * roundMultiplier}";
+
+                    Log.TimeWrite($"[Series] Serie {i+1}/{series} Complete!", Urgency.Correct);
+
+                    Log.Write($"Next sim will perform [{int.Parse(textBoxAmountRounds.Text) * roundMultiplier}] rounds.", Urgency.Normal);
+                }
+            }
+        }
+
+        private void buttonExportToExcell_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Export.ToExcel_TileStepSimulation(SimDataHistory, int.Parse(textBoxStartRound.Text), int.Parse(textBoxRoundMultiplier.Text));
+            }
+            catch 
+            {
+                Log.TimeWrite("Error exporting!", Urgency.Incorrect);
+            }
+        }
+
+        private void buttonEstimateTime_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch
+            {
+                textBoxEstimateTime.Text = "";
+            }
+        }
     }
 }

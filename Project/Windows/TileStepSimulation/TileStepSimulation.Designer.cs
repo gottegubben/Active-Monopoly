@@ -117,11 +117,31 @@
             this.panel22 = new System.Windows.Forms.Panel();
             this.panel23 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonExportToExcel = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxRoundMultiplier = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxSeries = new System.Windows.Forms.TextBox();
+            this.buttonRunSeries = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBoxSimHistory = new System.Windows.Forms.TextBox();
+            this.buttonClearHistory = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBoxStartRound = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.checkBoxLogRndMat = new System.Windows.Forms.CheckBox();
+            this.textBoxEstimateTime = new System.Windows.Forms.TextBox();
+            this.buttonEstimateTime = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupBoxSimSettings.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTileData)).BeginInit();
             this.panel3.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxSimSettings
@@ -644,9 +664,9 @@
             // 
             // textBoxTileDataTileId
             // 
-            this.textBoxTileDataTileId.Enabled = false;
             this.textBoxTileDataTileId.Location = new System.Drawing.Point(363, 33);
             this.textBoxTileDataTileId.Name = "textBoxTileDataTileId";
+            this.textBoxTileDataTileId.ReadOnly = true;
             this.textBoxTileDataTileId.Size = new System.Drawing.Size(81, 20);
             this.textBoxTileDataTileId.TabIndex = 7;
             this.textBoxTileDataTileId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -662,9 +682,9 @@
             // 
             // textBoxTileDataChance
             // 
-            this.textBoxTileDataChance.Enabled = false;
             this.textBoxTileDataChance.Location = new System.Drawing.Point(184, 85);
             this.textBoxTileDataChance.Name = "textBoxTileDataChance";
+            this.textBoxTileDataChance.ReadOnly = true;
             this.textBoxTileDataChance.Size = new System.Drawing.Size(74, 20);
             this.textBoxTileDataChance.TabIndex = 5;
             this.textBoxTileDataChance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -680,9 +700,9 @@
             // 
             // textBoxTileGroupIndex
             // 
-            this.textBoxTileGroupIndex.Enabled = false;
             this.textBoxTileGroupIndex.Location = new System.Drawing.Point(99, 59);
             this.textBoxTileGroupIndex.Name = "textBoxTileGroupIndex";
+            this.textBoxTileGroupIndex.ReadOnly = true;
             this.textBoxTileGroupIndex.Size = new System.Drawing.Size(159, 20);
             this.textBoxTileGroupIndex.TabIndex = 3;
             this.textBoxTileGroupIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -698,9 +718,9 @@
             // 
             // textBoxTileDataName
             // 
-            this.textBoxTileDataName.Enabled = false;
             this.textBoxTileDataName.Location = new System.Drawing.Point(99, 33);
             this.textBoxTileDataName.Name = "textBoxTileDataName";
+            this.textBoxTileDataName.ReadOnly = true;
             this.textBoxTileDataName.Size = new System.Drawing.Size(159, 20);
             this.textBoxTileDataName.TabIndex = 1;
             this.textBoxTileDataName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -932,18 +952,190 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Location = new System.Drawing.Point(12, 562);
+            this.groupBox3.Controls.Add(this.textBoxStartRound);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.buttonExportToExcel);
+            this.groupBox3.Location = new System.Drawing.Point(778, 562);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1015, 126);
+            this.groupBox3.Size = new System.Drawing.Size(249, 124);
             this.groupBox3.TabIndex = 62;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Export Settings";
+            // 
+            // buttonExportToExcel
+            // 
+            this.buttonExportToExcel.Location = new System.Drawing.Point(23, 71);
+            this.buttonExportToExcel.Name = "buttonExportToExcel";
+            this.buttonExportToExcel.Size = new System.Drawing.Size(204, 38);
+            this.buttonExportToExcel.TabIndex = 0;
+            this.buttonExportToExcel.Text = "Export Recorded To Excell";
+            this.buttonExportToExcel.UseVisualStyleBackColor = true;
+            this.buttonExportToExcel.Click += new System.EventHandler(this.buttonExportToExcell_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.groupBox5);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this.textBoxRoundMultiplier);
+            this.groupBox4.Controls.Add(this.label11);
+            this.groupBox4.Controls.Add(this.textBoxSeries);
+            this.groupBox4.Controls.Add(this.buttonRunSeries);
+            this.groupBox4.Controls.Add(this.label10);
+            this.groupBox4.Controls.Add(this.textBoxSimHistory);
+            this.groupBox4.Controls.Add(this.buttonClearHistory);
+            this.groupBox4.Location = new System.Drawing.Point(12, 562);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(760, 124);
+            this.groupBox4.TabIndex = 63;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Simulation Tools";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(282, 87);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(86, 13);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "Round Multiplier:";
+            // 
+            // textBoxRoundMultiplier
+            // 
+            this.textBoxRoundMultiplier.Location = new System.Drawing.Point(372, 84);
+            this.textBoxRoundMultiplier.Name = "textBoxRoundMultiplier";
+            this.textBoxRoundMultiplier.Size = new System.Drawing.Size(59, 20);
+            this.textBoxRoundMultiplier.TabIndex = 6;
+            this.textBoxRoundMultiplier.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(167, 87);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(39, 13);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Series:";
+            // 
+            // textBoxSeries
+            // 
+            this.textBoxSeries.Location = new System.Drawing.Point(212, 84);
+            this.textBoxSeries.Name = "textBoxSeries";
+            this.textBoxSeries.Size = new System.Drawing.Size(46, 20);
+            this.textBoxSeries.TabIndex = 4;
+            this.textBoxSeries.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // buttonRunSeries
+            // 
+            this.buttonRunSeries.Location = new System.Drawing.Point(16, 78);
+            this.buttonRunSeries.Name = "buttonRunSeries";
+            this.buttonRunSeries.Size = new System.Drawing.Size(124, 31);
+            this.buttonRunSeries.TabIndex = 3;
+            this.buttonRunSeries.Text = "Run Series";
+            this.buttonRunSeries.UseVisualStyleBackColor = true;
+            this.buttonRunSeries.Click += new System.EventHandler(this.buttonRunSeries_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(167, 37);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(111, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Recorded simulations:";
+            // 
+            // textBoxSimHistory
+            // 
+            this.textBoxSimHistory.Location = new System.Drawing.Point(284, 34);
+            this.textBoxSimHistory.Name = "textBoxSimHistory";
+            this.textBoxSimHistory.ReadOnly = true;
+            this.textBoxSimHistory.Size = new System.Drawing.Size(147, 20);
+            this.textBoxSimHistory.TabIndex = 1;
+            this.textBoxSimHistory.Text = "0";
+            this.textBoxSimHistory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // buttonClearHistory
+            // 
+            this.buttonClearHistory.Location = new System.Drawing.Point(16, 28);
+            this.buttonClearHistory.Name = "buttonClearHistory";
+            this.buttonClearHistory.Size = new System.Drawing.Size(124, 31);
+            this.buttonClearHistory.TabIndex = 0;
+            this.buttonClearHistory.Text = "Clear History";
+            this.buttonClearHistory.UseVisualStyleBackColor = true;
+            this.buttonClearHistory.Click += new System.EventHandler(this.buttonClearHistory_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(27, 37);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(62, 13);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Start round:";
+            // 
+            // textBoxStartRound
+            // 
+            this.textBoxStartRound.Location = new System.Drawing.Point(95, 34);
+            this.textBoxStartRound.Name = "textBoxStartRound";
+            this.textBoxStartRound.Size = new System.Drawing.Size(132, 20);
+            this.textBoxStartRound.TabIndex = 2;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label14);
+            this.groupBox5.Controls.Add(this.buttonEstimateTime);
+            this.groupBox5.Controls.Add(this.textBoxEstimateTime);
+            this.groupBox5.Controls.Add(this.checkBoxLogRndMat);
+            this.groupBox5.Location = new System.Drawing.Point(454, 9);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(300, 109);
+            this.groupBox5.TabIndex = 8;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Log Options";
+            // 
+            // checkBoxLogRndMat
+            // 
+            this.checkBoxLogRndMat.AutoSize = true;
+            this.checkBoxLogRndMat.Location = new System.Drawing.Point(24, 28);
+            this.checkBoxLogRndMat.Name = "checkBoxLogRndMat";
+            this.checkBoxLogRndMat.Size = new System.Drawing.Size(130, 17);
+            this.checkBoxLogRndMat.TabIndex = 0;
+            this.checkBoxLogRndMat.Text = "Log round and match.";
+            this.checkBoxLogRndMat.UseVisualStyleBackColor = true;
+            // 
+            // textBoxEstimateTime
+            // 
+            this.textBoxEstimateTime.Location = new System.Drawing.Point(159, 71);
+            this.textBoxEstimateTime.Name = "textBoxEstimateTime";
+            this.textBoxEstimateTime.ReadOnly = true;
+            this.textBoxEstimateTime.Size = new System.Drawing.Size(81, 20);
+            this.textBoxEstimateTime.TabIndex = 1;
+            this.textBoxEstimateTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // buttonEstimateTime
+            // 
+            this.buttonEstimateTime.Location = new System.Drawing.Point(24, 66);
+            this.buttonEstimateTime.Name = "buttonEstimateTime";
+            this.buttonEstimateTime.Size = new System.Drawing.Size(116, 29);
+            this.buttonEstimateTime.TabIndex = 2;
+            this.buttonEstimateTime.Text = "Estimate Time";
+            this.buttonEstimateTime.UseVisualStyleBackColor = true;
+            this.buttonEstimateTime.Click += new System.EventHandler(this.buttonEstimateTime_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(246, 75);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(42, 13);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Minuter";
             // 
             // TileStepSimulation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 700);
+            this.ClientSize = new System.Drawing.Size(1042, 698);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.panel23);
             this.Controls.Add(this.panel22);
@@ -1018,7 +1210,6 @@
             this.MinimizeBox = false;
             this.Name = "TileStepSimulation";
             this.ShowIcon = false;
-            this.Text = "s";
             this.Load += new System.EventHandler(this.TileStepSimulation_Load);
             this.groupBoxSimSettings.ResumeLayout(false);
             this.groupBoxSimSettings.PerformLayout();
@@ -1027,6 +1218,12 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTileData)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1122,6 +1319,23 @@
         private System.Windows.Forms.TextBox textBoxTileDataTileId;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button buttonClearHistory;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBoxSimHistory;
+        private System.Windows.Forms.Button buttonRunSeries;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBoxRoundMultiplier;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxSeries;
+        private System.Windows.Forms.Button buttonExportToExcel;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBoxStartRound;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.CheckBox checkBoxLogRndMat;
+        private System.Windows.Forms.Button buttonEstimateTime;
+        private System.Windows.Forms.TextBox textBoxEstimateTime;
+        private System.Windows.Forms.Label label14;
     }
 }
 

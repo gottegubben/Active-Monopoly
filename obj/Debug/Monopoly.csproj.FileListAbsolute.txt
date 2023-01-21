@@ -49,3 +49,4 @@ C:\Programmering\Coding Projects\Monopoly\bin\Debug\Monopoly.exe
 C:\Programmering\Coding Projects\Monopoly\bin\Debug\Monopoly.pdb
 D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.MonopolySimulation.resources
 C:\Programmering\Coding Projects\Monopoly\obj\Debug\Monopoly.MonopolySimulation.resources
+C:\Programmering\Coding Projects\Monopoly\obj\Debug\Monopoly.csproj.ResolveComReference.cache
