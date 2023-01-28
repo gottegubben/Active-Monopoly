@@ -105,11 +105,24 @@ namespace Monopoly
         //Returns the tile responsible for the player picking up cards with these params.
         private static CardCollecter getTileCardCollector(string tileName, int tileId, Color tileColor, CardType cardType)
         {
+            List<CardDeck> decks = MonopolyConfig.GetCardDecks();
+            CardDeck cardDeck;
+
+            if(cardType == CardType.CommunityChest)
+            {
+                cardDeck = decks[0];
+            }
+            else //Fortune
+            {
+                cardDeck = decks[1];
+            }
+
             return new CardCollecter(cardType)
             {
                 TileName = tileName,
                 TileId = tileId,
-                TileColor = tileColor
+                TileColor = tileColor,
+                CardDeck = cardDeck
             };
         }
 

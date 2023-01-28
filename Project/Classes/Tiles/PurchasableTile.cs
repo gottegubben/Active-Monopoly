@@ -19,7 +19,7 @@ namespace Monopoly
         public int GroupIndex { get; set; }
 
         //The player that owns the property.
-        public Player Owner { get; private set; }
+        public Player Owner { get; set; }
         #endregion
 
         #region Methods:

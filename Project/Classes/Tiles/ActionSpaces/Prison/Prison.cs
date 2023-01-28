@@ -26,9 +26,9 @@ namespace Monopoly
 
         #region Methods:
         //The action method will make the player unable to move temporarily and may send him to another tile.
-        public override void Action()
+        public override void Action(Player player, GameData data)
         {
-            PerformActionCallbackRef?.Invoke(prisonTileId, TypeOfAction.SendToPrison);
+            PerformActionCallbackRef?.Invoke(player, data, prisonTileId, TypeOfAction.SendToPrison);
         }
         #endregion
     }

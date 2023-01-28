@@ -26,10 +26,9 @@ namespace Monopoly
         #endregion
 
         #region Methods:
-        //This method will give the player money for passing the tile. 
-        public override void Action()
+        //Nothing will happen because the positionhandler class already takes care of this! (Gives the player money for passing go).
+        public override void Action(Player player, GameData data)
         {
-            throw new NotImplementedException();
         }
         #endregion
     }

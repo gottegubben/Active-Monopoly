@@ -15,7 +15,7 @@ namespace Monopoly
 
         #region Methods:
         //A method which will execute the action that corresponds to the tile.
-        public abstract void Action();
+        public abstract void Action(Player player, GameData data);
         #endregion
     }
 }

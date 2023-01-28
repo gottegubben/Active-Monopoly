@@ -48,6 +48,10 @@ namespace Monopoly
             SetPlayerPosition(player, landOnTile);
 
             //This method should also check if the player has walked over the "GO - tile".
+            if(currentPos > landOnTile)
+            {
+                player.Balance += 200;
+            }
         }
 
         //The "move player to tile - method" will teleport the player to the chosen location. Has to be a tile on the board.

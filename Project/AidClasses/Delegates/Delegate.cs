@@ -13,7 +13,7 @@ namespace Monopoly
     {
         #region Properties:
         //This delegates is for creating a reference for action based callbacks.
-        public delegate void PerformActionCallback(object value, TypeOfAction typeOfAction);
+        public delegate void PerformActionCallback(Player player, GameData data, object value, TypeOfAction typeOfAction);
 
         //This delegate is used for the round class to send the state of the game to the statistic class after a round.
         public delegate void SendStatisticsCallback(Round data);

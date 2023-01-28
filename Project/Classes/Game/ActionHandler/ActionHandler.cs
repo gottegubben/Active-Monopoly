@@ -25,30 +25,36 @@ namespace Monopoly
 
         #region Methods:
         //The callback function will be called by the subclasses. The value object will be transformed to another class depending on the type of action that is being performed.
-        private void handleAction(object value, TypeOfAction typeOfAction) 
+        private void handleAction(Player player, GameData data, object value, TypeOfAction typeOfAction) 
         {
             //the temp variable is the temporary used (value as the prefered class).
             if(typeOfAction == TypeOfAction.Teleport)
             {
                 throw new NotImplementedException();
             }
-            else if(typeOfAction == TypeOfAction.ChangeBalance)
+            else if(typeOfAction == TypeOfAction.NegativeBalance)
             {
-                throw new NotImplementedException();
+                int temp = (int)value;
+
+                player.Balance -= temp;
+            }
+            else if(typeOfAction == TypeOfAction.PositiveBalance)
+            {
+                int temp = (int)value;
+
+                player.Balance += temp;
             }
             else if(typeOfAction == TypeOfAction.SendToPrison)
             {
-                //The player's "canMove" variable should be altered.
-                
                 int temp = (int)value;
 
-                throw new NotImplementedException();
+                player.CanMove = false;
             }
             else if(typeOfAction == TypeOfAction.PickUpCard)
             {
-                CardType temp = (CardType)value;
+                CardDeck temp = (CardDeck)value;
 
-                throw new NotImplementedException();
+                temp.DrawCard().PerformAction(player, data);
             }
         }
         #endregion

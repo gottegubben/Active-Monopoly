@@ -59,6 +59,7 @@ namespace Monopoly
 
                     if (player.IsAlive)
                     {
+                        #region Try to buy the property:
                         //Try to buy the property the player is standing on.
                         Tile temp = Data.Tiles[Data.PlayerPositionHandler.GetPlayerPositionInt(player)];
 
@@ -74,6 +75,104 @@ namespace Monopoly
                         {
                             bot.BuyProperty(temp as PurchasableTile);
                         }
+                        #endregion
+
+                        #region Try to move:
+                        //Tries to move the player on the game board.
+                        if (player.CanMove)
+                        {
+                            int steps = player.Throw(Data.Dices.ToArray()).Sum();
+
+                            Data.PlayerPositionHandler.MovePlayerForward(player, steps, Data.Tiles.Count);
+
+                            //Do everything that needs to be done on that specific tile.
+                            Tile landed = Data.Tiles[Data.PlayerPositionHandler.GetPlayerPositionInt(player)];
+
+                            if(landed is ActionSpace)
+                            {
+                                if(landed is CardCollecter)
+                                {
+                                    (landed as CardCollecter).Action(player, Data);
+                                }
+                                else if(landed is Prison)
+                                {
+                                    (landed as Prison).Action(player, Data);
+                                }
+                                else if(landed is Tax)
+                                {
+                                    (landed as Tax).Action(player, Data);
+                                }
+                            }
+                            else if(landed is PurchasableTile)
+                            {
+                                if(landed is Property)
+                                {
+                                    Property prop = (landed as Property);
+
+                                    if(prop.Owner != null && prop.Owner != player)
+                                    {
+                                        int rent = prop.GetRent();
+
+                                        player.Balance -= rent;
+                                        prop.Owner.Balance += rent;
+                                    }
+                                }
+                                else if(landed is Station)
+                                {
+                                    Station stat = (landed as Station);
+
+                                    if (stat.Owner != null && stat.Owner != player)
+                                    {
+                                        int rent = stat.GetRent();
+
+                                        player.Balance -= rent;
+                                        stat.Owner.Balance += rent;
+                                    }
+                                }
+                                else if(landed is Utility)
+                                {
+                                    Utility util = (landed as Utility);
+
+                                    if (util.Owner != null && util.Owner != player)
+                                    {
+                                        int rent = util.GetRent();
+
+                                        player.Balance -= rent;
+                                        util.Owner.Balance += rent;
+                                    }
+                                }
+                            }
+                        }
+                        #endregion
+
+                        #region Try to construct buildings:
+                        //For bot.constructionMax... try to perform action to build with the bot.PerformActionChance. Also find 3 pairs of streets.
+                        #endregion
+
+                        #region Check if the player balance is below zero:
+                        if(player.Balance < 0)
+                        {
+                            List<Tile> purchasableTiles = Data.Tiles.FindAll((x) => x is PurchasableTile);
+                            List<Tile> owned = purchasableTiles.FindAll((x) => { if ((x as PurchasableTile).Owner == player) { return true; } else { return false; } });
+                            List<PurchasableTile> ownedAsPurch = new List<PurchasableTile>();
+                            foreach (Tile item in owned)
+                            {
+                                ownedAsPurch.Add(item as PurchasableTile);
+                            }
+                            ownedAsPurch.Sort();
+
+                            //Sells as many streets as possible.
+                            for (int i = 0; i < ownedAsPurch.Count; i++)
+                            {
+                                player.SellProperty(ownedAsPurch[i]);
+                                if(player.Balance > 0) { break; }
+                            } //Else resign.
+                            if(player.Balance > 0)
+                            {
+                                player.Resign();
+                            }
+                        }
+                        #endregion
                     }
 
 

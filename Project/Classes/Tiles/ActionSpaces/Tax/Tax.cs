@@ -26,9 +26,9 @@ namespace Monopoly
 
         #region Methods:
         //This will make the player pay a sum.
-        public override void Action()
+        public override void Action(Player player, GameData data)
         {
-            PerformActionCallbackRef?.Invoke(tax, TypeOfAction.ChangeBalance);
+            PerformActionCallbackRef?.Invoke(player, data, tax, TypeOfAction.NegativeBalance);
         }
         #endregion
     }

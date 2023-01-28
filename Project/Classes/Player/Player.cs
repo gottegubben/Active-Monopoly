@@ -65,9 +65,21 @@ namespace Monopoly
         }
 
         //Sells the property to the bank.
-        public void SellProperty()
+        public void SellProperty(PurchasableTile tile)
         {
-            throw new NotImplementedException();
+            this.Balance += tile.BaseCost;
+            if (tile is Property)
+            {
+                Property prop = (tile as Property);
+
+                this.Balance += prop.ConstructionCost * prop.HouseCount;
+
+                prop.ChangeOwner(null);
+            }
+            else
+            {
+                tile.ChangeOwner(null);
+            }
         }
 
         //Buys the property from the bank. The player can only buy the property they stand on.

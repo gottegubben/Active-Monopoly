@@ -22,13 +22,15 @@ namespace Monopoly
         #region Properties:
         //The card type is the type of card that the card collecter is going to pick up.
         private CardType cardType { get; }
+
+        public CardDeck CardDeck { get; set; }
         #endregion
 
         #region Methods:
         //The action will pick up a card and the player will apply that card.
-        public override void Action()
+        public override void Action(Player player, GameData data)
         {
-            PerformActionCallbackRef?.Invoke(cardType, TypeOfAction.PickUpCard);
+            PerformActionCallbackRef?.Invoke(player, data, CardDeck, TypeOfAction.PickUpCard);
         }
         #endregion
     }

@@ -85,7 +85,7 @@
     <Compile Include="Project\Classes\Tiles\PurchasableTile.cs" />
     <Compile Include="Project\Classes\Tiles\Station\Station.cs" />
     <Compile Include="Project\Classes\Tiles\Tile.cs" />
-    <Compile Include="Project\Classes\Tiles\Utilities\Utility.cs" />
+    <Compile Include="Project\Classes\Tiles\Utility\Utility.cs" />
     <Compile Include="Project\Config\MonopolyConfig.cs" />
     <Compile Include="Project\Windows\CreditWindow\CreditWindow.cs">
       <SubType>Form</SubType>
