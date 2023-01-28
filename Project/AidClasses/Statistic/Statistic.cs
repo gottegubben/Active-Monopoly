@@ -25,6 +25,12 @@ namespace Monopoly
             //Do something under that could be useful. Like who is winning right now? Who is first when it comes to money etc.
             //Maybe record the moves also.
         }
+
+        //Creates a stat collection that contains all the necessary data for the study.
+        public StatCollection CreateStat()
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }

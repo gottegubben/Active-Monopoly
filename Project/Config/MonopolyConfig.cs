@@ -404,6 +404,8 @@ namespace Monopoly
         {
             return new GameData()
             {
+                Players = new List<Player>(),
+
                 Tiles = GetTiles(),
 
                 Dices = GetDices(rnd),

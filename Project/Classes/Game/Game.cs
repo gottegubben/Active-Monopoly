@@ -12,7 +12,7 @@ namespace Monopoly
     public class Game
     {
         #region Consturctors:
-        public Game(Random rnd)
+        public Game(Random rnd, Action<Round> statisticCallback)
         {
             Data = MonopolyConfig.GetGameData(rnd);
 
@@ -25,12 +25,59 @@ namespace Monopoly
         public GameData Data { get; set; }
 
         //The statistic class that will keep the data of the match.
-        public Statistic Stat { get; set; }
+        private Statistic Stat { get; set; }
         #endregion
 
         #region Methods:
         //Starts the match.
-        public void StartMatch() { GameLoop(); }
+        public void StartMatch() 
+        { 
+            if(Data.Players.Count != 0)
+            {
+                GameLoop();
+            }
+            else
+            {
+                Log.TimeWrite("Forgot to add the players to the game!", Urgency.Incorrect);
+                throw new Exception("Forgot to add the players to the game!");
+            }
+        }
+
+        //Adds the players to the player list in the class.
+        public void AddPlayers(int[] players)
+        {
+            if(players.Length < 6 && players.Length != 0)
+            {
+                for (int i = 0; i < players.Length; i++)
+                {
+                    for (int y = 0; y < players[i]; y++)
+                    {
+                        switch (i)
+                        {
+                            case 0:
+                                Data.Players.Add(MonopolyConfig.GetAggressiveMaxBot());
+                                break;
+                            case 1:
+                                Data.Players.Add(MonopolyConfig.GetAggressiveMinBot());
+                                break;
+                            case 2:
+                                Data.Players.Add(MonopolyConfig.GetBalancedBot());
+                                break;
+                            case 3:
+                                Data.Players.Add(MonopolyConfig.GetPassiveBot());
+                                break;
+                            case 4:
+                                Data.Players.Add(MonopolyConfig.GetBraindeadBot());
+                                break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                Log.TimeWrite("The player array either didn't contain any values or owere to many!", Urgency.Incorrect);
+            }
+        }
 
         //The main loop that will run the game.
         private void GameLoop()

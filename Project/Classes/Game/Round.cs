@@ -48,7 +48,36 @@ namespace Monopoly
                 //Checks if the current player is alive, otherwise the player can't play.
                 if (player.IsAlive)
                 {
+                    Bot bot = player as Bot;
 
+                    /* Order:
+                     * Testa ifall man kan köpa gatan.
+                     * Ifall man ej är i fängelse, slå tärningen och gå.
+                     * Köp hus/hotell.
+                     * Se hur mycket pengar individen har så att hen inte är bankrupt.
+                    */
+
+                    if (player.IsAlive)
+                    {
+                        //Try to buy the property the player is standing on.
+                        Tile temp = Data.Tiles[Data.PlayerPositionHandler.GetPlayerPositionInt(player)];
+
+                        bool canBuyStreet = Data.Tiles[Data.PlayerPositionHandler.GetPlayerPositionInt(player)].CanBuyThisStreet();
+                        bool hasEnoughMoney;
+                        try
+                        {
+                            hasEnoughMoney = bot.Balance >= bot.Buffert && bot.Balance >= (temp as PurchasableTile).BaseCost;
+                        }
+                        catch { hasEnoughMoney = false; }
+
+                        if(canBuyStreet && hasEnoughMoney)
+                        {
+                            bot.BuyProperty(temp as PurchasableTile);
+                        }
+                    }
+
+
+                    //Test to buy the street.
                 }
             }
 

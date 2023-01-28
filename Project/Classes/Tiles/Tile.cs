@@ -29,6 +29,23 @@ namespace Monopoly
         {
             throw new NotImplementedException();
         }
+
+        //Returns true if the street is avaible for purchase.
+        public bool CanBuyThisStreet()
+        {
+            if(this is PurchasableTile)
+            {
+                if((this as PurchasableTile).Owner == null)
+                {
+                    return true;
+                }
+                else { return false; }
+            }
+            else
+            {
+                return false;
+            }
+        }
         #endregion
     }
 }

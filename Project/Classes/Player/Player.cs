@@ -71,13 +71,21 @@ namespace Monopoly
         }
 
         //Buys the property from the bank. The player can only buy the property they stand on.
-        public void BuyProperty()
+        public void BuyProperty(PurchasableTile tile)
         {
-            throw new NotImplementedException();
+            this.Balance -= tile.BaseCost;
+            if(tile is Property)
+            {
+                (tile as Property).ChangeOwner(this);
+            }
+            else
+            {
+                tile.ChangeOwner(this);
+            }
         }
 
         //This method will make it avaible to build on your properties.
-        public void BuildOnProperty()
+        public void BuildOnProperty(Property tile)
         {
             throw new NotImplementedException();
         }

@@ -12,6 +12,9 @@ namespace Monopoly
 {
     public partial class MonopolySimulation : Form
     {
+        private Game game { get; set; }
+        private Random rnd { get; set; }
+        private Statistic statistic { get; set; }
         private List<TextBox> textBoxesBotCount { get; set; }
         public MonopolySimulation()
         {
@@ -29,6 +32,14 @@ namespace Monopoly
 
         private void buttonRunSim_Click(object sender, EventArgs e)
         {
+            /* Inputs:
+             * gameCounter
+             * gameCondition
+             * roundCap
+             * botCounts
+             * seed
+            */
+
             #region Validate Inputs
 
             #region Player Settings:
@@ -126,11 +137,28 @@ namespace Monopoly
             //If the inputs are of the correct format:
             if(botCountCheck && gameCounterCheck && roundCapChecked && seedChecked)
             {
+                statistic = new Statistic();
+                rnd = new Random(seed);
 
+                /*
+                 * repeat for all games:
+                 * new game()
+                 * tell how many players are playing and call them by the config class.
+                 * start the match by calling the method.
+                 * let the match play out.
+                */
+                for (int i = 0; i < gameCounter; i++)
+                {
+                    game = new Game(rnd, statistic.StoreState);
+
+                    game.AddPlayers(botCounts.ToArray());
+
+                    game.StartMatch();
+                }
             }
             else
             {
-                //Log.Write
+                Log.TimeWrite($"The inputs were written in the wrong format!", Urgency.Incorrect);
             }
         }
 
