@@ -99,13 +99,38 @@ namespace Monopoly
         //This method will make it avaible to build on your properties.
         public void BuildOnProperty(Property tile)
         {
-            throw new NotImplementedException();
+            if(tile.Owner == this)
+            {
+                tile.HouseCount++;
+                this.Balance -= tile.ConstructionCost;
+            }
         }
 
         //Will disable this player. Resigned players have "lost" and can't be apart of the game anymore.
         public void Resign()
         {
             IsAlive = false;
+        }
+
+        //Fetches all the tiles that are owned by the player.
+        public List<PurchasableTile> GetOwnedTiles(List<Tile> tiles)
+        {
+            List<PurchasableTile> result = new List<PurchasableTile>();
+
+            for (int i = 0; i < tiles.Count; i++)
+            {
+                if (tiles[i] is PurchasableTile)
+                {
+                    PurchasableTile temp = (tiles[i] as PurchasableTile);
+
+                    if(temp.Owner == this)
+                    {
+                        result.Add(temp);
+                    }
+                }
+            }
+
+            return result;
         }
         #endregion
     }

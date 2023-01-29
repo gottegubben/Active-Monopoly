@@ -11,11 +11,21 @@ namespace Monopoly
     /// </summary>
     public class PlayerPosition
     {
+        public PlayerPosition()
+        {
+
+        }
+        public PlayerPosition(Player player)
+        {
+            PlayerId = player.Id;
+            Position = 0;
+        }
+
         #region Properties:
         //The player id will help identify what player's position it is.
         public int PlayerId { get; set; }
 
-        //The position of hte player.
+        //The position of the player.
         public int Position { get; set; }
         #endregion
     }

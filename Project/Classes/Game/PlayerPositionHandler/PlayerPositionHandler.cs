@@ -11,6 +11,20 @@ namespace Monopoly
     /// </summary>
     public class PlayerPositionHandler
     {
+        public PlayerPositionHandler()
+        {
+            Positions = new List<PlayerPosition>();
+        }
+        public PlayerPositionHandler(List<Player> players)
+        {
+            Positions = new List<PlayerPosition>();
+
+            for (int i = 0; i < players.Count; i++)
+            {
+                Positions.Add(new PlayerPosition(players[i]));
+            }
+        }
+
         #region Properties:
         //The positions of the players.
         public List<PlayerPosition> Positions { get; set; }

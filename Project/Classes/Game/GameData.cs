@@ -84,6 +84,26 @@ namespace Monopoly
 
             return returnValue;
         }
+
+        public List<PurchasableTile> GetTilesOfGroupIndex(int groupIndex)
+        {
+            List<PurchasableTile> returnValue = new List<PurchasableTile>();
+
+            for (int i = 0; i < Tiles.Count; i++)
+            {
+                if (Tiles[i] is PurchasableTile)
+                {
+                    PurchasableTile temp = Tiles[i] as PurchasableTile;
+
+                    if (temp.GroupIndex == groupIndex)
+                    {
+                        returnValue.Add(temp);
+                    }
+                }
+            }
+
+            return returnValue;
+        }
         #endregion
     }
 }

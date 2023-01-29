@@ -72,6 +72,8 @@ namespace Monopoly
                         }
                     }
                 }
+
+                Data.PlayerPositionHandler = new PlayerPositionHandler(Data.Players);
             }
             else
             {
@@ -82,9 +84,25 @@ namespace Monopoly
         //The main loop that will run the game.
         private void GameLoop()
         {
-            while (true) //Fix this loop!!!
+            //Fix so that you can also play other types of games. Not just annihilation! Maybe it's fine either way.
+
+            bool matchOngoing = true;
+            while (matchOngoing) //Fix this loop!!!
             {
                 new Round(Data, Stat.StoreState);
+
+                int deadPlayers = 0;
+                for (int i = 0; i < Data.Players.Count; i++)
+                {
+                    if (Data.Players[i].IsAlive != true)
+                    {
+                        deadPlayers++;
+                    }
+                }
+                if (deadPlayers == Data.Players.Count)
+                {
+                    matchOngoing = false;
+                }
             }
         }
         #endregion

@@ -147,6 +147,41 @@ namespace Monopoly
 
                         #region Try to construct buildings:
                         //For bot.constructionMax... try to perform action to build with the bot.PerformActionChance. Also find 3 pairs of streets.
+
+                        List<PurchasableTile> ownedTiles = player.GetOwnedTiles(Data.Tiles);
+
+                        int constructionsMade = 0;
+                        bool enoughMoney = true;
+
+                        while((player as Bot).MaxConstruction < constructionsMade && enoughMoney)
+                        {
+                            for (int i = 0; i < ownedTiles.Count; i++)
+                            {
+                                List<PurchasableTile> tiles = Data.GetTilesOfGroupIndex(ownedTiles[i].GroupIndex);
+
+                                bool ownsAll = tiles.All((x) => x.Owner == player);
+
+                                if (ownsAll && tiles[0] is Property)
+                                {
+                                    for (int y = 0; y < tiles.Count; y++)
+                                    {
+                                        Property prop = tiles[y] as Property;
+
+                                        if (prop.ConstructionCost < player.Balance)
+                                        {
+                                            player.BuildOnProperty(prop);
+                                            constructionsMade++;
+                                        }
+                                        else
+                                        {
+                                            enoughMoney = false;
+                                        }
+                                    }
+
+                                    ownedTiles.Remove(ownedTiles[i]);
+                                }
+                            }
+                        }
                         #endregion
 
                         #region Check if the player balance is below zero:
@@ -159,7 +194,9 @@ namespace Monopoly
                             {
                                 ownedAsPurch.Add(item as PurchasableTile);
                             }
-                            ownedAsPurch.Sort();
+
+                            //This list is sorted by the base cost of each purchasable tile, not by how much money the tile together with the buildings will come to.
+                            ownedAsPurch = ownedAsPurch.OrderBy((x) => x.BaseCost).ToList();
 
                             //Sells as many streets as possible.
                             for (int i = 0; i < ownedAsPurch.Count; i++)
@@ -174,9 +211,6 @@ namespace Monopoly
                         }
                         #endregion
                     }
-
-
-                    //Test to buy the street.
                 }
             }
 
