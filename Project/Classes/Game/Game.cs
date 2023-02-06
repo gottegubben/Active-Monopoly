@@ -12,15 +12,19 @@ namespace Monopoly
     public class Game
     {
         #region Consturctors:
-        public Game(Random rnd, Action<Round> statisticCallback)
+        public Game(Random rnd, Action<Round> statisticCallback, int roundCap)
         {
             Data = MonopolyConfig.GetGameData(rnd);
 
             Stat = new Statistic();
+
+            this.roundCap = roundCap;
         }
         #endregion
 
         #region Properties
+        private int roundCap { get; set; }
+
         //The initial data. The players, the dices and the tiles.
         public GameData Data { get; set; }
 
@@ -102,6 +106,12 @@ namespace Monopoly
                 if (deadPlayers == Data.Players.Count)
                 {
                     matchOngoing = false;
+                }
+                if (roundCap != 0 && Data.RoundCounter >= roundCap)
+                {
+                    matchOngoing = false;
+
+                    //Decide a winner.
                 }
             }
         }

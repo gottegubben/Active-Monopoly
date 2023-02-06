@@ -29,9 +29,13 @@ namespace Monopoly
         public override int GetRent() { throw new Exception(@"Use the overloaded ""GetRent - method"" intead."); }
 
         //This function will have a parameter that stands for the amount of properties of the same sort you own. This function will therefore return the desired rent.
-        public int GetRent(int propertyCount)
+        public int GetRent(GameData data)
         {
-            if (propertyCount <= rent.Length && propertyCount < 1)
+            int propertyCount = 0;
+
+            propertyCount = data.GetOwnedGroupIndexCount(this.Owner, this);
+
+            if (propertyCount <= rent.Length && propertyCount >= 1)
             {
                 return rent[propertyCount - 1];
             }

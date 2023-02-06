@@ -45,6 +45,8 @@ namespace Monopoly
             //All players should have their own turn in a round, this will happen here.
             foreach (Player player in Data.Players)
             {
+                Move move = new Move(player);
+
                 //Checks if the current player is alive, otherwise the player can't play.
                 if (player.IsAlive)
                 {
@@ -67,14 +69,21 @@ namespace Monopoly
                         bool hasEnoughMoney;
                         try
                         {
-                            hasEnoughMoney = bot.Balance >= bot.Buffert && bot.Balance >= (temp as PurchasableTile).BaseCost;
+                            if(temp is PurchasableTile)
+                            {
+                                hasEnoughMoney = bot.Balance >= bot.Buffert && bot.Balance >= (temp as PurchasableTile).BaseCost;
+                            }
+                            else { hasEnoughMoney = false; }
                         }
                         catch { hasEnoughMoney = false; }
 
                         if(canBuyStreet && hasEnoughMoney)
                         {
                             bot.BuyProperty(temp as PurchasableTile);
+
+                            move.HasBoughtProperty = true;
                         }
+                        else { move.HasBoughtProperty = false; }
                         #endregion
 
                         #region Try to move:
@@ -83,10 +92,16 @@ namespace Monopoly
                         {
                             int steps = player.Throw(Data.Dices.ToArray()).Sum();
 
+                            move.PrePosition = Data.PlayerPositionHandler.GetPlayerPositionInt(player);
+
                             Data.PlayerPositionHandler.MovePlayerForward(player, steps, Data.Tiles.Count);
+
+                            move.PostPosition = Data.PlayerPositionHandler.GetPlayerPositionInt(player);
 
                             //Do everything that needs to be done on that specific tile.
                             Tile landed = Data.Tiles[Data.PlayerPositionHandler.GetPlayerPositionInt(player)];
+
+                            move.SteppedTile = landed;
 
                             if(landed is ActionSpace)
                             {
@@ -123,7 +138,7 @@ namespace Monopoly
 
                                     if (stat.Owner != null && stat.Owner != player)
                                     {
-                                        int rent = stat.GetRent();
+                                        int rent = stat.GetRent(Data);
 
                                         player.Balance -= rent;
                                         stat.Owner.Balance += rent;
@@ -135,7 +150,7 @@ namespace Monopoly
 
                                     if (util.Owner != null && util.Owner != player)
                                     {
-                                        int rent = util.GetRent();
+                                        int rent = util.GetRent(Data, player.Throw(Data.Dices[0])[0]);
 
                                         player.Balance -= rent;
                                         util.Owner.Balance += rent;
@@ -210,6 +225,8 @@ namespace Monopoly
                             }
                         }
                         #endregion
+
+                        Moves.Add(move);
                     }
                 }
             }

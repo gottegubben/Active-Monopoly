@@ -11,6 +11,11 @@ namespace Monopoly
     /// </summary>
     public class Statistic
     {
+        public Statistic()
+        {
+            RoundHistory = new List<Round>();
+        }
+
         #region Properties:
         //This list will contain all the rounds that have been played before in a match.
         public List<Round> RoundHistory { get; private set; }
@@ -21,6 +26,8 @@ namespace Monopoly
         public void StoreState(Round round)
         {
             RoundHistory.Add(round);
+
+            Log.TimeWrite("Stored a round!", Urgency.Normal);
 
             //Do something under that could be useful. Like who is winning right now? Who is first when it comes to money etc.
             //Maybe record the moves also.

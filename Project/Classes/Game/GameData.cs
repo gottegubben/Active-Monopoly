@@ -32,6 +32,9 @@ namespace Monopoly
 
         //The player position handler handles all the player positions.
         public PlayerPositionHandler PlayerPositionHandler { get; set; }
+
+        //Counts the amount of rounds that have been played.
+        public int RoundCounter { get; set; }
         #endregion
 
         #region Methods:

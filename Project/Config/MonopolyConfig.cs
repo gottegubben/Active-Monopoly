@@ -66,15 +66,14 @@ namespace Monopoly
         }
 
         //Returns a station with the following params.
-        private static Station getTileStation(string tileName, int tileId, Color tileColor, int groupIndex, int baseCost, params int[] rent)
+        private static Station getTileStation(string tileName, int tileId, Color tileColor, int groupIndex, params int[] rent)
         {
             return new Station(rent)
             {
                 TileName = tileName,
                 TileId = tileId,
                 TileColor = tileColor,
-                GroupIndex = groupIndex,
-                BaseCost = baseCost
+                GroupIndex = groupIndex
             };
         }
 
@@ -144,55 +143,55 @@ namespace Monopoly
             //Utility group index = 1
 
             //Station rent:
-            int[] stationRent = new int[] { };
+            int[] stationRent = new int[] {25,50,100,200 };
 
             return new List<Tile>()
             {
                 getTileGo(0, 200),
 
-                getTileProperty("Sergels torg", 1, Color.Brown, 2, 0, 0, new int[]{}),
+                getTileProperty("Sergels torg", 1, Color.Brown, 2, 60, 50, new int[]{2,10,30,90,160,250}),
                 getTileCardCollector("Allmän", 2, Color.White, CardType.CommunityChest),
-                getTileProperty("Medborgarplatsen", 3, Color.Brown, 2, 0, 0, new int[]{}),
+                getTileProperty("Medborgarplatsen", 3, Color.Brown, 2, 60, 50, new int[]{4,20,60,180,320,450}),
                 getTileTax("Skatt", 2, Color.White, 0),
-                getTileStation("Slussen", 5, Color.White, 0, 0, stationRent),
-                getTileProperty("Hammarby sjöstad", 6, Color.LightBlue, 3, 0, 0, new int[]{}),
+                getTileStation("Slussen", 5, Color.White, 0, stationRent),
+                getTileProperty("Hammarby sjöstad", 6, Color.LightBlue, 3, 100, 50, new int[]{6,30,90,270,400}),
                 getTileCardCollector("Chans", 7, Color.White, CardType.Fortune),
-                getTileProperty("Hornstull", 8, Color.LightBlue, 3, 0, 0, new int[]{}),
-                getTileProperty("Sveavägen", 9, Color.LightBlue, 3, 0, 0, new int[]{}),
+                getTileProperty("Hornstull", 8, Color.LightBlue, 3, 100, 50, new int[]{6,30,90,270,400,550}),
+                getTileProperty("Sveavägen", 9, Color.LightBlue, 3, 120, 50, new int[]{8,40,100,300,450,600}),
 
                 getTileBlank("Fängelsebesök", 10, Color.White),
 
-                getTileProperty("Hantverkargatan", 11, Color.Pink, 4, 0, 0, new int[]{}),
-                getTileUtility("Kaknästornet", 12, Color.White, 1, 0),
-                getTileProperty("Götgatsbacken", 13, Color.Pink, 4, 0, 0, new int[]{}),
-                getTileProperty("S:T Eriksgatan", 14, Color.Pink, 4, 0, 0, new int[]{}),
-                getTileStation("Fridhemsplan", 15, Color.White, 0, 0, stationRent),
-                getTileProperty("Drottning-gatan", 16, Color.Orange, 5, 0, 0, new int[]{}),
+                getTileProperty("Hantverkargatan", 11, Color.Pink, 4, 140, 100, new int[]{10,50,150,450,625,750}),
+                getTileUtility("Kaknästornet", 12, Color.White, 1, 150),
+                getTileProperty("Götgatsbacken", 13, Color.Pink, 4, 140, 100, new int[]{10,50,150,450,625,750}),
+                getTileProperty("S:T Eriksgatan", 14, Color.Pink, 4, 160, 100, new int[]{12,60,180,500,700,900}),
+                getTileStation("Fridhemsplan", 15, Color.White, 0, stationRent),
+                getTileProperty("Drottning-gatan", 16, Color.Orange, 5, 180, 100, new int[]{14,70,200,550,700,900}),
                 getTileCardCollector("Allmän", 17, Color.White, CardType.CommunityChest),
-                getTileProperty("Birgerjarlsgatan", 18, Color.Orange, 5, 0, 0, new int[]{}),
-                getTileProperty("Kungsgatan", 19, Color.Orange, 5, 0, 0, new int[]{}),
+                getTileProperty("Birgerjarlsgatan", 18, Color.Orange, 5, 180, 100, new int[]{14,70,200,550,700,950}),
+                getTileProperty("Kungsgatan", 19, Color.Orange, 5, 200, 100, new int[]{16,80,220,600,800,1000}),
                 getTileBlank("Gratis parkering", 20, Color.White),
-                getTileProperty("Mariatorget", 21, Color.Red, 6, 0, 0, new int[]{}),
+                getTileProperty("Mariatorget", 21, Color.Red, 6, 220, 150, new int[]{18,90,250,700,875,1050}),
                 getTileCardCollector("Chans", 22, Color.White, CardType.Fortune),
-                getTileProperty("Hötorget", 23, Color.Red, 6, 0, 0, new int[]{}),
-                getTileProperty("Odenplan", 24, Color.Red, 6, 0, 0, new int[]{}),
-                getTileStation("T-centralen", 25, Color.White, 0, 0, stationRent),
-                getTileProperty("Kungsträdgården", 26, Color.Yellow, 7, 0, 0, new int[]{}),
-                getTileProperty("Norrmälarstrand", 27, Color.Yellow, 7, 0, 0, new int[]{}),
-                getTileUtility("Globen", 28, Color.White, 1, 0),
-                getTileProperty("Hamngatan", 29, Color.Yellow, 7, 0, 0, new int[]{}),
+                getTileProperty("Hötorget", 23, Color.Red, 6, 220, 150, new int[]{18,90,250,700,875,1050}),
+                getTileProperty("Odenplan", 24, Color.Red, 6, 240, 150, new int[]{20,100,300,750,925,1100}),
+                getTileStation("T-centralen", 25, Color.White, 0, stationRent),
+                getTileProperty("Kungsträdgården", 26, Color.Yellow, 7, 260, 150, new int[]{22,110,330,800,975,1150}),
+                getTileProperty("Norrmälarstrand", 27, Color.Yellow, 7, 260, 150, new int[]{22,110,330,800,975,1150}),
+                getTileUtility("Globen", 28, Color.White, 1, 150),
+                getTileProperty("Hamngatan", 29, Color.Yellow, 7, 280, 150, new int[]{24,120,360,850,1025,1200}),
 
                 getTilePrison("Gå i fängelse", 30, 10),
 
-                getTileProperty("Gamla stan", 31, Color.Green, 8, 0, 0, new int[]{}),
-                getTileProperty("Östermalmstorg", 32, Color.Green, 8, 0, 0, new int[]{}),
+                getTileProperty("Gamla stan", 31, Color.Green, 8, 300, 200, new int[]{26,130,390,900,1100,1275}),
+                getTileProperty("Östermalmstorg", 32, Color.Green, 8, 300, 200, new int[]{26,130,390,900,1100,1275}),
                 getTileCardCollector("Allmän", 33, Color.White, CardType.CommunityChest),
-                getTileProperty("Norrmalmstorg", 34, Color.Green, 8, 0, 0, new int[]{}),
-                getTileStation("Östermalmstorg", 35, Color.White, 0, 0, stationRent),
+                getTileProperty("Norrmalmstorg", 34, Color.Green, 8, 320, 200, new int[]{28,150,450,1000,1200,1400}),
+                getTileStation("Östermalmstorg", 35, Color.White, 0, stationRent),
                 getTileCardCollector("Chans", 36, Color.White, CardType.Fortune),
-                getTileProperty("Djurgården", 37, Color.Blue, 9, 0, 0, new int[]{}),
+                getTileProperty("Djurgården", 37, Color.Blue, 9, 350, 200, new int[]{35,175,500,1100,1300,1500}),
                 getTileTax("Skatt", 38, Color.White, 0),
-                getTileProperty("Strandvägen", 39, Color.Blue, 9, 0, 0, new int[]{})
+                getTileProperty("Strandvägen", 39, Color.Blue, 9, 400, 200, new int[]{50,200,600,1400,1700,2000})
             };
         }
         #endregion
@@ -260,9 +259,7 @@ namespace Monopoly
 
                         if(owner != null)
                         {
-                            int propertyCount = data.GetOwnedGroupIndexCount(player, tile);
-
-                            int rent = (tile as Utility).GetRent(propertyCount, player.Throw(data.Dices.ToArray()).Sum());
+                            int rent = (tile as Utility).GetRent(data, player.Throw(data.Dices.ToArray()).Sum());
 
                             player.Balance -= rent;
 
@@ -283,7 +280,7 @@ namespace Monopoly
                         {
                             int propertyCount = data.GetOwnedGroupIndexCount(player, tile);
 
-                            int rent = (tile as Station).GetRent(propertyCount);
+                            int rent = (tile as Station).GetRent(data);
 
                             player.Balance -= rent;
 

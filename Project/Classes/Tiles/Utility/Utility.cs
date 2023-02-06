@@ -35,8 +35,12 @@ namespace Monopoly
         public override int GetRent() { throw new Exception(@"Use the overloaded ""GetRent - method"" intead."); }
 
         //This function returns the rent by calculating it from the usage of a dice value. These rules are taken from the Monopoly wiki.
-        public int GetRent(int propertyCount, int diceValue)
+        public int GetRent(GameData data, int diceValue)
         {
+            int propertyCount = 0;
+
+            propertyCount = data.GetOwnedGroupIndexCount(this.Owner, this);
+
             if(propertyCount >= 1)
             {
                 return (((((propertyCount - 1) * 6) + 4) * diceValue) * rentMultiplier);

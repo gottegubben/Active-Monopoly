@@ -35,7 +35,6 @@ C:\Programmering\Monopoly\obj\Debug\Monopoly.csproj.GenerateResource.cache
 C:\Programmering\Monopoly\obj\Debug\Monopoly.csproj.CoreCompileInputs.cache
 C:\Programmering\Monopoly\obj\Debug\Monopoly.exe
 C:\Programmering\Monopoly\obj\Debug\Monopoly.pdb
-C:\Programmering\Coding Projects\Monopoly\obj\Debug\Monopoly.csprojAssemblyReference.cache
 C:\Programmering\Coding Projects\Monopoly\obj\Debug\Monopoly.CreditWindow.resources
 C:\Programmering\Coding Projects\Monopoly\obj\Debug\Monopoly.SelectionWindow.resources
 C:\Programmering\Coding Projects\Monopoly\obj\Debug\Monopoly.TileStepSimulation.resources
@@ -51,3 +50,4 @@ D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.MonopolySimulation.
 C:\Programmering\Coding Projects\Monopoly\obj\Debug\Monopoly.MonopolySimulation.resources
 C:\Programmering\Coding Projects\Monopoly\obj\Debug\Monopoly.csproj.ResolveComReference.cache
 D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.csproj.ResolveComReference.cache
+C:\Programmering\Coding Projects\Monopoly\obj\Debug\Monopoly.csproj.AssemblyReference.cache

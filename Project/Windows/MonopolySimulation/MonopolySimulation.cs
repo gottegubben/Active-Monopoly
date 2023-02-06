@@ -108,7 +108,10 @@ namespace Monopoly
             int roundCap = 0;
             try
             {
-                roundCap = int.Parse(textBoxRoundCap.Text);
+                if (checkBoxEnableRoundCap.Checked)
+                {
+                    roundCap = int.Parse(textBoxRoundCap.Text);
+                }
             }
             catch
             {
@@ -149,7 +152,7 @@ namespace Monopoly
                 */
                 for (int i = 0; i < gameCounter; i++)
                 {
-                    game = new Game(rnd, statistic.StoreState);
+                    game = new Game(rnd, statistic.StoreState, roundCap);
 
                     game.AddPlayers(botCounts.ToArray());
 

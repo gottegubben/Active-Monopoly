@@ -33,7 +33,7 @@ namespace Monopoly
         public Card Card { get; set; }
 
         //The tile the player stepped on. If null, then the player has stayed on the same tile.
-        public Tile Tile { get; set; }
+        public Tile SteppedTile { get; set; }
 
         //Records if the player has bought a new property.
         public bool HasBoughtProperty { get; set; }

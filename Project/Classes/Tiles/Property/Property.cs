@@ -43,7 +43,7 @@ namespace Monopoly
         //This function will have a parameter that stands for the amount of houses you have built on that property. This function will therefore return the desired rent.
         public override int GetRent()
         {
-            if(HouseCount <= rent.Length && HouseCount < 0)
+            if(HouseCount <= rent.Length && HouseCount >= 0)
             {
                 return rent[HouseCount];
             }
