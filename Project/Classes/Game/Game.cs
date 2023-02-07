@@ -12,17 +12,23 @@ namespace Monopoly
     public class Game
     {
         #region Consturctors:
-        public Game(Random rnd, Action<Round> statisticCallback, int roundCap)
+        public Game(Random rnd, Action<Round> statisticCallback, int roundCap, int playerBalance, int maxConstruction)
         {
             Data = MonopolyConfig.GetGameData(rnd);
 
             Stat = new Statistic();
 
             this.roundCap = roundCap;
+
+            this.playerBalance = playerBalance;
+
+            this.maxConstruction = maxConstruction;
         }
         #endregion
 
         #region Properties
+        private int playerBalance { get; set; }
+        private int maxConstruction { get; set; }
         private int roundCap { get; set; }
 
         //The initial data. The players, the dices and the tiles.
@@ -56,22 +62,43 @@ namespace Monopoly
                 {
                     for (int y = 0; y < players[i]; y++)
                     {
+                        Bot bot;
                         switch (i)
                         {
                             case 0:
-                                Data.Players.Add(MonopolyConfig.GetAggressiveMaxBot());
+                                bot = MonopolyConfig.GetAggressiveMaxBot();
+                                bot.Id = i;
+                                bot.Balance = playerBalance;
+                                bot.MaxConstruction = maxConstruction;
+                                Data.Players.Add(bot);
                                 break;
                             case 1:
-                                Data.Players.Add(MonopolyConfig.GetAggressiveMinBot());
+                                bot = MonopolyConfig.GetAggressiveMinBot();
+                                bot.Id = i;
+                                bot.Balance = playerBalance;
+                                bot.MaxConstruction = maxConstruction;
+                                Data.Players.Add(bot);
                                 break;
                             case 2:
-                                Data.Players.Add(MonopolyConfig.GetBalancedBot());
+                                bot = MonopolyConfig.GetBalancedBot();
+                                bot.Id = i;
+                                bot.Balance = playerBalance;
+                                bot.MaxConstruction = maxConstruction;
+                                Data.Players.Add(bot);
                                 break;
                             case 3:
-                                Data.Players.Add(MonopolyConfig.GetPassiveBot());
+                                bot = MonopolyConfig.GetPassiveBot();
+                                bot.Id = i;
+                                bot.Balance = playerBalance;
+                                bot.MaxConstruction = maxConstruction;
+                                Data.Players.Add(bot);
                                 break;
                             case 4:
-                                Data.Players.Add(MonopolyConfig.GetBraindeadBot());
+                                bot = MonopolyConfig.GetBraindeadBot();
+                                bot.Id = i;
+                                bot.Balance = playerBalance;
+                                bot.MaxConstruction = maxConstruction;
+                                Data.Players.Add(bot);
                                 break;
                         }
                     }
@@ -111,6 +138,8 @@ namespace Monopoly
                 {
                     matchOngoing = false;
 
+
+                    Log.TimeWrite("Match finished!", Urgency.Warning);
                     //Decide a winner.
                 }
             }

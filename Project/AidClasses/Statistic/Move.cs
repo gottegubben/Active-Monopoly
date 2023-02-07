@@ -46,6 +46,18 @@ namespace Monopoly
 
         //Records how many building if so.
         public int ConstructedBuildings { get; set; }
+
+        //The balance at the beginning of the round.
+        public int PlayerBalancePre { get; set; }
+
+        //The balance at the end of the round.
+        public int PlayerBalancePost { get; set; }
+
+        //Properties owned at the end of the round.
+        public int AmountOfPropertiesOwned { get; set; }
+
+        //Amount of houses.
+        public int AmountOfConstructedBuildings { get; set; }
         #endregion
     }
 }

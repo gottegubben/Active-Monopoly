@@ -135,13 +135,50 @@ namespace Monopoly
             }
             #endregion
 
+            #region Other
+            int startBalance = 200;
+            int maxConstruction = 3;
+
+            try
+            {
+                startBalance = int.Parse(textBoxPlayerBalance.Text);
+                maxConstruction = int.Parse(textBoxMaxConstruct.Text);
+            }
+            catch
+            {
+            }
+            #endregion
+
             #endregion
 
             //If the inputs are of the correct format:
-            if(botCountCheck && gameCounterCheck && roundCapChecked && seedChecked)
+            if (botCountCheck && gameCounterCheck && roundCapChecked && seedChecked)
             {
                 statistic = new Statistic();
                 rnd = new Random(seed);
+
+                Game gm = new Game(rnd, statistic.StoreState, roundCap, startBalance, maxConstruction);
+                gm.AddPlayers(botCounts.ToArray());
+                List<TextBox> textBoxText = new List<TextBox>()
+                {
+                    textBoxBotA,
+                    textBoxBotB,
+                    textBoxBotC,
+                    textBoxBotD,
+                    textBoxBotE
+                };
+                for (int i = 0; i < gm.Data.Players.Count; i++)
+                {
+                    textBoxText[i].Text = $"Con: [{(gm.Data.Players[i] as Bot).BuildingChance}] Pur: [{(gm.Data.Players[i] as Bot).PurchaseChance}]";
+                }
+                List<Button> buttonText = new List<Button>()
+                {
+                    buttonBotA,
+                    buttonBotB,
+                    buttonBotC,
+                    buttonBotD,
+                    buttonBotE
+                };
 
                 /*
                  * repeat for all games:
@@ -152,7 +189,7 @@ namespace Monopoly
                 */
                 for (int i = 0; i < gameCounter; i++)
                 {
-                    game = new Game(rnd, statistic.StoreState, roundCap);
+                    game = new Game(rnd, statistic.StoreState, roundCap, startBalance, maxConstruction);
 
                     game.AddPlayers(botCounts.ToArray());
 

@@ -40,7 +40,7 @@ namespace Monopoly
         public bool IsAlive { get; private set; }
 
         //This id will identify the player when for example: searching for it. Can be used as identifier.
-        public int Id { get; }
+        public int Id { get; set; }
         #endregion
 
         #region Methods:

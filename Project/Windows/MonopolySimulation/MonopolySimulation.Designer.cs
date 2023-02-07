@@ -76,7 +76,7 @@
             this.textBoxBotE = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.textBoxD = new System.Windows.Forms.TextBox();
+            this.textBoxBotD = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.textBoxBotB = new System.Windows.Forms.TextBox();
             this.textBoxBotC = new System.Windows.Forms.TextBox();
@@ -86,17 +86,21 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonBotE = new System.Windows.Forms.Button();
+            this.buttonBotD = new System.Windows.Forms.Button();
+            this.buttonBotC = new System.Windows.Forms.Button();
+            this.buttonBotB = new System.Windows.Forms.Button();
+            this.buttonBotA = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.textBoxPlayerBalance = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxMaxConstruct = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -147,7 +151,7 @@
             this.groupBox2.Controls.Add(this.tableLayoutPanel1);
             this.groupBox2.Location = new System.Drawing.Point(17, 263);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(459, 203);
+            this.groupBox2.Size = new System.Drawing.Size(459, 263);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Player Settings";
@@ -336,7 +340,7 @@
             // 
             this.groupBox3.Controls.Add(this.textBoxSeed);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Location = new System.Drawing.Point(482, 368);
+            this.groupBox3.Location = new System.Drawing.Point(482, 428);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(337, 49);
             this.groupBox3.TabIndex = 5;
@@ -364,6 +368,10 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.textBoxMaxConstruct);
+            this.groupBox4.Controls.Add(this.label8);
+            this.groupBox4.Controls.Add(this.textBoxPlayerBalance);
+            this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.groupBox11);
             this.groupBox4.Controls.Add(this.groupBox5);
             this.groupBox4.Controls.Add(this.checkBoxBreakFreeDice);
@@ -371,7 +379,7 @@
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Location = new System.Drawing.Point(482, 48);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(337, 314);
+            this.groupBox4.Size = new System.Drawing.Size(337, 374);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Simulation Settings";
@@ -478,7 +486,7 @@
             // 
             // buttonRunSim
             // 
-            this.buttonRunSim.Location = new System.Drawing.Point(482, 423);
+            this.buttonRunSim.Location = new System.Drawing.Point(482, 483);
             this.buttonRunSim.Name = "buttonRunSim";
             this.buttonRunSim.Size = new System.Drawing.Size(337, 43);
             this.buttonRunSim.TabIndex = 6;
@@ -607,7 +615,7 @@
             this.groupBox8.Controls.Add(this.textBoxBotE);
             this.groupBox8.Controls.Add(this.panel9);
             this.groupBox8.Controls.Add(this.panel10);
-            this.groupBox8.Controls.Add(this.textBoxD);
+            this.groupBox8.Controls.Add(this.textBoxBotD);
             this.groupBox8.Controls.Add(this.panel8);
             this.groupBox8.Controls.Add(this.textBoxBotB);
             this.groupBox8.Controls.Add(this.textBoxBotC);
@@ -645,13 +653,13 @@
             this.panel10.Size = new System.Drawing.Size(20, 20);
             this.panel10.TabIndex = 10;
             // 
-            // textBoxD
+            // textBoxBotD
             // 
-            this.textBoxD.Enabled = false;
-            this.textBoxD.Location = new System.Drawing.Point(278, 54);
-            this.textBoxD.Name = "textBoxD";
-            this.textBoxD.Size = new System.Drawing.Size(149, 20);
-            this.textBoxD.TabIndex = 12;
+            this.textBoxBotD.Enabled = false;
+            this.textBoxBotD.Location = new System.Drawing.Point(278, 54);
+            this.textBoxBotD.Name = "textBoxBotD";
+            this.textBoxBotD.Size = new System.Drawing.Size(149, 20);
+            this.textBoxBotD.TabIndex = 12;
             // 
             // panel8
             // 
@@ -724,11 +732,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.buttonBotE);
+            this.panel1.Controls.Add(this.buttonBotD);
+            this.panel1.Controls.Add(this.buttonBotC);
+            this.panel1.Controls.Add(this.buttonBotB);
+            this.panel1.Controls.Add(this.buttonBotA);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel11);
             this.panel1.Controls.Add(this.panel5);
@@ -739,55 +747,55 @@
             this.panel1.Size = new System.Drawing.Size(404, 213);
             this.panel1.TabIndex = 0;
             // 
-            // button6
+            // buttonBotE
             // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.Enabled = false;
-            this.button6.Location = new System.Drawing.Point(322, 29);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(48, 142);
-            this.button6.TabIndex = 15;
-            this.button6.UseVisualStyleBackColor = false;
+            this.buttonBotE.BackColor = System.Drawing.Color.White;
+            this.buttonBotE.Enabled = false;
+            this.buttonBotE.Location = new System.Drawing.Point(322, 29);
+            this.buttonBotE.Name = "buttonBotE";
+            this.buttonBotE.Size = new System.Drawing.Size(48, 142);
+            this.buttonBotE.TabIndex = 15;
+            this.buttonBotE.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // buttonBotD
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(251, 29);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(48, 142);
-            this.button4.TabIndex = 14;
-            this.button4.UseVisualStyleBackColor = false;
+            this.buttonBotD.BackColor = System.Drawing.Color.White;
+            this.buttonBotD.Enabled = false;
+            this.buttonBotD.Location = new System.Drawing.Point(251, 29);
+            this.buttonBotD.Name = "buttonBotD";
+            this.buttonBotD.Size = new System.Drawing.Size(48, 142);
+            this.buttonBotD.TabIndex = 14;
+            this.buttonBotD.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // buttonBotC
             // 
-            this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(180, 29);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(48, 142);
-            this.button5.TabIndex = 13;
-            this.button5.UseVisualStyleBackColor = false;
+            this.buttonBotC.BackColor = System.Drawing.Color.White;
+            this.buttonBotC.Enabled = false;
+            this.buttonBotC.Location = new System.Drawing.Point(180, 29);
+            this.buttonBotC.Name = "buttonBotC";
+            this.buttonBotC.Size = new System.Drawing.Size(48, 142);
+            this.buttonBotC.TabIndex = 13;
+            this.buttonBotC.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // buttonBotB
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(109, 29);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(48, 142);
-            this.button3.TabIndex = 12;
-            this.button3.UseVisualStyleBackColor = false;
+            this.buttonBotB.BackColor = System.Drawing.Color.White;
+            this.buttonBotB.Enabled = false;
+            this.buttonBotB.Location = new System.Drawing.Point(109, 29);
+            this.buttonBotB.Name = "buttonBotB";
+            this.buttonBotB.Size = new System.Drawing.Size(48, 142);
+            this.buttonBotB.TabIndex = 12;
+            this.buttonBotB.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // buttonBotA
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(38, 29);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(48, 142);
-            this.button2.TabIndex = 11;
-            this.button2.UseVisualStyleBackColor = false;
+            this.buttonBotA.BackColor = System.Drawing.Color.White;
+            this.buttonBotA.Enabled = false;
+            this.buttonBotA.Location = new System.Drawing.Point(38, 29);
+            this.buttonBotA.Name = "buttonBotA";
+            this.buttonBotA.Size = new System.Drawing.Size(48, 142);
+            this.buttonBotA.TabIndex = 11;
+            this.buttonBotA.UseVisualStyleBackColor = false;
             // 
             // panel4
             // 
@@ -836,12 +844,44 @@
             // 
             // groupBox10
             // 
-            this.groupBox10.Location = new System.Drawing.Point(17, 473);
+            this.groupBox10.Location = new System.Drawing.Point(17, 532);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(802, 216);
+            this.groupBox10.Size = new System.Drawing.Size(802, 157);
             this.groupBox10.TabIndex = 8;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Export Options";
+            // 
+            // textBoxPlayerBalance
+            // 
+            this.textBoxPlayerBalance.Location = new System.Drawing.Point(168, 276);
+            this.textBoxPlayerBalance.Name = "textBoxPlayerBalance";
+            this.textBoxPlayerBalance.Size = new System.Drawing.Size(152, 20);
+            this.textBoxPlayerBalance.TabIndex = 8;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(19, 279);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(103, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Player start balance:";
+            // 
+            // textBoxMaxConstruct
+            // 
+            this.textBoxMaxConstruct.Location = new System.Drawing.Point(168, 303);
+            this.textBoxMaxConstruct.Name = "textBoxMaxConstruct";
+            this.textBoxMaxConstruct.Size = new System.Drawing.Size(152, 20);
+            this.textBoxMaxConstruct.TabIndex = 10;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(19, 306);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(122, 13);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Player max construction:";
             // 
             // MonopolySimulation
             // 
@@ -921,7 +961,7 @@
         private System.Windows.Forms.TextBox textBoxBotE;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox textBoxD;
+        private System.Windows.Forms.TextBox textBoxBotD;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.TextBox textBoxBotB;
         private System.Windows.Forms.TextBox textBoxBotC;
@@ -934,11 +974,11 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonBotE;
+        private System.Windows.Forms.Button buttonBotD;
+        private System.Windows.Forms.Button buttonBotC;
+        private System.Windows.Forms.Button buttonBotB;
+        private System.Windows.Forms.Button buttonBotA;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxRoundCap;
         private System.Windows.Forms.GroupBox groupBox10;
@@ -955,5 +995,9 @@
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.CheckBox checkBoxEnableRoundCap;
+        private System.Windows.Forms.TextBox textBoxPlayerBalance;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxMaxConstruct;
+        private System.Windows.Forms.Label label8;
     }
 }

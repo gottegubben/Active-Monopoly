@@ -16,6 +16,7 @@ namespace Monopoly
         public Round(GameData data, Delegate.SendStatisticsCallback sendStatisticsCallbackRef)
         {
             Data = data;
+            data.RoundCounter++;
 
             Moves = new List<Move>();
 
@@ -46,6 +47,8 @@ namespace Monopoly
             foreach (Player player in Data.Players)
             {
                 Move move = new Move(player);
+
+                move.PlayerBalancePre = player.Balance;
 
                 //Checks if the current player is alive, otherwise the player can't play.
                 if (player.IsAlive)
@@ -204,6 +207,7 @@ namespace Monopoly
                         {
                             List<Tile> purchasableTiles = Data.Tiles.FindAll((x) => x is PurchasableTile);
                             List<Tile> owned = purchasableTiles.FindAll((x) => { if ((x as PurchasableTile).Owner == player) { return true; } else { return false; } });
+
                             List<PurchasableTile> ownedAsPurch = new List<PurchasableTile>();
                             foreach (Tile item in owned)
                             {
@@ -219,12 +223,28 @@ namespace Monopoly
                                 player.SellProperty(ownedAsPurch[i]);
                                 if(player.Balance > 0) { break; }
                             } //Else resign.
-                            if(player.Balance > 0)
+                            if(player.Balance < 0)
                             {
                                 player.Resign();
                             }
                         }
                         #endregion
+
+                        List<Tile> tempTilesPurch = Data.Tiles.FindAll((x) => x is PurchasableTile).ToList();
+                        move.AmountOfPropertiesOwned = tempTilesPurch.FindAll((x) => { if ((x as PurchasableTile).Owner == player) { return true; } else { return false; } }).Count;
+
+                        int constructedBuildings = 0;
+                        for (int i = 0; i < tempTilesPurch.Count; i++)
+                        {
+                            if(tempTilesPurch[i] is Property)
+                            {
+                                constructedBuildings += (tempTilesPurch[i] as Property).HouseCount;
+                            }
+                        }
+
+                        move.AmountOfConstructedBuildings = constructedBuildings;
+                        
+                        move.PlayerBalancePost = player.Balance;
 
                         Moves.Add(move);
                     }

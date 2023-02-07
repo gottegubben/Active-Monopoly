@@ -13,7 +13,8 @@ namespace Monopoly
     public class StatCollection
     {
         #region Properties:
-
+        //The players ranked in an order from first to last.
+        public Player[] PlayerPedestal { get; set; }
         #endregion
     }
 }
