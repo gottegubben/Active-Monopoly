@@ -12,6 +12,20 @@ namespace Monopoly
     /// </summary>
     public class StatCollection
     {
+        public StatCollection(Round[] rounds)
+        {
+            #region PlayerPedestal:
+            //Check if there's one winner winners:
+            List<Move> moves = rounds[rounds.Length - 1].Moves;
+
+            //Every player is an increment.
+            for (int i = 0; i < moves.Count; i++)
+            {
+                
+            }
+            #endregion
+        }
+
         #region Properties:
         //The players ranked in an order from first to last.
         public Player[] PlayerPedestal { get; set; }

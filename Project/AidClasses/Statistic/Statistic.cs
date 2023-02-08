@@ -36,7 +36,7 @@ namespace Monopoly
         //Creates a stat collection that contains all the necessary data for the study.
         public StatCollection CreateStat()
         {
-            throw new NotImplementedException();
+            return new StatCollection(RoundHistory.ToArray());
         }
         #endregion
     }

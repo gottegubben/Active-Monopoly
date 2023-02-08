@@ -49,6 +49,10 @@
             this.textBoxSeed = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textBoxMaxConstruct = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxPlayerBalance = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.checkBoxEnableRoundCap = new System.Windows.Forms.CheckBox();
             this.textBoxRoundCap = new System.Windows.Forms.TextBox();
@@ -97,10 +101,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.textBoxPlayerBalance = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxMaxConstruct = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -151,7 +151,7 @@
             this.groupBox2.Controls.Add(this.tableLayoutPanel1);
             this.groupBox2.Location = new System.Drawing.Point(17, 263);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(459, 263);
+            this.groupBox2.Size = new System.Drawing.Size(459, 227);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Player Settings";
@@ -340,7 +340,7 @@
             // 
             this.groupBox3.Controls.Add(this.textBoxSeed);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Location = new System.Drawing.Point(482, 428);
+            this.groupBox3.Location = new System.Drawing.Point(482, 392);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(337, 49);
             this.groupBox3.TabIndex = 5;
@@ -379,10 +379,42 @@
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Location = new System.Drawing.Point(482, 48);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(337, 374);
+            this.groupBox4.Size = new System.Drawing.Size(337, 338);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Simulation Settings";
+            // 
+            // textBoxMaxConstruct
+            // 
+            this.textBoxMaxConstruct.Location = new System.Drawing.Point(168, 303);
+            this.textBoxMaxConstruct.Name = "textBoxMaxConstruct";
+            this.textBoxMaxConstruct.Size = new System.Drawing.Size(152, 20);
+            this.textBoxMaxConstruct.TabIndex = 10;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(19, 306);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(122, 13);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Player max construction:";
+            // 
+            // textBoxPlayerBalance
+            // 
+            this.textBoxPlayerBalance.Location = new System.Drawing.Point(168, 276);
+            this.textBoxPlayerBalance.Name = "textBoxPlayerBalance";
+            this.textBoxPlayerBalance.Size = new System.Drawing.Size(152, 20);
+            this.textBoxPlayerBalance.TabIndex = 8;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(19, 279);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(103, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Player start balance:";
             // 
             // groupBox11
             // 
@@ -486,7 +518,7 @@
             // 
             // buttonRunSim
             // 
-            this.buttonRunSim.Location = new System.Drawing.Point(482, 483);
+            this.buttonRunSim.Location = new System.Drawing.Point(482, 447);
             this.buttonRunSim.Name = "buttonRunSim";
             this.buttonRunSim.Size = new System.Drawing.Size(337, 43);
             this.buttonRunSim.TabIndex = 6;
@@ -844,44 +876,12 @@
             // 
             // groupBox10
             // 
-            this.groupBox10.Location = new System.Drawing.Point(17, 532);
+            this.groupBox10.Location = new System.Drawing.Point(17, 498);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(802, 157);
+            this.groupBox10.Size = new System.Drawing.Size(802, 191);
             this.groupBox10.TabIndex = 8;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Export Options";
-            // 
-            // textBoxPlayerBalance
-            // 
-            this.textBoxPlayerBalance.Location = new System.Drawing.Point(168, 276);
-            this.textBoxPlayerBalance.Name = "textBoxPlayerBalance";
-            this.textBoxPlayerBalance.Size = new System.Drawing.Size(152, 20);
-            this.textBoxPlayerBalance.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 279);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Player start balance:";
-            // 
-            // textBoxMaxConstruct
-            // 
-            this.textBoxMaxConstruct.Location = new System.Drawing.Point(168, 303);
-            this.textBoxMaxConstruct.Name = "textBoxMaxConstruct";
-            this.textBoxMaxConstruct.Size = new System.Drawing.Size(152, 20);
-            this.textBoxMaxConstruct.TabIndex = 10;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(19, 306);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(122, 13);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Player max construction:";
             // 
             // MonopolySimulation
             // 

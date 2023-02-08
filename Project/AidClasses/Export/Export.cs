@@ -91,5 +91,10 @@ namespace Monopoly
                 workSheet.Cells[2, $"{(char)((int)'J' + z)}"] = $"{averages[z]}";
             }
         }
+
+        public static void ToExcel_MonopolySimulation()
+        {
+
+        }
     }
 }

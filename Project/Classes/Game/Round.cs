@@ -221,7 +221,8 @@ namespace Monopoly
                             for (int i = 0; i < ownedAsPurch.Count; i++)
                             {
                                 player.SellProperty(ownedAsPurch[i]);
-                                if(player.Balance > 0) { break; }
+                                move.SoldProperties.Add(ownedAsPurch[i]);
+                                if(player.Balance > 0) { move.HasSoldProperty = true; break; }
                             } //Else resign.
                             if(player.Balance < 0)
                             {

@@ -16,6 +16,8 @@ namespace Monopoly
         public Move(Player player)
         {
             this.Player = player;
+
+            SoldProperties = new List<Tile>();
         }
         #endregion
 
@@ -40,6 +42,9 @@ namespace Monopoly
 
         //Records if the player has sold a property.
         public bool HasSoldProperty { get; set; }
+
+        //A list of the tiles that were sold.
+        public List<Tile> SoldProperties { get; set; }
 
         //Records if the player has constructed buildings on their properties.
         public bool HasConstructedBuilding { get; set; }

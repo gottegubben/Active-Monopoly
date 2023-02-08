@@ -14,11 +14,13 @@ namespace Monopoly
     {
         private Game game { get; set; }
         private Random rnd { get; set; }
-        private Statistic statistic { get; set; }
+        private List<StatCollection> statCollection { get; set; }
         private List<TextBox> textBoxesBotCount { get; set; }
         public MonopolySimulation()
         {
             InitializeComponent();
+
+            statCollection = new List<StatCollection>();
 
             textBoxesBotCount = new List<TextBox>()
             {
@@ -154,10 +156,9 @@ namespace Monopoly
             //If the inputs are of the correct format:
             if (botCountCheck && gameCounterCheck && roundCapChecked && seedChecked)
             {
-                statistic = new Statistic();
                 rnd = new Random(seed);
 
-                Game gm = new Game(rnd, statistic.StoreState, roundCap, startBalance, maxConstruction);
+                Game gm = new Game(rnd, roundCap, startBalance, maxConstruction);
                 gm.AddPlayers(botCounts.ToArray());
                 List<TextBox> textBoxText = new List<TextBox>()
                 {
@@ -189,12 +190,15 @@ namespace Monopoly
                 */
                 for (int i = 0; i < gameCounter; i++)
                 {
-                    game = new Game(rnd, statistic.StoreState, roundCap, startBalance, maxConstruction);
+                    game = new Game(rnd, roundCap, startBalance, maxConstruction);
 
                     game.AddPlayers(botCounts.ToArray());
 
-                    game.StartMatch();
+                    statCollection.Add(game.StartMatch());
                 }
+
+                //Make sense of the statCollection list.
+                //Write out the stats.
             }
             else
             {

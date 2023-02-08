@@ -12,7 +12,7 @@ namespace Monopoly
     public class Game
     {
         #region Consturctors:
-        public Game(Random rnd, Action<Round> statisticCallback, int roundCap, int playerBalance, int maxConstruction)
+        public Game(Random rnd, int roundCap, int playerBalance, int maxConstruction)
         {
             Data = MonopolyConfig.GetGameData(rnd);
 
@@ -40,7 +40,7 @@ namespace Monopoly
 
         #region Methods:
         //Starts the match.
-        public void StartMatch() 
+        public StatCollection StartMatch() 
         { 
             if(Data.Players.Count != 0)
             {
@@ -51,6 +51,8 @@ namespace Monopoly
                 Log.TimeWrite("Forgot to add the players to the game!", Urgency.Incorrect);
                 throw new Exception("Forgot to add the players to the game!");
             }
+
+            return Stat.CreateStat();
         }
 
         //Adds the players to the player list in the class.
@@ -140,7 +142,6 @@ namespace Monopoly
 
 
                     Log.TimeWrite("Match finished!", Urgency.Warning);
-                    //Decide a winner.
                 }
             }
         }
