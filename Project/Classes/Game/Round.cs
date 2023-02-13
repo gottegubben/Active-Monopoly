@@ -72,7 +72,7 @@ namespace Monopoly
                         bool hasEnoughMoney;
                         try
                         {
-                            if(temp is PurchasableTile)
+                            if (temp is PurchasableTile)
                             {
                                 hasEnoughMoney = bot.Balance >= bot.Buffert && bot.Balance >= (temp as PurchasableTile).BaseCost;
                             }
@@ -80,7 +80,7 @@ namespace Monopoly
                         }
                         catch { hasEnoughMoney = false; }
 
-                        if(canBuyStreet && hasEnoughMoney)
+                        if (canBuyStreet && hasEnoughMoney && bot.IsAbleToTakeAction(Data.Rnd, bot.PurchaseChance))
                         {
                             bot.BuyProperty(temp as PurchasableTile);
 
@@ -106,28 +106,28 @@ namespace Monopoly
 
                             move.SteppedTile = landed;
 
-                            if(landed is ActionSpace)
+                            if (landed is ActionSpace)
                             {
-                                if(landed is CardCollecter)
+                                if (landed is CardCollecter)
                                 {
                                     (landed as CardCollecter).Action(player, Data);
                                 }
-                                else if(landed is Prison)
+                                else if (landed is Prison)
                                 {
                                     (landed as Prison).Action(player, Data);
                                 }
-                                else if(landed is Tax)
+                                else if (landed is Tax)
                                 {
                                     (landed as Tax).Action(player, Data);
                                 }
                             }
-                            else if(landed is PurchasableTile)
+                            else if (landed is PurchasableTile)
                             {
-                                if(landed is Property)
+                                if (landed is Property)
                                 {
                                     Property prop = (landed as Property);
 
-                                    if(prop.Owner != null && prop.Owner != player)
+                                    if (prop.Owner != null && prop.Owner != player)
                                     {
                                         int rent = prop.GetRent();
 
@@ -135,7 +135,7 @@ namespace Monopoly
                                         prop.Owner.Balance += rent;
                                     }
                                 }
-                                else if(landed is Station)
+                                else if (landed is Station)
                                 {
                                     Station stat = (landed as Station);
 
@@ -147,7 +147,7 @@ namespace Monopoly
                                         stat.Owner.Balance += rent;
                                     }
                                 }
-                                else if(landed is Utility)
+                                else if (landed is Utility)
                                 {
                                     Utility util = (landed as Utility);
 
@@ -171,39 +171,57 @@ namespace Monopoly
                         int constructionsMade = 0;
                         bool enoughMoney = true;
 
-                        while((player as Bot).MaxConstruction < constructionsMade && enoughMoney)
+                        //for (all tiles):
+                        //  if(max.construction > constructed):
+                        //      build on tile
+
+                        for (int z = 0; z < (player as Bot).MaxConstruction; z++)
                         {
-                            for (int i = 0; i < ownedTiles.Count; i++)
+                            List<PurchasableTile> usedTiles = new List<PurchasableTile>();
+
+
+                            if (enoughMoney && ownedTiles.Count != 0)
                             {
-                                List<PurchasableTile> tiles = Data.GetTilesOfGroupIndex(ownedTiles[i].GroupIndex);
-
-                                bool ownsAll = tiles.All((x) => x.Owner == player);
-
-                                if (ownsAll && tiles[0] is Property)
+                                for (int i = 0; i < ownedTiles.Count; i++)
                                 {
-                                    for (int y = 0; y < tiles.Count; y++)
-                                    {
-                                        Property prop = tiles[y] as Property;
+                                    List<PurchasableTile> tiles = Data.GetTilesOfGroupIndex(ownedTiles[i].GroupIndex);
 
-                                        if (prop.ConstructionCost < player.Balance)
+                                    bool isNotUsed = usedTiles.Any((x)=>x.TileId == tiles[0].TileId);
+
+                                    bool ownsAll = tiles.All((x) => x.Owner == player);
+
+                                    if (isNotUsed && ownsAll && tiles[0] is Property)
+                                    {
+                                        for (int y = 0; y < tiles.Count; y++)
                                         {
-                                            player.BuildOnProperty(prop);
-                                            constructionsMade++;
+                                            Property prop = tiles[y] as Property;
+
+                                            if (prop.ConstructionCost < player.Balance && (player as Bot).IsAbleToTakeAction(Data.Rnd, (player as Bot).BuildingChance))
+                                            {
+                                                bool worked = player.BuildOnProperty(prop);
+                                                if (worked) { constructionsMade++; }
+                                            }
+                                            else
+                                            {
+                                                enoughMoney = false;
+                                            }
                                         }
-                                        else
-                                        {
-                                            enoughMoney = false;
-                                        }
+
+                                        ownedTiles.Remove(ownedTiles[i]);
                                     }
 
-                                    ownedTiles.Remove(ownedTiles[i]);
+                                    foreach (PurchasableTile item in tiles)
+                                    {
+                                        usedTiles.Add(item);
+                                    }
                                 }
+
                             }
                         }
                         #endregion
 
                         #region Check if the player balance is below zero:
-                        if(player.Balance < 0)
+                        if (player.Balance < 0)
                         {
                             List<Tile> purchasableTiles = Data.Tiles.FindAll((x) => x is PurchasableTile);
                             List<Tile> owned = purchasableTiles.FindAll((x) => { if ((x as PurchasableTile).Owner == player) { return true; } else { return false; } });
@@ -222,9 +240,9 @@ namespace Monopoly
                             {
                                 player.SellProperty(ownedAsPurch[i]);
                                 move.SoldProperties.Add(ownedAsPurch[i]);
-                                if(player.Balance > 0) { move.HasSoldProperty = true; break; }
+                                if (player.Balance > 0) { move.HasSoldProperty = true; break; }
                             } //Else resign.
-                            if(player.Balance < 0)
+                            if (player.Balance < 0)
                             {
                                 player.Resign();
                             }
@@ -237,23 +255,21 @@ namespace Monopoly
                         int constructedBuildings = 0;
                         for (int i = 0; i < tempTilesPurch.Count; i++)
                         {
-                            if(tempTilesPurch[i] is Property)
+                            if (tempTilesPurch[i] is Property)
                             {
                                 constructedBuildings += (tempTilesPurch[i] as Property).HouseCount;
                             }
                         }
 
                         move.AmountOfConstructedBuildings = constructedBuildings;
-                        
+
                         move.PlayerBalancePost = player.Balance;
-
-                        Moves.Add(move);
                     }
-                }
+                    }
+                Moves.Add(move);
             }
-
-            SendStatisticsCallbackRef(this);
+                SendStatisticsCallbackRef(this);
+            }
+            #endregion
         }
-        #endregion
     }
-}

@@ -18,11 +18,11 @@ namespace Monopoly
             //Check if there's one winner winners:
             List<Move> moves = rounds[rounds.Length - 1].Moves;
 
-            //Every player is an increment.
-            for (int i = 0; i < moves.Count; i++)
-            {
-                
-            }
+            //The order by amounts of properties each player has.
+            List<Move> byProperty = moves.OrderBy((x) => { return x.AmountOfPropertiesOwned; }).Reverse().ToList();
+
+            //The order by the balance each player has.
+            List<Move> byMoney = moves.OrderBy((x) => { return x.PlayerBalancePost; }).Reverse().ToList();
             #endregion
         }
 

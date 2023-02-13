@@ -154,7 +154,7 @@ namespace Monopoly
                 getTileProperty("Medborgarplatsen", 3, Color.Brown, 2, 60, 50, new int[]{4,20,60,180,320,450}),
                 getTileTax("Skatt", 2, Color.White, 0),
                 getTileStation("Slussen", 5, Color.White, 0, stationRent),
-                getTileProperty("Hammarby sjöstad", 6, Color.LightBlue, 3, 100, 50, new int[]{6,30,90,270,400}),
+                getTileProperty("Hammarby sjöstad", 6, Color.LightBlue, 3, 100, 50, new int[]{6,30,90,270,400,550}),
                 getTileCardCollector("Chans", 7, Color.White, CardType.Fortune),
                 getTileProperty("Hornstull", 8, Color.LightBlue, 3, 100, 50, new int[]{6,30,90,270,400,550}),
                 getTileProperty("Sveavägen", 9, Color.LightBlue, 3, 120, 50, new int[]{8,40,100,300,450,600}),
@@ -414,6 +414,8 @@ namespace Monopoly
         {
             return new GameData()
             {
+                Rnd = rnd,
+
                 Players = new List<Player>(),
 
                 Tiles = GetTiles(),

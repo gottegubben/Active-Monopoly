@@ -18,6 +18,9 @@ namespace Monopoly
         #endregion
 
         #region Properties:
+        //The random object of this object.
+        public Random Rnd { get; set; }
+
         //All the tiles that will be used in the game and in there respected order.
         public List<Tile> Tiles { get; set; }
         

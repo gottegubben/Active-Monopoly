@@ -120,7 +120,7 @@ namespace Monopoly
             //Fix so that you can also play other types of games. Not just annihilation! Maybe it's fine either way.
 
             bool matchOngoing = true;
-            while (matchOngoing) //Fix this loop!!!
+            while (matchOngoing)
             {
                 new Round(Data, Stat.StoreState);
 
