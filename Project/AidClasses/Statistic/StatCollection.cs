@@ -12,9 +12,10 @@ namespace Monopoly
     /// </summary>
     public class StatCollection
     {
+        #region Constructors:
         public StatCollection(Round[] rounds)
         {
-            #region PlayerPedestal:
+            #region Pedestal:
             //Check if there's one winner winners:
             List<Move> moves = rounds[rounds.Length - 1].Moves;
 
@@ -55,13 +56,33 @@ namespace Monopoly
             }
 
             PlayerPedestal = playerped.ToArray();
+            #endregion
+
+            #region RentCount:
+
+            RentCountOfTile = new int[rounds[0].Data.Tiles.Count];
+
+            foreach (Round rnd in rounds)
+            {
+                foreach (Move mv in rnd.Moves)
+                {
+                    if (mv.PaidRent)
+                    {
+                        RentCountOfTile[mv.SteppedTile.TileId]++;
+                    }
+                }
+            }
 
             #endregion
         }
+        #endregion
 
         #region Properties:
         //The players ranked in an order from first to last.
         public Player[] PlayerPedestal { get; set; }
+
+        //An index is the corresponding tile id and this will store how many times a player had to pay rent on a specific tile under the match.
+        public int[] RentCountOfTile { get; set; }
         #endregion
     }
 }

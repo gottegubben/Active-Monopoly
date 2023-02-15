@@ -117,8 +117,15 @@
             this.panel22 = new System.Windows.Forms.Panel();
             this.panel23 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBoxStartRound = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.buttonExportToExcel = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.buttonEstimateTime = new System.Windows.Forms.Button();
+            this.textBoxEstimateTime = new System.Windows.Forms.TextBox();
+            this.checkBoxLogRndMat = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxRoundMultiplier = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -127,13 +134,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.textBoxSimHistory = new System.Windows.Forms.TextBox();
             this.buttonClearHistory = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBoxStartRound = new System.Windows.Forms.TextBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.checkBoxLogRndMat = new System.Windows.Forms.CheckBox();
-            this.textBoxEstimateTime = new System.Windows.Forms.TextBox();
-            this.buttonEstimateTime = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
+            this.buttonHeatMap = new System.Windows.Forms.Button();
             this.groupBoxSimSettings.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -952,15 +953,32 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.buttonHeatMap);
             this.groupBox3.Controls.Add(this.textBoxStartRound);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.buttonExportToExcel);
             this.groupBox3.Location = new System.Drawing.Point(778, 562);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(249, 124);
+            this.groupBox3.Size = new System.Drawing.Size(249, 154);
             this.groupBox3.TabIndex = 62;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Export Settings";
+            // 
+            // textBoxStartRound
+            // 
+            this.textBoxStartRound.Location = new System.Drawing.Point(95, 34);
+            this.textBoxStartRound.Name = "textBoxStartRound";
+            this.textBoxStartRound.Size = new System.Drawing.Size(132, 20);
+            this.textBoxStartRound.TabIndex = 2;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(27, 37);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(62, 13);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Start round:";
             // 
             // buttonExportToExcel
             // 
@@ -985,10 +1003,61 @@
             this.groupBox4.Controls.Add(this.buttonClearHistory);
             this.groupBox4.Location = new System.Drawing.Point(12, 562);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(760, 124);
+            this.groupBox4.Size = new System.Drawing.Size(760, 154);
             this.groupBox4.TabIndex = 63;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Simulation Tools";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label14);
+            this.groupBox5.Controls.Add(this.buttonEstimateTime);
+            this.groupBox5.Controls.Add(this.textBoxEstimateTime);
+            this.groupBox5.Controls.Add(this.checkBoxLogRndMat);
+            this.groupBox5.Location = new System.Drawing.Point(454, 9);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(300, 139);
+            this.groupBox5.TabIndex = 8;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Log Options";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(246, 75);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(42, 13);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Minuter";
+            // 
+            // buttonEstimateTime
+            // 
+            this.buttonEstimateTime.Location = new System.Drawing.Point(24, 66);
+            this.buttonEstimateTime.Name = "buttonEstimateTime";
+            this.buttonEstimateTime.Size = new System.Drawing.Size(116, 29);
+            this.buttonEstimateTime.TabIndex = 2;
+            this.buttonEstimateTime.Text = "Estimate Time";
+            this.buttonEstimateTime.UseVisualStyleBackColor = true;
+            this.buttonEstimateTime.Click += new System.EventHandler(this.buttonEstimateTime_Click);
+            // 
+            // textBoxEstimateTime
+            // 
+            this.textBoxEstimateTime.Location = new System.Drawing.Point(159, 71);
+            this.textBoxEstimateTime.Name = "textBoxEstimateTime";
+            this.textBoxEstimateTime.ReadOnly = true;
+            this.textBoxEstimateTime.Size = new System.Drawing.Size(81, 20);
+            this.textBoxEstimateTime.TabIndex = 1;
+            this.textBoxEstimateTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // checkBoxLogRndMat
+            // 
+            this.checkBoxLogRndMat.AutoSize = true;
+            this.checkBoxLogRndMat.Location = new System.Drawing.Point(24, 28);
+            this.checkBoxLogRndMat.Name = "checkBoxLogRndMat";
+            this.checkBoxLogRndMat.Size = new System.Drawing.Size(130, 17);
+            this.checkBoxLogRndMat.TabIndex = 0;
+            this.checkBoxLogRndMat.Text = "Log round and match.";
+            this.checkBoxLogRndMat.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -1063,78 +1132,20 @@
             this.buttonClearHistory.UseVisualStyleBackColor = true;
             this.buttonClearHistory.Click += new System.EventHandler(this.buttonClearHistory_Click);
             // 
-            // label13
+            // buttonHeatMap
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(27, 37);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(62, 13);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Start round:";
-            // 
-            // textBoxStartRound
-            // 
-            this.textBoxStartRound.Location = new System.Drawing.Point(95, 34);
-            this.textBoxStartRound.Name = "textBoxStartRound";
-            this.textBoxStartRound.Size = new System.Drawing.Size(132, 20);
-            this.textBoxStartRound.TabIndex = 2;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.label14);
-            this.groupBox5.Controls.Add(this.buttonEstimateTime);
-            this.groupBox5.Controls.Add(this.textBoxEstimateTime);
-            this.groupBox5.Controls.Add(this.checkBoxLogRndMat);
-            this.groupBox5.Location = new System.Drawing.Point(454, 9);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(300, 109);
-            this.groupBox5.TabIndex = 8;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Log Options";
-            // 
-            // checkBoxLogRndMat
-            // 
-            this.checkBoxLogRndMat.AutoSize = true;
-            this.checkBoxLogRndMat.Location = new System.Drawing.Point(24, 28);
-            this.checkBoxLogRndMat.Name = "checkBoxLogRndMat";
-            this.checkBoxLogRndMat.Size = new System.Drawing.Size(130, 17);
-            this.checkBoxLogRndMat.TabIndex = 0;
-            this.checkBoxLogRndMat.Text = "Log round and match.";
-            this.checkBoxLogRndMat.UseVisualStyleBackColor = true;
-            // 
-            // textBoxEstimateTime
-            // 
-            this.textBoxEstimateTime.Location = new System.Drawing.Point(159, 71);
-            this.textBoxEstimateTime.Name = "textBoxEstimateTime";
-            this.textBoxEstimateTime.ReadOnly = true;
-            this.textBoxEstimateTime.Size = new System.Drawing.Size(81, 20);
-            this.textBoxEstimateTime.TabIndex = 1;
-            this.textBoxEstimateTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // buttonEstimateTime
-            // 
-            this.buttonEstimateTime.Location = new System.Drawing.Point(24, 66);
-            this.buttonEstimateTime.Name = "buttonEstimateTime";
-            this.buttonEstimateTime.Size = new System.Drawing.Size(116, 29);
-            this.buttonEstimateTime.TabIndex = 2;
-            this.buttonEstimateTime.Text = "Estimate Time";
-            this.buttonEstimateTime.UseVisualStyleBackColor = true;
-            this.buttonEstimateTime.Click += new System.EventHandler(this.buttonEstimateTime_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(246, 75);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(42, 13);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Minuter";
+            this.buttonHeatMap.Location = new System.Drawing.Point(23, 115);
+            this.buttonHeatMap.Name = "buttonHeatMap";
+            this.buttonHeatMap.Size = new System.Drawing.Size(204, 22);
+            this.buttonHeatMap.TabIndex = 3;
+            this.buttonHeatMap.Text = "Heat map";
+            this.buttonHeatMap.UseVisualStyleBackColor = true;
             // 
             // TileStepSimulation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 698);
+            this.ClientSize = new System.Drawing.Size(1042, 728);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.panel23);
@@ -1336,6 +1347,7 @@
         private System.Windows.Forms.Button buttonEstimateTime;
         private System.Windows.Forms.TextBox textBoxEstimateTime;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button buttonHeatMap;
     }
 }
 

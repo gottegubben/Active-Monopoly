@@ -16,6 +16,10 @@ namespace Monopoly
         private Random rnd { get; set; }
         private List<StatCollection> statCollection { get; set; }
         private List<TextBox> textBoxesBotCount { get; set; }
+        private int defHeight { get; set; }
+        private int defTop { get; set; }
+        private double[] percPlayerWins { get; set; }
+        private double[] percMostPaidRent { get; set; }
         public MonopolySimulation()
         {
             InitializeComponent();
@@ -30,6 +34,9 @@ namespace Monopoly
                 textBoxBotPas,
                 textBoxBotDead
             };
+
+            defHeight = buttonBotA.Height;
+            defTop = buttonBotA.Top;
         }
 
         private void buttonRunSim_Click(object sender, EventArgs e)
@@ -160,6 +167,14 @@ namespace Monopoly
 
                 Game gm = new Game(rnd, roundCap, startBalance, maxConstruction);
                 gm.AddPlayers(botCounts.ToArray());
+                List<Button> buttonText = new List<Button>()
+                {
+                    buttonBotA,
+                    buttonBotB,
+                    buttonBotC,
+                    buttonBotD,
+                    buttonBotE
+                };
                 List<TextBox> textBoxText = new List<TextBox>()
                 {
                     textBoxBotA,
@@ -171,15 +186,10 @@ namespace Monopoly
                 for (int i = 0; i < gm.Data.Players.Count; i++)
                 {
                     textBoxText[i].Text = $"Con: [{(gm.Data.Players[i] as Bot).BuildingChance}] Pur: [{(gm.Data.Players[i] as Bot).PurchaseChance}]";
+                    buttonText[i].Height = defHeight;
+                    buttonText[i].Top = defTop;
+                    buttonText[i].Text = "";
                 }
-                List<Button> buttonText = new List<Button>()
-                {
-                    buttonBotA,
-                    buttonBotB,
-                    buttonBotC,
-                    buttonBotD,
-                    buttonBotE
-                };
 
                 /*
                  * repeat for all games:
@@ -195,6 +205,44 @@ namespace Monopoly
                     game.AddPlayers(botCounts.ToArray());
 
                     statCollection.Add(game.StartMatch());
+                }
+
+                int[] playerWins = new int[gm.Data.Players.Count];
+                int[] mostPaidRent = new int[gm.Data.Tiles.Count];
+
+                statCollection.ForEach((x) => 
+                { 
+                    playerWins[x.PlayerPedestal[0].Id]++;
+
+                    for (int i = 0; i < x.RentCountOfTile.Length; i++)
+                    {
+                        mostPaidRent[i] += x.RentCountOfTile[i];
+                    }
+                });
+
+                percPlayerWins = new double[playerWins.Length];
+                percMostPaidRent = new double[mostPaidRent.Length];
+
+                for (int i = 0; i < playerWins.Length; i++)
+                {
+                    percPlayerWins[i] = (double)playerWins[i] / (double)playerWins.Sum();
+                }
+                for (int i = 0; i < mostPaidRent.Length; i++)
+                {
+                    percMostPaidRent[i] = (double)mostPaidRent[i] / (double)mostPaidRent.Sum();
+                }
+
+                foreach (Button item in buttonText)
+                {
+                    item.Height = 0;
+                }
+
+                for (int i = 0; i < percPlayerWins.Length; i++)
+                {
+                    int newHeight = (int)((double)defHeight * percPlayerWins[i]);
+                    buttonText[i].Height = newHeight;
+                    buttonText[i].Top += defHeight-newHeight;
+                    buttonText[i].Text = $"{Convert.ToDouble(percPlayerWins[i].ToString("N4"))*100}%";
                 }
 
                 //Make sense of the statCollection list.
@@ -234,6 +282,18 @@ namespace Monopoly
                 textBoxRoundCap.Enabled = false;
                 textBoxRoundCap.Text = "";
             }
+        }
+
+        private void buttonWTCWinRate_Click(object sender, EventArgs e)
+        {
+            Log.Write("Players present each block!",Urgency.Normal);
+            Log.Write($"Win Rate:    [{string.Join("|",percPlayerWins)}]", Urgency.Result);
+        }
+
+        private void buttonWTCRent_Click(object sender, EventArgs e)
+        {
+            Log.Write("Tiles present each block!", Urgency.Normal);
+            Log.Write($"Rent:    [{string.Join("|", percMostPaidRent)}]", Urgency.Result);
         }
     }
 }

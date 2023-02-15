@@ -63,6 +63,9 @@ namespace Monopoly
 
         //Amount of houses.
         public int AmountOfConstructedBuildings { get; set; }
+
+        //Payed rent.
+        public bool PaidRent { get; set; }
         #endregion
     }
 }

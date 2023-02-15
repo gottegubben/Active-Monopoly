@@ -27,8 +27,6 @@ namespace Monopoly
         {
             RoundHistory.Add(round);
 
-            Log.TimeWrite("Stored a round!", Urgency.Normal);
-
             //Do something under that could be useful. Like who is winning right now? Who is first when it comes to money etc.
             //Maybe record the moves also.
         }

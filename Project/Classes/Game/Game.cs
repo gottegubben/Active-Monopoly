@@ -58,6 +58,7 @@ namespace Monopoly
         //Adds the players to the player list in the class.
         public void AddPlayers(int[] players)
         {
+            int id = 0;
             if(players.Length < 6 && players.Length != 0)
             {
                 for (int i = 0; i < players.Length; i++)
@@ -69,35 +70,35 @@ namespace Monopoly
                         {
                             case 0:
                                 bot = MonopolyConfig.GetAggressiveMaxBot();
-                                bot.Id = i;
+                                bot.Id = id; id++;
                                 bot.Balance = playerBalance;
                                 bot.MaxConstruction = maxConstruction;
                                 Data.Players.Add(bot);
                                 break;
                             case 1:
                                 bot = MonopolyConfig.GetAggressiveMinBot();
-                                bot.Id = i;
+                                bot.Id = id; id++;
                                 bot.Balance = playerBalance;
                                 bot.MaxConstruction = maxConstruction;
                                 Data.Players.Add(bot);
                                 break;
                             case 2:
                                 bot = MonopolyConfig.GetBalancedBot();
-                                bot.Id = i;
+                                bot.Id = id; id++;
                                 bot.Balance = playerBalance;
                                 bot.MaxConstruction = maxConstruction;
                                 Data.Players.Add(bot);
                                 break;
                             case 3:
                                 bot = MonopolyConfig.GetPassiveBot();
-                                bot.Id = i;
+                                bot.Id = id; id++;
                                 bot.Balance = playerBalance;
                                 bot.MaxConstruction = maxConstruction;
                                 Data.Players.Add(bot);
                                 break;
                             case 4:
                                 bot = MonopolyConfig.GetBraindeadBot();
-                                bot.Id = i;
+                                bot.Id = id; id++;
                                 bot.Balance = playerBalance;
                                 bot.MaxConstruction = maxConstruction;
                                 Data.Players.Add(bot);

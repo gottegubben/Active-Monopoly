@@ -101,6 +101,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.buttonWTCWinRate = new System.Windows.Forms.Button();
+            this.buttonWTCRent = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -113,6 +115,7 @@
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -876,12 +879,34 @@
             // 
             // groupBox10
             // 
+            this.groupBox10.Controls.Add(this.buttonWTCRent);
+            this.groupBox10.Controls.Add(this.buttonWTCWinRate);
             this.groupBox10.Location = new System.Drawing.Point(17, 498);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(802, 191);
             this.groupBox10.TabIndex = 8;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Export Options";
+            // 
+            // buttonWTCWinRate
+            // 
+            this.buttonWTCWinRate.Location = new System.Drawing.Point(15, 34);
+            this.buttonWTCWinRate.Name = "buttonWTCWinRate";
+            this.buttonWTCWinRate.Size = new System.Drawing.Size(211, 28);
+            this.buttonWTCWinRate.TabIndex = 0;
+            this.buttonWTCWinRate.Text = "[Win Rate] Write to console";
+            this.buttonWTCWinRate.UseVisualStyleBackColor = true;
+            this.buttonWTCWinRate.Click += new System.EventHandler(this.buttonWTCWinRate_Click);
+            // 
+            // buttonWTCRent
+            // 
+            this.buttonWTCRent.Location = new System.Drawing.Point(15, 68);
+            this.buttonWTCRent.Name = "buttonWTCRent";
+            this.buttonWTCRent.Size = new System.Drawing.Size(211, 28);
+            this.buttonWTCRent.TabIndex = 1;
+            this.buttonWTCRent.Text = "[Rent tile] Write to console";
+            this.buttonWTCRent.UseVisualStyleBackColor = true;
+            this.buttonWTCRent.Click += new System.EventHandler(this.buttonWTCRent_Click);
             // 
             // MonopolySimulation
             // 
@@ -919,6 +944,7 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -999,5 +1025,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxMaxConstruct;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button buttonWTCRent;
+        private System.Windows.Forms.Button buttonWTCWinRate;
     }
 }

@@ -133,6 +133,8 @@ namespace Monopoly
 
                                         player.Balance -= rent;
                                         prop.Owner.Balance += rent;
+
+                                        move.PaidRent = true;
                                     }
                                 }
                                 else if (landed is Station)
