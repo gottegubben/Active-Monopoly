@@ -23,6 +23,39 @@ namespace Monopoly
 
             //The order by the balance each player has.
             List<Move> byMoney = moves.OrderBy((x) => { return x.PlayerBalancePost; }).Reverse().ToList();
+
+            //Order by networth (the tiles cost + building cost)
+            Round lastRound = rounds[rounds.Length - 1];
+
+            foreach (Tile item in lastRound.Data.Tiles)
+            {
+                if(item is PurchasableTile)
+                {
+                    PurchasableTile temp = (item as PurchasableTile);
+
+                    if(temp.Owner != null)
+                    {
+                        temp.Owner.FinalNetworth += temp.BaseCost;
+
+                        if (temp is Property)
+                        {
+                            Property prop = temp as Property;
+                            temp.Owner.FinalNetworth += prop.ConstructionCost * prop.HouseCount;
+                        }
+                    }
+                }
+            }
+
+            List<Move> byNetWorth = moves.OrderBy((x) => { return x.Player.FinalNetworth; }).Reverse().ToList();
+
+            List<Player> playerped = new List<Player>();
+            foreach (Move item in byNetWorth)
+            {
+                playerped.Add(item.Player);
+            }
+
+            PlayerPedestal = playerped.ToArray();
+
             #endregion
         }
 

@@ -31,13 +31,13 @@ namespace Monopoly
             Excel._Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet;
 
             #region Normal Data:
-            workSheet.Cells[1, "A"] = "Rounds:";
+            workSheet.Cells[1, "A"] = "TileId";
             workSheet.Cells[1, "A"].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
             workSheet.Cells[1, "A"].Font.Bold = true;
 
             for (int i = 0; i < data[0].Length; i++)
             {
-                workSheet.Cells[2 + i, "A"] = $"Q{i + 1}";
+                workSheet.Cells[2 + i, "A"] = $"{i + 1}";
             }
 
             for (int i = 0; i < data.Count; i++)

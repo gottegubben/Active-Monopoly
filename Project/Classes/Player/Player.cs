@@ -41,6 +41,9 @@ namespace Monopoly
 
         //This id will identify the player when for example: searching for it. Can be used as identifier.
         public int Id { get; set; }
+
+        //Networth of the player (final):
+        public int FinalNetworth { get; set; }
         #endregion
 
         #region Methods:
