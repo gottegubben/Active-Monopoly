@@ -13,9 +13,11 @@ namespace Monopoly
     {
         #region Constructors:
         //The default constructor of the station class.
-        public Station(params int[] rent)
+        public Station(int baseCost, params int[] rent)
         {
             this.rent = rent;
+
+            this.BaseCost = baseCost;
         }
         #endregion
 

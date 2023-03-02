@@ -80,7 +80,9 @@ namespace Monopoly
                         }
                         catch { hasEnoughMoney = false; }
 
-                        if (canBuyStreet && hasEnoughMoney && bot.IsAbleToTakeAction(Data.Rnd, bot.PurchaseChance))
+                        double excess = bot.ChanceAlternator(Data.PlayerPositionHandler.GetPlayerPositionInt(player)).HasValue ? bot.ChanceAlternator(Data.PlayerPositionHandler.GetPlayerPositionInt(player)).Value : 0d;
+
+                        if (canBuyStreet && hasEnoughMoney && bot.IsAbleToTakeAction(Data.Rnd, bot.PurchaseChance + excess))
                         {
                             bot.BuyProperty(temp as PurchasableTile);
 

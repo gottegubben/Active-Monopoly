@@ -105,6 +105,12 @@
     <Compile Include="Project\Windows\SelectionWindow\SelectionWindow.Designer.cs">
       <DependentUpon>SelectionWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Project\Windows\Testing\Testing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\Windows\Testing\Testing.Designer.cs">
+      <DependentUpon>Testing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Project\Windows\TileStepSimulation\TileStepSimulation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Project\Windows\SelectionWindow\SelectionWindow.resx">
       <DependentUpon>SelectionWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\Windows\Testing\Testing.resx">
+      <DependentUpon>Testing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Project\Windows\TileStepSimulation\TileStepSimulation.resx">
       <DependentUpon>TileStepSimulation.cs</DependentUpon>

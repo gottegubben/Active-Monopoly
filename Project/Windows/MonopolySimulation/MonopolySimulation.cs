@@ -165,8 +165,11 @@ namespace Monopoly
             {
                 rnd = new Random(seed);
 
+                //Mix the botcounts!
+
                 Game gm = new Game(rnd, roundCap, startBalance, maxConstruction);
                 gm.AddPlayers(botCounts.ToArray());
+
                 List<Button> buttonText = new List<Button>()
                 {
                     buttonBotA,

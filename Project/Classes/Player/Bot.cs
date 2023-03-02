@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -44,6 +45,35 @@ namespace Monopoly
             double compareNumber = rnd.NextDouble();
 
             return chance >= compareNumber;
+        }
+
+        public double? ChanceAlternator(int tileId)
+        {
+            double[] normalized = MonopolyConfig.TileValueBestToWorstProp;
+
+            double maxValue = normalized.Max();
+            double minValue = normalized.Min();
+
+            //zi = (xi – min(x)) / (max(x) – min(x))
+
+            for (int i = 0; i < normalized.Length; i++)
+            {
+                normalized[i] = (normalized[i] - minValue) / (maxValue - minValue); 
+            }
+
+            normalized = normalized.Reverse().ToArray();
+
+            double? returnValue = null;
+
+            try
+            {
+                int index = MonopolyConfig.TileIdBestToWorstProp.ToList().FindIndex(x => x == tileId);
+
+                returnValue = normalized[index];
+            }
+            catch { }
+
+            return returnValue;
         }
         #endregion
     }

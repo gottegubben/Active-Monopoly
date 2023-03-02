@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -66,9 +67,9 @@ namespace Monopoly
         }
 
         //Returns a station with the following params.
-        private static Station getTileStation(string tileName, int tileId, Color tileColor, int groupIndex, params int[] rent)
+        private static Station getTileStation(string tileName, int tileId, Color tileColor, int groupIndex, int baseCost, params int[] rent)
         {
-            return new Station(rent)
+            return new Station(baseCost, rent)
             {
                 TileName = tileName,
                 TileId = tileId,
@@ -144,6 +145,7 @@ namespace Monopoly
 
             //Station rent:
             int[] stationRent = new int[] {25,50,100,200 };
+            int stationBaseCost = 200;
 
             return new List<Tile>()
             {
@@ -153,7 +155,7 @@ namespace Monopoly
                 getTileCardCollector("Allmän", 2, Color.White, CardType.CommunityChest),
                 getTileProperty("Medborgarplatsen", 3, Color.Brown, 2, 60, 50, new int[]{4,20,60,180,320,450}),
                 getTileTax("Skatt", 2, Color.White, 0),
-                getTileStation("Slussen", 5, Color.White, 0, stationRent),
+                getTileStation("Slussen", 5, Color.White, 0, stationBaseCost, stationRent),
                 getTileProperty("Hammarby sjöstad", 6, Color.LightBlue, 3, 100, 50, new int[]{6,30,90,270,400,550}),
                 getTileCardCollector("Chans", 7, Color.White, CardType.Fortune),
                 getTileProperty("Hornstull", 8, Color.LightBlue, 3, 100, 50, new int[]{6,30,90,270,400,550}),
@@ -165,7 +167,7 @@ namespace Monopoly
                 getTileUtility("Kaknästornet", 12, Color.White, 1, 150),
                 getTileProperty("Götgatsbacken", 13, Color.Pink, 4, 140, 100, new int[]{10,50,150,450,625,750}),
                 getTileProperty("S:T Eriksgatan", 14, Color.Pink, 4, 160, 100, new int[]{12,60,180,500,700,900}),
-                getTileStation("Fridhemsplan", 15, Color.White, 0, stationRent),
+                getTileStation("Fridhemsplan", 15, Color.White, 0, stationBaseCost, stationRent),
                 getTileProperty("Drottning-gatan", 16, Color.Orange, 5, 180, 100, new int[]{14,70,200,550,700,900}),
                 getTileCardCollector("Allmän", 17, Color.White, CardType.CommunityChest),
                 getTileProperty("Birgerjarlsgatan", 18, Color.Orange, 5, 180, 100, new int[]{14,70,200,550,700,950}),
@@ -175,7 +177,7 @@ namespace Monopoly
                 getTileCardCollector("Chans", 22, Color.White, CardType.Fortune),
                 getTileProperty("Hötorget", 23, Color.Red, 6, 220, 150, new int[]{18,90,250,700,875,1050}),
                 getTileProperty("Odenplan", 24, Color.Red, 6, 240, 150, new int[]{20,100,300,750,925,1100}),
-                getTileStation("T-centralen", 25, Color.White, 0, stationRent),
+                getTileStation("T-centralen", 25, Color.White, 0, stationBaseCost, stationRent),
                 getTileProperty("Kungsträdgården", 26, Color.Yellow, 7, 260, 150, new int[]{22,110,330,800,975,1150}),
                 getTileProperty("Norrmälarstrand", 27, Color.Yellow, 7, 260, 150, new int[]{22,110,330,800,975,1150}),
                 getTileUtility("Globen", 28, Color.White, 1, 150),
@@ -187,7 +189,7 @@ namespace Monopoly
                 getTileProperty("Östermalmstorg", 32, Color.Green, 8, 300, 200, new int[]{26,130,390,900,1100,1275}),
                 getTileCardCollector("Allmän", 33, Color.White, CardType.CommunityChest),
                 getTileProperty("Norrmalmstorg", 34, Color.Green, 8, 320, 200, new int[]{28,150,450,1000,1200,1400}),
-                getTileStation("Östermalmstorg", 35, Color.White, 0, stationRent),
+                getTileStation("Östermalmstorg", 35, Color.White, 0, stationBaseCost, stationRent),
                 getTileCardCollector("Chans", 36, Color.White, CardType.Fortune),
                 getTileProperty("Djurgården", 37, Color.Blue, 9, 350, 200, new int[]{35,175,500,1100,1300,1500}),
                 getTileTax("Skatt", 38, Color.White, 0),
@@ -434,6 +436,67 @@ namespace Monopoly
                     }))
             };
         }
+        #endregion
+
+        #region AAA
+
+        //[ID] [VALUE]
+
+
+        //The best properties (ID) ordered from best to worst.
+        public static int[] TileIdBestToWorstProp = new int[]
+        {
+            39,
+            29,
+            27,
+            31,
+            26,
+            18,
+            32,
+            24,
+            16,
+            34,
+            19,
+            37,
+            21,
+            23,
+            14,
+            13,
+            9,
+            11,
+            3,
+            8,
+            6,
+            1
+        };
+
+        //Same but it's the values.
+        public static double[] TileValueBestToWorstProp = new double[]
+        {
+            110.41d,
+            126.91d,
+            129.23d,
+            130.25d,
+            132.39d,
+            132.93d,
+            133.82d,
+            135.21d,
+            135.58d,
+            137.11d,
+            137.52d,
+            139.62d,
+            140.7d,
+            142.64d,
+            146.21d,
+            174.46d,
+            178.38d,
+            180.9d,
+            192.03d,
+            198.76d,
+            204.56d,
+            393.21d
+        };
+
         #endregion
 
         #endregion

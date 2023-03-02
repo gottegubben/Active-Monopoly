@@ -107,12 +107,25 @@ namespace Monopoly
                     }
                 }
 
+                //Mix the players.
+
+
                 Data.PlayerPositionHandler = new PlayerPositionHandler(Data.Players);
             }
             else
             {
                 Log.TimeWrite("The player array either didn't contain any values or owere to many!", Urgency.Incorrect);
             }
+        }
+
+        public void AddPlayers(params Player[] players)
+        {
+            foreach (Player player in players)
+            {
+                Data.Players.Add(player);
+            }
+
+            Data.PlayerPositionHandler = new PlayerPositionHandler(Data.Players);
         }
 
         //The main loop that will run the game.
