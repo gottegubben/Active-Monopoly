@@ -53,3 +53,4 @@ D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.csproj.ResolveComRe
 C:\Programmering\Coding Projects\Monopoly\obj\Debug\Monopoly.csproj.AssemblyReference.cache
 C:\Programmering\Coding Projects\Monopoly\obj\Debug\Monopoly.csproj.SuggestedBindingRedirects.cache
 D:\Visual studios\repos\Monopoly\Monopoly\obj\Debug\Monopoly.Testing.resources
+C:\Programmering\Coding Projects\Monopoly\obj\Debug\Monopoly.Testing.resources

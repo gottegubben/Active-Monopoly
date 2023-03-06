@@ -186,6 +186,11 @@ namespace Monopoly
                     textBoxBotD,
                     textBoxBotE
                 };
+                for (int i = 0; i < buttonText.Count; i++)
+                {
+                    buttonText[i].Text = "";
+                    textBoxText[i].Text = "";
+                }
                 for (int i = 0; i < gm.Data.Players.Count; i++)
                 {
                     textBoxText[i].Text = $"Con: [{(gm.Data.Players[i] as Bot).BuildingChance}] Pur: [{(gm.Data.Players[i] as Bot).PurchaseChance}]";
