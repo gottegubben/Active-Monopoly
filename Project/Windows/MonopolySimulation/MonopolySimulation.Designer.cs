@@ -147,7 +147,8 @@
             this.richTextBoxDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.richTextBoxDescription.Size = new System.Drawing.Size(446, 181);
             this.richTextBoxDescription.TabIndex = 0;
-            this.richTextBoxDescription.Text = "AAA";
+            this.richTextBoxDescription.Text = "Standard values:\n\n* Amount of games = 1 000\n* Enable Round Cap = true [200 rounds" +
+    "]";
             // 
             // groupBox2
             // 
