@@ -213,7 +213,13 @@ namespace Monopoly
                     game.AddPlayers(botCounts.ToArray());
 
                     statCollection.Add(game.StartMatch());
+
+                    if(i % 100 == 0)
+                    {
+                        Log.TimeWrite($"Match played: {i}", Urgency.Warning);
+                    }
                 }
+                Log.TimeWrite($"Match played: {gameCounter}", Urgency.Warning);
 
                 int[] playerWins = new int[gm.Data.Players.Count];
                 int[] mostPaidRent = new int[gm.Data.Tiles.Count];

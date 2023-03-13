@@ -153,9 +153,6 @@ namespace Monopoly
                 if (roundCap != 0 && Data.RoundCounter >= roundCap)
                 {
                     matchOngoing = false;
-
-
-                    Log.TimeWrite("Match finished!", Urgency.Warning);
                 }
             }
         }
