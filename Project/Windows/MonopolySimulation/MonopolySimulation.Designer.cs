@@ -101,9 +101,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.checkBoxUseNormalized = new System.Windows.Forms.CheckBox();
             this.buttonWTCRent = new System.Windows.Forms.Button();
             this.buttonWTCWinRate = new System.Windows.Forms.Button();
-            this.checkBoxUseNormalized = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -891,6 +891,16 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Export Options";
             // 
+            // checkBoxUseNormalized
+            // 
+            this.checkBoxUseNormalized.AutoSize = true;
+            this.checkBoxUseNormalized.Location = new System.Drawing.Point(465, 20);
+            this.checkBoxUseNormalized.Name = "checkBoxUseNormalized";
+            this.checkBoxUseNormalized.Size = new System.Drawing.Size(173, 17);
+            this.checkBoxUseNormalized.TabIndex = 2;
+            this.checkBoxUseNormalized.Text = "Use normalized picking (BOTS)";
+            this.checkBoxUseNormalized.UseVisualStyleBackColor = true;
+            // 
             // buttonWTCRent
             // 
             this.buttonWTCRent.Location = new System.Drawing.Point(15, 68);
@@ -910,16 +920,6 @@
             this.buttonWTCWinRate.Text = "[Win Rate] Write to console";
             this.buttonWTCWinRate.UseVisualStyleBackColor = true;
             this.buttonWTCWinRate.Click += new System.EventHandler(this.buttonWTCWinRate_Click);
-            // 
-            // checkBoxUseNormalized
-            // 
-            this.checkBoxUseNormalized.AutoSize = true;
-            this.checkBoxUseNormalized.Location = new System.Drawing.Point(465, 20);
-            this.checkBoxUseNormalized.Name = "checkBoxUseNormalized";
-            this.checkBoxUseNormalized.Size = new System.Drawing.Size(173, 17);
-            this.checkBoxUseNormalized.TabIndex = 2;
-            this.checkBoxUseNormalized.Text = "Use normalized picking (BOTS)";
-            this.checkBoxUseNormalized.UseVisualStyleBackColor = true;
             // 
             // MonopolySimulation
             // 
