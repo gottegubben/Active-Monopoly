@@ -210,6 +210,8 @@ namespace Monopoly
                 {
                     game = new Game(rnd, roundCap, startBalance, maxConstruction);
 
+                    game.Data.NormalizedBotPicks = checkBoxUseNormalized.Checked;
+
                     game.AddPlayers(botCounts.ToArray());
 
                     statCollection.Add(game.StartMatch());

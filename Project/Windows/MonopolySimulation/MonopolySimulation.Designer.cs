@@ -103,6 +103,7 @@
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.buttonWTCRent = new System.Windows.Forms.Button();
             this.buttonWTCWinRate = new System.Windows.Forms.Button();
+            this.checkBoxUseNormalized = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -880,6 +881,7 @@
             // 
             // groupBox10
             // 
+            this.groupBox10.Controls.Add(this.checkBoxUseNormalized);
             this.groupBox10.Controls.Add(this.buttonWTCRent);
             this.groupBox10.Controls.Add(this.buttonWTCWinRate);
             this.groupBox10.Location = new System.Drawing.Point(17, 498);
@@ -908,6 +910,16 @@
             this.buttonWTCWinRate.Text = "[Win Rate] Write to console";
             this.buttonWTCWinRate.UseVisualStyleBackColor = true;
             this.buttonWTCWinRate.Click += new System.EventHandler(this.buttonWTCWinRate_Click);
+            // 
+            // checkBoxUseNormalized
+            // 
+            this.checkBoxUseNormalized.AutoSize = true;
+            this.checkBoxUseNormalized.Location = new System.Drawing.Point(465, 20);
+            this.checkBoxUseNormalized.Name = "checkBoxUseNormalized";
+            this.checkBoxUseNormalized.Size = new System.Drawing.Size(173, 17);
+            this.checkBoxUseNormalized.TabIndex = 2;
+            this.checkBoxUseNormalized.Text = "Use normalized picking (BOTS)";
+            this.checkBoxUseNormalized.UseVisualStyleBackColor = true;
             // 
             // MonopolySimulation
             // 
@@ -946,6 +958,7 @@
             this.groupBox7.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1028,5 +1041,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button buttonWTCRent;
         private System.Windows.Forms.Button buttonWTCWinRate;
+        private System.Windows.Forms.CheckBox checkBoxUseNormalized;
     }
 }

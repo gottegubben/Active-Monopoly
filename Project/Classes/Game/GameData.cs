@@ -38,6 +38,8 @@ namespace Monopoly
 
         //Counts the amount of rounds that have been played.
         public int RoundCounter { get; set; }
+
+        public bool NormalizedBotPicks { get; set; }
         #endregion
 
         #region Methods:
